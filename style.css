@@ -141,12 +141,14 @@ img { max-width: 100%; display: block; }
 
 .hero-content {
     position: absolute;
-    bottom: 80px;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     text-align: center;
     color: white;
+    width: 100%;
 }
+
 
 .hero h1 { font-size: 44px; margin-bottom: 12px; }
 .hero h3 { font-size: 22px; margin-bottom: 6px; }
