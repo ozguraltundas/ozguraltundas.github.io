@@ -50,6 +50,9 @@ img {
 }
 
 .nav-links a {
+  display: flex;
+  gap: 22px; /* istediğin gibi ayarlanabilir */
+  margin-left: -40px; /* Sola kaydırır — değeri artırıp azaltabilirsin */
   font-size: 16px;
   font-weight: 600;
   padding-bottom: 3px;
