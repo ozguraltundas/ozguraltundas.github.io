@@ -2,11 +2,15 @@
    GLOBAL SETTINGS
 =========================== */
 
-body {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Inter', sans-serif;
-  background-color: #fafafa;
+  background: #fafafa;
   color: #222;
 }
 
@@ -16,9 +20,10 @@ a {
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
   display: block;
 }
+
 
 /* ===========================
    NAVBAR (Desktop + Mobile)
@@ -26,92 +31,92 @@ img {
 
 .navbar {
   width: 100%;
+  height: 70px;
   display: flex;
-  justify-content: flex-start;  /* Logo – Menü hizalama */
   align-items: center;
-  gap: 40px;                    /* LOGO – MENÜ ARASI BOŞLUK (buradan ayarlıyorsun) */
-  padding: 18px 40px;
+  justify-content: space-between;
+  padding: 0 25px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
   position: fixed;
   top: 0;
-  background: white;
-  border-bottom: 1px solid #eee;
-  z-index: 9999;
+  z-index: 999;
 }
 
-.navbar .logo {
+.logo {
   font-size: 1.7rem;
   font-weight: 700;
-  color: #111;
   white-space: nowrap;
 }
 
-/* Desktop Menu */
 .nav-links {
   display: flex;
   gap: 20px;
 }
 
 .nav-links a {
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 600;
-  color: #222;
+  padding: 4px 0;
 }
 
-.nav-links a.active {
-  color: #0056d6;
-  font-weight: 700;
-}
-
+.nav-links a.active,
 .nav-links a:hover {
-  color: #0056d6;
+  color: #0067ff;
 }
 
-/* Hamburger (mobile only) */
+/* Mobile Hamburger Button */
 .menu-btn {
   display: none;
   font-size: 2rem;
   cursor: pointer;
 }
 
-/* Mobile Menu */
+
+/* ===========================
+   MOBILE MENU (Full Screen)
+=========================== */
+
 .mobile-menu {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(12px);
-  background: rgba(0,0,0,0.55);
+  background: rgba(0,0,0,0.80);
+  backdrop-filter: blur(8px);
   display: none;
   flex-direction: column;
   align-items: center;
-  padding-top: 150px;
+  justify-content: center;
 }
 
 .mobile-menu a {
-  color: white;
+  color: #fff;
   font-size: 1.8rem;
   margin: 15px 0;
-  font-weight: 600;
+  font-weight: bold;
 }
 
 .mobile-menu a.active {
   color: #4da3ff;
 }
 
-/* Responsive */
-@media (max-width: 860px) {
+/* Mobile view */
+@media (max-width: 900px) {
+
   .nav-links {
     display: none;
   }
+
   .menu-btn {
     display: block;
-    margin-left: auto;
   }
 }
 
+
 /* ===========================
-   HERO SECTION
+   HERO (PAGE HEADER IMAGE)
 =========================== */
 
 .hero {
@@ -119,8 +124,8 @@ img {
   height: 70vh;
   background-size: cover;
   background-position: center;
+  margin-top: 70px;
   position: relative;
-  margin-top: 80px; /* navbar boşluğu */
 }
 
 .hero::before {
@@ -130,35 +135,44 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0,0,0,0.4);
 }
 
 .hero-content {
   position: absolute;
-  bottom: 80px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 15%;
+  width: 100%;
   text-align: center;
-  color: white;
+  color: #fff;
+  padding: 0 20px;
 }
 
-.hero h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
+.hero-content h1 {
+  font-size: 44px;
+  font-weight: 700;
 }
 
-.hero h3 {
+.hero-content h3 {
   font-size: 22px;
-  margin-bottom: 6px;
+  margin-top: 8px;
 }
 
-.hero h4 {
+.hero-content h4 {
   font-size: 18px;
   opacity: 0.9;
+  margin-top: 6px;
 }
 
+/* HERO Mobile */
+@media (max-width: 900px) {
+  .hero-content h1 { font-size: 34px; }
+  .hero-content h3 { font-size: 18px; }
+  .hero-content h4 { font-size: 16px; }
+}
+
+
 /* ===========================
-   CONTENT SECTIONS
+   PAGE SECTIONS
 =========================== */
 
 .section {
@@ -170,13 +184,15 @@ img {
 .section h2 {
   font-size: 32px;
   color: #0077ff;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .section p {
   font-size: 18px;
   line-height: 1.7;
+  margin-bottom: 15px;
 }
+
 
 /* ===========================
    FOOTER
@@ -186,7 +202,7 @@ footer {
   text-align: center;
   padding: 25px;
   background: #f3f3f3;
-  margin-top: 80px;
   font-size: 14px;
-  color: #555;
+  color: #666;
+  margin-top: 60px;
 }
