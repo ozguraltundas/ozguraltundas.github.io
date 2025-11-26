@@ -2,102 +2,103 @@
       GLOBAL STYLES
 ================================*/
 body {
-  margin: 0;
-  padding: 0;
-  font-family: "Inter", sans-serif;
-  background: #fafafa;
-  color: #222;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    background: #fafafa;
+    color: #222;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
 /* ===============================
       NAVBAR (DESKTOP)
 ================================*/
 .navbar {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  padding: 18px 35px; /* üst/alt – sağ/sol */
-  position: fixed;
-  top: 0;
-  background: white;
-  border-bottom: 1px solid #eee;
-  z-index: 9999;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 18px 35px; /* üst/alt – sağ/sol */
+    position: fixed;
+    top: 0;
+    background: white;
+    border-bottom: 1px solid #eee;
+    z-index: 9999;
 }
 
 /* SOLDAKİ İSİM */
 .navbar .logo {
-  font-size: 1.7rem;
-  font-weight: 700;
-  margin-right: 40px;  /* İSİM + MENÜ ARASI BOŞLUK BURADA */
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-right: 15px;  /* Değişiklik: 40px'ten 15px'e düşürüldü */
 }
 
 /* MENÜ LİSTESİ */
 .nav-links {
-  margin-left: -100px;
-  display: flex;
-  gap: 18px;  /* MENÜ İÇİ BOŞLUKLAR */
-  margin-left: 20px; /* LOGOYA YAKLAŞTIRIR */
+    /* Eski: margin-left: -100px; - KALDIRILDI */
+    display: flex;
+    gap: 12px;  /* Değişiklik: 18px'ten 12px'e düşürüldü (Daha iyi sığması için) */
+    /* Eski: margin-left: 20px; - KALDIRILDI */
 }
 
 /* MENÜ LINKLERİ */
 .nav-links a {
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: #222;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #222;
+    white-space: nowrap; /* Menü öğelerinin tek satırda kalmasını sağlar */
 }
 
 .nav-links a.active,
 .nav-links a:hover {
-  color: #0056d6;
+    color: #0056d6;
 }
 
 /* ===============================
       MOBILE MENU BUTTON
 ================================*/
 .menu-btn {
-  font-size: 2rem;
-  cursor: pointer;
-  display: none;
-  margin-left: auto;
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+    margin-left: auto;
 }
 
 /* ===============================
       MOBILE MENU (OVERLAY)
 ================================*/
 .mobile-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(10px);
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 150px;
-  z-index: 99999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(10px);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 150px;
+    z-index: 99999;
 }
 
 .mobile-menu a {
-  color: white;
-  font-size: 1.8rem;
-  margin: 12px 0;
+    color: white;
+    font-size: 1.8rem;
+    margin: 12px 0;
 }
 
 /* ===============================
       RESPONSIVE (TABLET & PHONE)
 ================================*/
 @media (max-width: 900px) {
-  .nav-links {
-    display: none;
-  }
-  .menu-btn {
-    display: block;
-  }
+    .nav-links {
+        display: none;
+    }
+    .menu-btn {
+        display: block;
+    }
 }
