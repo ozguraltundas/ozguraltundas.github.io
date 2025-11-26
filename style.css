@@ -40,7 +40,7 @@ a {
 .nav-links {
   display: flex;
   gap: 18px;  /* MENÜ İÇİ BOŞLUKLAR */
-  margin-left: 10px; /* LOGOYA YAKLAŞTIRIR */
+  margin-left: 20px; /* LOGOYA YAKLAŞTIRIR */
 }
 
 /* MENÜ LINKLERİ */
