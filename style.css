@@ -20,7 +20,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   justify-content: flex-start;  /* LOGO + HAMBURGER aynı hizaya */
   align-items: center;
-  gap: -50px;                    /* Logo ile hamburger arasındaki boşluk */
+  gap: 100px;                    /* Logo ile hamburger arasındaki boşluk */
   padding: 18px 20px;
   background: white;
   border-bottom: 1px solid #eee;
