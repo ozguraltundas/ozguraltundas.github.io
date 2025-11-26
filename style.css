@@ -1,9 +1,9 @@
-/* =========================================
+/* ===========================
    GLOBAL
-========================================= */
+=========================== */
 body {
   margin: 0;
-  padding: 0;
+  padding: 90px 0 0 0;  /* NAVBAR YÜKSEKLİĞİ KADAR PAY */
   font-family: 'Inter', sans-serif;
   background: #fafafa;
   color: #222;
@@ -12,20 +12,17 @@ body {
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; display: block; }
 
-/* =========================================
+/* ===========================
    NAVBAR
-========================================= */
+=========================== */
 .navbar {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  padding: 18px 24px;
-
-  background: #ffffff;
+  padding: 18px 20px;
+  background: white;
   border-bottom: 1px solid #eee;
-
   position: fixed;
   top: 0;
   left: 0;
@@ -40,7 +37,7 @@ img { max-width: 100%; display: block; }
 
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 18px;
 }
 
 .nav-links a {
@@ -52,43 +49,37 @@ img { max-width: 100%; display: block; }
   color: #0056d6;
 }
 
-.nav-links a:hover {
-  color: #0056d6;
-}
+/* Hover */
+.nav-links a:hover { color: #0056d6; }
 
-/* Hamburger Button */
+/* Hamburger */
 .menu-btn {
   display: none;
   font-size: 2rem;
   cursor: pointer;
 }
 
-
-/* =========================================
+/* ===========================
    MOBILE MENU
-========================================= */
+=========================== */
 .mobile-menu {
   position: fixed;
   top: 0;
   left: 0;
-
   width: 100%;
   height: 100%;
-
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0,0,0,0.55);
   backdrop-filter: blur(12px);
-
   display: none;
   flex-direction: column;
   align-items: center;
-
-  padding-top: 150px;
+  padding-top: 140px;
 }
 
 .mobile-menu a {
+  color: white;
   font-size: 1.7rem;
   margin: 12px 0;
-  color: white;
   font-weight: 600;
 }
 
@@ -96,30 +87,29 @@ img { max-width: 100%; display: block; }
   color: #4da3ff;
 }
 
-
-/* =========================================
-   RESPONSIVE RULES
-========================================= */
+/* ===========================
+   RESPONSIVE
+=========================== */
 @media (max-width: 860px) {
-  .nav-links { display: none; }
-  .menu-btn { display: block; }
+
+  .nav-links {
+    display: none;    /* Menü gizlenecek */
+  }
+
+  .menu-btn {
+    display: block;   /* Hamburger butonu görünecek */
+  }
 }
 
-
-/* =========================================
-   HERO SECTION
-========================================= */
+/* ===========================
+   HERO
+=========================== */
 .hero {
   width: 100%;
   height: 70vh;
-
   background-size: cover;
   background-position: center;
-
-  position: relative;
-
-  /* 🔥 NAVBAR YÜZÜNDEN ÜSTTEN BOŞLUK GEREKİR */
-  margin-top: 90px;
+  position: relative;   /* margin-top kaldırıldı */
 }
 
 .hero::before {
@@ -141,14 +131,13 @@ img { max-width: 100%; display: block; }
   color: white;
 }
 
-.hero h1 { font-size: 44px; margin-bottom: 12px; }
-.hero h3 { font-size: 22px; margin-bottom: 6px; }
-.hero h4 { font-size: 18px; opacity: 0.9; }
+.hero h1 { font-size: 42px; margin-bottom: 10px; }
+.hero h3 { font-size: 20px; margin-bottom: 4px; }
+.hero h4 { font-size: 17px; opacity: 0.9; }
 
-
-/* =========================================
-   CONTENT SECTIONS
-========================================= */
+/* ===========================
+   CONTENT
+=========================== */
 .section {
   max-width: 900px;
   margin: 60px auto;
@@ -162,10 +151,9 @@ img { max-width: 100%; display: block; }
   margin-bottom: 15px;
 }
 
-
-/* =========================================
+/* ===========================
    FOOTER
-========================================= */
+=========================== */
 footer {
   text-align: center;
   padding: 25px;
