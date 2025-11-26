@@ -1,3 +1,4 @@
+/* GLOBAL */
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
@@ -11,53 +12,38 @@ h1, h2, h3, h4 {
     font-weight: 700;
 }
 
-p {
-    font-size: 1.05rem;
-    line-height: 1.75;
-}
-
-/* =======================================
-   NAVBAR
-======================================= */
+/* NAVBAR */
 .navbar {
     width: 100%;
     background: #ffffff;
-    padding: 5px 20px;
-    padding: 10px 0;
+    padding: 8px 20px;
     display: flex;
-    justify-content: flex-start;     /* space-between → flex-start */
-    justify-content: center;
     align-items: center;
-    gap: 0px;                       /* logo ile menü arası kontrollü boşluk */
-    gap: 20px;
+    gap: 20px; /* LOGO – MENU boşluğu sadece bu */
     border-bottom: 1px solid #eee;
     position: sticky;
     top: 0;
     z-index: 999;
 }
 
-.navbar > * {
-    margin: 0 15px;
-}
-
-
 .logo {
     font-size: 1.5rem;
     font-weight: 800;
     color: #003366;
+    white-space: nowrap;
 }
 
-/* Desktop Menu */
+/* MENU */
 .nav-links {
     display: flex;
-    gap: 5px;
-    gap: 12px;
+    gap: 18px;
+    padding: 0;
+    margin: 0;
 }
 
 .nav-links a {
     text-decoration: none;
     color: #222;
-    font-size: 1rem;
     font-weight: 600;
 }
 
@@ -65,15 +51,93 @@ p {
     color: #0066cc;
 }
 
-/* Mobile Menu Button */
+/* MOBILE BUTTON */
 .menu-btn {
     display: none;
-    font-size: 1.9rem;
+    font-size: 2rem;
+    margin-left: auto;
     cursor: pointer;
 }
 
-/* MOBILE OVERLAY MENU */
+/* MOBILE MENU */
 .mobile-menu {
     display: none;
     flex-direction: column;
     background: white;
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.mobile-menu a {
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* HERO */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 480px;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.hero-content {
+    color: white;
+    width: 90%;
+    max-width: 900px;
+}
+
+.hero-content h1 {
+    font-size: 2.6rem;
+}
+
+.hero-content h3 {
+    margin-top: 12px;
+    font-size: 1.3rem;
+}
+
+/* CONTENT */
+.section {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.section h2 {
+    color: #004c99;
+}
+
+.btn {
+    background: #004c99;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 60px;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #eee;
+    color: #666;
+}
+
+/* MOBILE */
+@media (max-width: 850px) {
+    .nav-links {
+        display: none;
+    }
+    .menu-btn {
+        display: block;
+        margin-left: auto;
+    }
+}
