@@ -10,120 +10,73 @@
 
 <body>
 
-<!-- ================================
-     NAVBAR (Tüm sayfalarda aynı)
-================================ -->
-<div class="navbar">
-  <div class="logo">Özgür Altundaş</div>
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="logo">Özgür Altundaş</div>
 
-  <div class="nav-links">
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a class="active" href="about.html">About</a>
+      <a href="research.html">Research</a>
+      <a href="projects.html">Projects</a>
+      <a href="publications.html">Publications</a>
+      <a href="news.html">News</a>
+      <a href="journal.html">Literature Highlights</a>
+      <a href="books.html">Books & Movies</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Home</a>
-    <a href="about.html">About</a>
+    <a class="active" href="about.html">About</a>
     <a href="research.html">Research</a>
     <a href="projects.html">Projects</a>
     <a href="publications.html">Publications</a>
-    <a href="awards.html">Awards</a>
     <a href="news.html">News</a>
     <a href="journal.html">Literature Highlights</a>
     <a href="books.html">Books & Movies</a>
     <a href="contact.html">Contact</a>
   </div>
 
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
-</div>
+  <!-- HERO (Her sayfa için gereklidir!) -->
+  <section class="hero" style="background-image: url('image3.jpg');">
+    <div class="hero-content">
+      <h1>About Me</h1>
+      <h3>Plant Breeding, Genetics & Quantitative Genomics</h3>
+    </div>
+  </section>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="research.html">Research</a>
-  <a href="projects.html">Projects</a>
-  <a href="publications.html">Publications</a>
-  <a href="awards.html">Awards</a>
-  <a href="news.html">News</a>
-  <a href="journal.html">Literature Highlights</a>
-  <a href="books.html">Books & Movies</a>
-  <a href="contact.html">Contact</a>
-</div>
-
-
-<!-- ================================
-     HERO (About Banner)
-================================ -->
-<section class="hero" style="background-image: url('image1.jpg');">
-  <div class="hero-content">
-    <h1>About Me</h1>
-    <h3>Plant Breeding, Genetics & Quantitative Genomics</h3>
+  <!-- CONTENT -->
+  <div class="section">
+    <h2>Biography</h2>
+    <p>...</p>
   </div>
-</section>
 
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Özgür Altundaş — University of Nebraska–Lincoln
+  </footer>
 
-<!-- ================================
-     ABOUT CONTENT
-================================ -->
-<div class="section">
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+    }
+  </script>
 
-  <h2>Who I Am</h2>
-  <p>
-    I am a Ph.D. candidate in Plant Breeding & Genetics at the University of Nebraska–Lincoln,
-    working in the Schnable Lab. My research integrates plant genomics, quantitative genetics, 
-    high-throughput phenotyping, and computational data analysis to understand trait variation and 
-    improve crop performance.
-  </p>
-
-  <p>
-    My academic background includes agricultural genetic engineering, plant biotechnology, and
-    molecular breeding, supported by hands-on experience in both industry and research environments.
-  </p>
-
-  <h2>Research Interests</h2>
-  <ul>
-    <li>Quantitative genetics & multi-environment analysis</li>
-    <li>High-throughput field phenotyping & drone/ground sensing</li>
-    <li>Maize genomic selection and trait prediction</li>
-    <li>QTL mapping and candidate gene identification</li>
-    <li>Genotype–phenotype integration pipelines</li>
-  </ul>
-
-  <h2>Education</h2>
-  <ul>
-    <li><strong>Ph.D., Plant Breeding & Genetics</strong> — University of Nebraska–Lincoln</li>
-    <li><strong>M.S., Plant Biotechnology</strong> — Gebze Technical University</li>
-    <li><strong>B.S., Agricultural Genetic Engineering</strong> — Niğde Ömer Halisdemir University</li>
-  </ul>
-
-  <h2>Beyond Research</h2>
-  <p>
-    I am passionate about scientific communication, data visualization, agricultural innovation,
-    and helping bridge classical breeding with modern computational genomics. 
-  </p>
-
-</div>
-
-
-<!-- ================================
-     FOOTER
-================================ -->
-<footer>
-  © 2025 Özgür Altundaş — University of Nebraska–Lincoln
-</footer>
-
-
-<!-- ================================
-     SCRIPTS (Tüm sayfalarda aynı)
-================================ -->
-<script>
-function toggleMenu() {
-  const menu = document.getElementById("mobileMenu");
-  menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-}
-
-const currentPage = window.location.pathname.split("/").pop();
-document.querySelectorAll(".nav-links a, .mobile-menu a").forEach(link => {
-  if (link.getAttribute("href") === currentPage) {
-    link.classList.add("active");
-  }
-});
-</script>
+  <script>
+    const links = document.querySelectorAll(".nav-links a, .mobile-menu a");
+    const current = window.location.pathname.split("/").pop();
+    links.forEach(link => {
+      if (link.getAttribute("href") === current) {
+        link.classList.add("active");
+      }
+    });
+  </script>
 
 </body>
 </html>
