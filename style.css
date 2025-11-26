@@ -1,1 +1,125 @@
+/* GLOBAL RESET -------------------------------------- */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+  color: #222;
+}
+
+/* NAVBAR -------------------------------------------- */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;   /* HER ŞEY ORTADA */
+  align-items: center;
+  gap: 40px;                 /* logo ↔ menü boşluğu */
+  padding: 12px 0;
+  background: white;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #003366;
+}
+
+.nav-links {
+  display: flex;
+  gap: 18px;
+}
+
+.nav-links a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.nav-links a:hover {
+  color: #0066cc;
+}
+
+/* MOBILE MENU BUTTON -------------------------------- */
+.menu-btn {
+  display: none;
+  cursor: pointer;
+  font-size: 2rem;
+  position: absolute;
+  right: 20px;
+}
+
+/* MOBILE MENU --------------------------------------- */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+
+.mobile-menu a {
+  padding: 10px;
+  text-align: center;
+  color: #222;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+/* HERO ------------------------------------------------ */
+.hero {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.hero-content {
+  color: white;
+  text-shadow: 1px 1px 7px rgba(0,0,0,0.7);
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+/* CONTENT -------------------------------------------- */
+.section {
+  max-width: 900px;
+  margin: 70px auto;
+  padding: 0 20px;
+}
+
+.btn {
+  display: inline-block;
+  background: #004c99;
+  color: white;
+  padding: 10px 18px;
+  margin-top: 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* FOOTER --------------------------------------------- */
+footer {
+  text-align: center;
+  padding: 25px 0;
+  margin-top: 60px;
+  border-top: 1px solid #eee;
+}
+
+/* RESPONSIVE ----------------------------------------- */
+@media (max-width: 850px) {
+  .nav-links { display: none; }
+  .menu-btn { display: block; }
+}
 
