@@ -1,184 +1,226 @@
-/* =========================================
-   ACİL FİX — TÜM NAVBAR ÇAKIŞMALARINI TEMİZLER
-========================================= */
-.navbar {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0;
-    width: 100%;
-    z-index: 99999 !important;
-    background: white;
-}
-
+/* =======================================
+   GLOBAL
+======================================= */
 body {
     margin: 0;
-    padding-top: 90px !important; /* Navbar yüksekliği kadar pay */
     font-family: 'Inter', sans-serif;
-    background: #fafafa;
+    background: #ffffff;
     color: #222;
+    line-height: 1.7;
 }
 
-/* =========================================
-   GLOBAL
-========================================= */
-a { text-decoration: none; color: inherit; }
-img { max-width: 100%; display: block; }
+h1, h2, h3, h4 {
+    margin: 0;
+    font-weight: 700;
+}
 
-/* =========================================
+p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+/* =======================================
    NAVBAR
-========================================= */
+======================================= */
 .navbar {
     width: 100%;
+    background: #ffffff;
+    padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 24px;
     border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .logo {
-    font-size: 1.6rem;
-    font-weight: 700;
-    white-space: nowrap;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #003366;
 }
 
+/* Desktop Menu */
 .nav-links {
     display: flex;
-    justify-content: flex-start;     /* SOLA HİZALAR */
-    gap: 20px;
+    gap: 22px;
 }
-
 
 .nav-links a {
-    font-size: 1.05rem;
+    text-decoration: none;
+    color: #222;
+    font-size: 1rem;
     font-weight: 600;
-}
-
-.nav-links a.active {
-    color: #0056d6;
 }
 
 .nav-links a:hover {
-    color: #0056d6;
+    color: #0066cc;
 }
 
-/* =========================================
-   HAMBURGER BUTTON
-========================================= */
+/* Mobile Menu Button */
 .menu-btn {
     display: none;
-    font-size: 2rem;
+    font-size: 1.9rem;
     cursor: pointer;
 }
 
-/* =========================================
-   MOBILE MENU
-========================================= */
+/* MOBILE OVERLAY MENU */
 .mobile-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    background: rgba(0, 0, 0, 0.55);
-    backdrop-filter: blur(12px);
-
     display: none;
     flex-direction: column;
-    align-items: center;
-    padding-top: 150px;
+    background: white;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
 }
 
 .mobile-menu a {
-    font-size: 1.7rem;
-    margin: 14px 0;
-    color: white;
-    font-weight: 600;
+    padding: 12px 0;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #222;
 }
 
-.mobile-menu a.active {
-    color: #4da3ff;
+.mobile-menu a:hover {
+    color: #0066cc;
 }
 
-/* =========================================
-   RESPONSIVE — MOBİL
-========================================= */
-@media (max-width: 860px) {
-    .nav-links { display: none; }
-    .menu-btn { display: block; }
-
-    .navbar {
-        justify-content: space-between !important;
-        padding: 14px 16px !important;
-    }
-}
-
-/* =========================================
-   HERO SECTION
-========================================= */
+/* =======================================
+   HERO
+======================================= */
 .hero {
-    width: 100%;
-    height: 70vh;
-
-    background-size: cover;
-    background-position: center;
-
     position: relative;
-
-    margin-top: 90px !important;  /* 🔥 HERO ARTIK NAVBAR'DAN SONRA BAŞLIYOR */
-}
-
-
-.hero {
-    position: relative;        /* BUNU EKLEMEK ZORUNLU */
     width: 100%;
-    height: 500px;
+    height: 520px; /* Yazıların tamamen görünmesi için ideal */
     background-size: cover;
     background-position: center;
 }
 
 .hero-content {
     position: absolute;
-    top: 50%;                  /* DİKEY ORTALAMA */
-    left: 50%;                 /* YATAY ORTALAMA */
+    top: 50%;      /* tam ortalama */
+    left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
-    width: 100%;
+    width: 90%;      /* taşma olmasın */
+    max-width: 900px; /* çok yayılmasın */
 }
 
+.hero-content h1 {
+    font-size: 2.6rem;
+    letter-spacing: 2px;
+}
 
+.hero-content h3 {
+    margin-top: 12px;
+    font-size: 1.3rem;
+}
 
-.hero h1 { font-size: 44px; margin-bottom: 12px; }
-.hero h3 { font-size: 22px; margin-bottom: 6px; }
-.hero h4 { font-size: 18px; opacity: 0.9; }
+.hero-content h4 {
+    margin-top: 8px;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
 
-/* =========================================
-   CONTENT SECTIONS
-========================================= */
+/* =======================================
+   SECTION
+======================================= */
 .section {
-    max-width: 900px;
-    margin: 60px auto;
+    max-width: 950px;
+    margin: 70px auto;
     padding: 0 20px;
-    line-height: 1.7;
 }
 
 .section h2 {
-    font-size: 32px;
-    color: #0077ff;
-    margin-bottom: 15px;
+    font-size: 1.7rem;
+    color: #004c99;
+    margin-bottom: 12px;
 }
 
-/* =========================================
+/* Button */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    background: #004c99;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: #003366;
+}
+
+/* =======================================
    FOOTER
-========================================= */
+======================================= */
 footer {
+    margin-top: 60px;
     text-align: center;
-    padding: 25px;
-    background: #f3f3f3;
-    margin-top: 80px;
-    font-size: 14px;
+    padding: 25px 0;
+    border-top: 1px solid #eee;
+    background: #fafafa;
     color: #555;
+}
+
+/* =======================================
+   RESPONSIVE DESIGN (Mobile)
+======================================= */
+
+@media (max-width: 850px) {
+
+    .nav-links {
+        display: none;  /* desktop menu gizle */
+    }
+
+    .menu-btn {
+        display: block; /* mobil menü butonu göster */
+    }
+
+    .hero {
+        height: 420px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.1rem;
+    }
+
+    .hero-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .hero-content h4 {
+        font-size: 1rem;
+    }
+
+    .section {
+        margin: 50px auto;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .hero {
+        height: 370px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content h3 {
+        font-size: 1rem;
+    }
+
+    .hero-content h4 {
+        font-size: 0.9rem;
+    }
 }
