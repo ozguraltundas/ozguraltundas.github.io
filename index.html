@@ -1,15 +1,6 @@
-l
-+93
--42
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Özgür Altundaş | Plant Breeding & Genetics</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Özgür Altundaş | Plant Breeding & Genetics</title>
@@ -20,20 +11,6 @@ l
 </head>
 
 <body>
-  <!-- Header -->
-  <header class="hero">
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1>Özgür Altundaş</h1>
-      <h3>Ph.D. Candidate, Plant Breeding and Genetics</h3>
-      <h4>University of Nebraska–Lincoln | Schnable Lab</h4>
-      <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="research.html">Research</a>
-        <a href="publication.html">Publications</a>
-        <a href="awards.html">Awards</a>
-        <a href="contact.html">Contact</a>
-      </nav>
 
 <!-- NAVBAR -->
 <header class="navbar">
@@ -49,40 +26,18 @@ l
             <a href="contact.html">Contact</a>
         </nav>
     </div>
-  </header>
-
-  <!-- About Section -->
-  <section class="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>
-        I am an agricultural genetic engineer and a Ph.D. candidate in Plant Breeding and Genetics 
-        at the University of Nebraska–Lincoln, working in the <a href="https://schnablelab.org" target="_blank">Schnable Lab</a>. 
-        My doctoral studies are supported by the YLSY Scholarship from the Republic of Türkiye. 
-        I have experience in both academia and industry, having contributed to plant breeding projects and research in plant physiology.
-      </p>
-      <p>
-        My research focuses on genetic dissection of complex traits and developing innovative approaches 
-        for enhancing crop productivity. I received awards such as the 
-        <strong>Social Engagement Award</strong> at the Bayer-UNL Hackathon, 
-        <strong>Second Place</strong> in the Elevator Speech Contest, 
-        and presented my work at the <strong>15th Annual Plant Sciences Symposium (UW–Madison)</strong>.
-      </p>
 </header>
 
 <!-- HERO SLIDER -->
 <section class="hero">
     <div class="slider">
+        <!-- FOTOĞRAFLARI SEN BURAYA EKLEYECEKSİN -->
         <div class="slide" style="background-image: url('image1.jpg');"></div>
         <div class="slide" style="background-image: url('image2.jpg');"></div>
         <div class="slide" style="background-image: url('image3.jpg');"></div>
         <div class="slide" style="background-image: url('image4.jpg');"></div>
-        <div class="slide" style="background-image: url('image5.jpg');"></div>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer>
     <div class="hero-text">
         <h1>ÖZGÜR ALTUNDAŞ</h1>
         <h3>PhD Candidate in Plant Breeding & Genetics</h3>
@@ -129,7 +84,6 @@ l
 <!-- FOOTER -->
 <footer>
     <p>© 2025 Özgür Altundaş | Hosted on GitHub Pages</p>
-  </footer>
 </footer>
 
 <!-- SLIDER SCRIPT -->
@@ -144,7 +98,7 @@ function showSlides() {
     slideIndex++;
     if (slideIndex > slides.length) { slideIndex = 1 }
     slides[slideIndex - 1].style.opacity = "1";
-    setTimeout(showSlides, 4000);
+    setTimeout(showSlides, 4000); // 4 saniyede bir değişim
 }
 </script>
 
