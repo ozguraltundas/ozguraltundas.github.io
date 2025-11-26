@@ -1,67 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="style.css">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Özgür Altundaş</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #fdfdfd;
-      color: #222;
-      margin: 0;
-      line-height: 1.6;
-    }
-    header {
-      text-align: center;
-      padding: 40px 20px;
-    }
-    h1 {
-      color: #0066cc;
-      font-family: 'Merriweather', serif;
-    }
-    main {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .contact-list {
-      list-style: none;
-      padding: 0;
-    }
-    .contact-list li {
-      margin-bottom: 12px;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me | Özgür Altundaş</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <header>
-    <h1>Özgür Altundaş — Ph.D. Candidate, UNL</h1>
-    <p>Department of Agronomy & Horticulture</p>
+
+<body class="secondary-page">
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">Özgür Altundaş</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About Me</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html">Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="awards.html">Awards</a>
+        <a href="news.html">News</a>
+        <a href="journal-review.html">Journal Review</a>
+        <a href="books.html">Books & Movies</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <h2>Contact Information</h2>
-    <ul class="contact-list">
-      <li>📧 Email: <a href="mailto:oaltundas2@nebraska.edu">oaltundas2@nebraska.edu</a></li>
-      <li>🎓 Google Scholar: <a href="https://scholar.google.com/citations?user=xqjVHMIAAAAJ&hl=en&oi=ao" target="_blank">View Profile</a></li>
-      <li>🔬 ResearchGate: <a href="https://www.researchgate.net/profile/Oezguer-Altundas" target="_blank">View Profile</a></li>
-      <li>📚 Academia.edu: <a href="https://ozguraltundas.academia.edu/" target="_blank">View Profile</a></li>
-      <li>💼 LinkedIn: <a href="https://www.linkedin.com/in/%C3%B6zg%C3%BCraltundas/" target="_blank">View Profile</a></li>
+  <!-- HERO -->
+  <section class="hero small-hero random-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>About Me</h1>
+      <p>Plant Breeding · Genetics · Physiology · High-Throughput Phenotyping</p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="content-section">
+
+    <h2 class="section-title">Who I Am</h2>
+
+    <p>
+      I am a Ph.D. student in Plant Breeding & Genetics at the 
+      <strong>University of Nebraska–Lincoln</strong>, working in the 
+      <a href="https://schnablelab.org" target="_blank">Schnable Lab</a>.  
+      My research focuses on the genetic architecture of complex traits in maize and sorghum, 
+      integrating quantitative genetics, physiology, and computational workflows to understand 
+      plant performance across diverse environments.
+    </p>
+
+    <p>
+      Before starting my Ph.D., I completed my M.Sc. in Plant Biotechnology, where I worked on 
+      physiological responses to abiotic stresses and plant–microbe interactions. I have also 
+      contributed to several industry-driven crop improvement projects, particularly in tomato 
+      breeding, genetic biofortification, and molecular marker development.
+    </p>
+
+    <p>
+      I am supported by the <strong>YLSY Scholarship</strong> awarded by the Republic of Türkiye, 
+      a competitive fellowship supporting international graduate study and research.
+    </p>
+
+    <a class="cv-button" href="Ozgur Altundas CV.pdf" download>Download CV</a>
+
+    <hr class="section-divider" />
+
+
+    <!-- ACADEMIC INTERESTS -->
+    <h2 class="section-title">Academic Interests</h2>
+
+    <ul class="about-list">
+      <li>Quantitative trait dissection in maize and sorghum</li>
+      <li>Embryogenic callus formation & maize transformation</li>
+      <li>High-throughput phenotyping and physiological modeling</li>
+      <li>Genomic prediction & statistical genetics</li>
+      <li>Marker-assisted and genomic-assisted breeding</li>
+      <li>Stress physiology and plant–microbe interactions</li>
     </ul>
+
+    <hr class="section-divider" />
+
+
+    <!-- SKILLS -->
+    <h2 class="section-title">Skills</h2>
+
+    <h3 class="subsection-title">Computational & Data Analysis</h3>
+    <ul class="about-list">
+      <li>R (tidyverse, SpATS, lme4, rMVP, ggplot2)</li>
+      <li>Statistical modeling (BLUP/BLUE, heritability, mixed models)</li>
+      <li>High-throughput data cleaning & pipeline automation</li>
+      <li>VCF processing & genotype–phenotype integration</li>
+      <li>Cluster computing (HCC, SLURM, Globus transfers)</li>
+    </ul>
+
+    <h3 class="subsection-title">Laboratory & Molecular Techniques</h3>
+    <ul class="about-list">
+      <li>PCR, gel electrophoresis, DNA extraction</li>
+      <li>Molecular marker development (SNP, KASP, CAPS)</li>
+      <li>Tissue culture, maize callus induction, transformation workflows</li>
+      <li>Physiological measurements (chlorophyll, NPQt, fluorescence)</li>
+    </ul>
+
+    <h3 class="subsection-title">Field & Breeding Experience</h3>
+    <ul class="about-list">
+      <li>Plot management and phenotyping (maize, sorghum, tomato, wheat)</li>
+      <li>Hybrid development & agronomic trait evaluation</li>
+      <li>Experimental design and field data collection</li>
+    </ul>
+
+    <hr class="section-divider" />
+
+
+    <!-- PERSONAL SECTION -->
+    <h2 class="section-title">Beyond Research</h2>
+
+    <p>
+      Outside of academic work, I enjoy exploring photography, watching scientific documentaries, 
+      and writing short reflections on research papers I read each week — which I share in my 
+      <a href="journal-review.html">Journal Review</a> page.  
+      I also love discovering new books and films, which I curate on the 
+      <a href="books.html">Books & Movies</a> page.
+    </p>
+
   </main>
 
-  <footer style="text-align:center; padding:30px; color:#666; font-size:0.9em;">
-    © 2025 Özgür Altundaş | Hosted on GitHub Pages
+  <footer class="footer">
+    © 2025 Özgür Altundaş | University of Nebraska–Lincoln
   </footer>
+
+  <!-- RANDOM HERO JS -->
+  <script>
+    const images = [
+      "image1.jpg",
+      "image2.jpg",
+      "image4.jpg",
+      "image5.jpg"
+    ];
+    const random = images[Math.floor(Math.random() * images.length)];
+    document.querySelector(".random-hero").style.backgroundImage = `url('${random}')`;
+  </script>
+
 </body>
 </html>
