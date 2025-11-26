@@ -76,6 +76,15 @@
     const random = images[Math.floor(Math.random() * images.length)];
     document.querySelector(".random-hero").style.backgroundImage = `url('${random}')`;
   </script>
+<script>
+  const links = document.querySelectorAll(".nav-links a");
+  const current = window.location.pathname.split("/").pop();
+  links.forEach(link => {
+    if (link.getAttribute("href") === current) {
+      link.classList.add("active");
+    }
+  });
+</script>
 
 </body>
 </html>
