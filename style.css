@@ -1,53 +1,86 @@
-      NAVBAR (DESKTOP)
-================================*/
+/* ===========================
+   NAVBAR (Güncellenmiş)
+=========================== */
+
 .navbar {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 18px 35px; /* üst/alt – sağ/sol */
-    position: fixed;
-    top: 0;
-    background: white;
-    border-bottom: 1px solid #eee;
-    z-index: 9999;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;   /* Menü sola yaklaşır */
+  align-items: center;
+  gap: 40px;                      /* Logo–menü arası boşluğu kontrol eden kısım */
+  padding: 15px 40px;
+  position: fixed;
+  top: 0;
+  background: white;
+  border-bottom: 1px solid #eee;
+  z-index: 9999;
 }
 
-/* SOLDAKİ İSİM */
+/* LOGO */
 .navbar .logo {
-    font-size: 1.7rem;
-    font-weight: 700;
-    margin-right: 15px;  /* Değişiklik: 40px'ten 15px'e düşürüldü */
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #111;
+  white-space: nowrap;
 }
 
-/* MENÜ LİSTESİ */
+/* DESKTOP MENU */
 .nav-links {
-    /* Eski: margin-left: -100px; - KALDIRILDI */
-    display: flex;
-    gap: 12px;  /* Değişiklik: 18px'ten 12px'e düşürüldü (Daha iyi sığması için) */
-    /* Eski: margin-left: 20px; - KALDIRILDI */
-    gap: 10px;  /* Menü boşlukları küçültüldü */
-    margin-left: 8px; /* Menü, logoya yaklaştırıldı */
+  display: flex;
+  gap: 20px;    /* Menü elemanları arasındaki boşluk */
 }
 
-/* MENÜ LINKLERİ */
 .nav-links a {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #222;
-    white-space: nowrap; /* Menü öğelerinin tek satırda kalmasını sağlar */
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #222;
+  text-decoration: none;
 }
 
-.nav-links a.active,
+.nav-links a.active {
+  color: #0056d6;
+}
+
 .nav-links a:hover {
-    color: #0056d6;
+  color: #0056d6;
 }
 
-/* ===============================
-      MOBILE MENU BUTTON
-================================*/
+/* HAMBURGER */
 .menu-btn {
-    font-size: 2rem;
-    cursor: pointer;
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* MOBILE MENU */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.55);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 150px;
+}
+
+.mobile-menu a {
+  color: white;
+  font-size: 1.8rem;
+  margin: 15px 0;
+  font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 860px) {
+  .nav-links {
     display: none;
+  }
+  .menu-btn {
+    display: block;
     margin-left: auto;
+  }
 }
