@@ -18,9 +18,9 @@ img { max-width: 100%; display: block; }
 .navbar {
   width: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-between; /* Logo solda, hamburger sağda */
-  padding: 15px 22px;
+  padding: 18px 20px;
   background: white;
   border-bottom: 1px solid #eee;
   position: fixed;
@@ -37,7 +37,7 @@ img { max-width: 100%; display: block; }
 
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 18px;
 }
 
 .nav-links a {
@@ -45,10 +45,14 @@ img { max-width: 100%; display: block; }
   font-weight: 600;
 }
 
-.nav-links a.active { color: #0056d6; }
+.nav-links a.active {
+  color: #0056d6;
+}
+
+/* Hover */
 .nav-links a:hover { color: #0056d6; }
 
-/* Hamburger (only mobile) */
+/* Hamburger */
 .menu-btn {
   display: none;
   font-size: 2rem;
@@ -64,27 +68,98 @@ img { max-width: 100%; display: block; }
   left: 0;
   width: 100%;
   height: 100%;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(12px);
   display: none;
   flex-direction: column;
   align-items: center;
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(10px);
   padding-top: 140px;
 }
 
 .mobile-menu a {
-  font-size: 1.7rem;
   color: white;
-  margin: 14px 0;
+  font-size: 1.7rem;
+  margin: 12px 0;
   font-weight: 600;
 }
 
-.mobile-menu a.active { color: #4da3ff; }
+.mobile-menu a.active {
+  color: #4da3ff;
+}
 
 /* ===========================
    RESPONSIVE
 =========================== */
 @media (max-width: 860px) {
-  .nav-links { display: none; }
-  .menu-btn { display: block; }
+
+  .nav-links {
+    display: none;    /* Menü gizlenecek */
+  }
+
+  .menu-btn {
+    display: block;   /* Hamburger butonu görünecek */
+  }
+}
+
+/* ===========================
+   HERO
+=========================== */
+.hero {
+  width: 100%;
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  margin-top: 75px;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.35);
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+}
+
+.hero h1 { font-size: 42px; margin-bottom: 10px; }
+.hero h3 { font-size: 20px; margin-bottom: 4px; }
+.hero h4 { font-size: 17px; opacity: 0.9; }
+
+/* ===========================
+   CONTENT
+=========================== */
+.section {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+  line-height: 1.7;
+}
+
+.section h2 {
+  font-size: 32px;
+  color: #0077ff;
+  margin-bottom: 15px;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #f3f3f3;
+  margin-top: 80px;
+  font-size: 14px;
+  color: #555;
 }
