@@ -1,46 +1,11 @@
 /* -------------------------
    GLOBAL SETTINGS
 -------------------------- */
-<div class="navbar">
-  <div class="logo">Özgür Altundaş</div>
-
-  <!-- DESKTOP LINKS -->
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="research.html">Research</a>
-    <a href="projects.html">Projects</a>
-    <a href="publications.html">Publications</a>
-    <a href="awards.html">Awards</a>
-    <a href="news.html">News</a>
-    <a href="journal.html">Literature Highlights</a>
-    <a href="books.html">Books & Movies</a>
-    <a href="contact.html">Contact</a>
-  </div>
-
-  <!-- HAMBURGER BUTTON -->
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
-</div>
-
-<!-- MOBILE OVERLAY MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="research.html">Research</a>
-  <a href="projects.html">Projects</a>
-  <a href="publications.html">Publications</a>
-  <a href="awards.html">Awards</a>
-  <a href="news.html">News</a>
-  <a href="journal.html">Literature Highlights</a>
-  <a href="books.html">Books & Movies</a>
-  <a href="contact.html">Contact</a>
-</div>
-
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', 'Lato', sans-serif;
-  background-color: #fafafa;
+  font-family: 'Inter', sans-serif;
+  background: #fafafa;
   color: #222;
 }
 
@@ -54,80 +19,90 @@ img {
   display: block;
 }
 
-/* ---------------------------------
-   NAVBAR - FIXED TOP
----------------------------------- */
-
+/* -------------------------
+   NAVBAR (Desktop + Mobile)
+-------------------------- */
 .navbar {
+  width: 100%;
+  padding: 18px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+/* LOGO */
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #000;
+}
+
+/* DESKTOP NAV */
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #0066cc;
+}
+
+/* HAMBURGER */
+.menu-btn {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* MOBILE MENU */
+.mobile-menu {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 70px;
-  background: rgba(255, 255, 255, 0.92);
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid #e4e4e4;
-  display: flex;
+  display: none;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 40px;
-  z-index: 9999;
+  padding-top: 120px;
 }
 
-.navbar .logo {
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: #000;
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 28px;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar ul li a {
-  font-size: 16px;
+.mobile-menu a {
+  color: white;
+  font-size: 24px;
+  margin: 15px 0;
   font-weight: 600;
-  color: #000;
-  padding-bottom: 4px;
-  transition: all 0.25s ease;
 }
 
-/* Hover effect */
-.navbar ul li a:hover {
-  color: #0077ff;
-  transform: scale(1.05);
+.mobile-menu a.active {
+  color: #4da3ff;
 }
 
-/* Active page */
-.navbar ul li a.active {
-  color: #0077ff;
-  font-weight: 700;
-}
-
-/* ---------------------------------
+/* -------------------------
    HERO SECTION
----------------------------------- */
-
+-------------------------- */
 .hero {
-  width: 100%;
-  height: 95vh;
+  height: 90vh;
   background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding-top: 70px; /* navbar offset */
+  background-position: center;
   position: relative;
+  margin-top: 80px; /* navbar offset */
 }
 
-/* Dark overlay for readability */
 .hero::before {
   content: "";
   position: absolute;
@@ -135,36 +110,38 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.45);
 }
 
 .hero-content {
-  position: relative;
-  z-index: 2;
-  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
 }
 
 .hero h1 {
-  font-size: 60px;
-  font-weight: 800;
+  font-size: 55px;
   margin-bottom: 10px;
+  font-weight: 800;
 }
 
 .hero h3 {
   font-size: 26px;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .hero h4 {
   font-size: 20px;
   font-weight: 400;
-  color: #eaeaea;
+  opacity: 0.9;
 }
 
-/* ---------------------------------
+/* -------------------------
    PAGE CONTENT
----------------------------------- */
-
+-------------------------- */
 .section {
   max-width: 900px;
   margin: 60px auto;
@@ -173,8 +150,8 @@ img {
 
 .section h2 {
   font-size: 32px;
-  color: #0077ff;
   margin-bottom: 15px;
+  color: #0066cc;
 }
 
 .section p {
@@ -183,299 +160,22 @@ img {
   margin-bottom: 20px;
 }
 
-/* ---------------------------------
-   BUTTONS
----------------------------------- */
-
-.btn {
-  display: inline-block;
-  padding: 10px 18px;
-  border-radius: 5px;
-  background: #0077ff;
-  color: white !important;
-  font-weight: 600;
-  transition: 0.25s ease;
-}
-
-.btn:hover {
-  background: #005fcc;
-}
-
-/* ---------------------------------
-   FOOTER
----------------------------------- */
-
-footer {
-  text-align: center;
-  padding: 25px;
-  background: #f3f3f3;
-  margin-top: 80px;
-  font-size: 14px;
-  color: #555;
-}
-
-/* ---------------------------------
-   RESPONSIVE DESIGN
----------------------------------- */
-
-@media (max-width: 900px) {
-  .navbar {
-    padding: 0 20px;
-  }
-
-  .navbar ul {
-    gap: 18px;
-  }
-
-  .hero h1 {
-    font-size: 42px;
-  }
-
-  .hero h3 {
-    font-size: 20px;
-  }
-
-  .hero h4 {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 600px) {
-  .navbar {
-    height: 65px;
-  }
-  .hero {
-    height: 80vh;
-  }
-  .hero h1 {
-    font-size: 34px;
-  }
-}
-/* ==== NAVBAR ==== */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: white;
-  border-bottom: 1px solid #eee;
-  z-index: 9999;
-}
-
-.nav-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 15px 25px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  font-weight: 700;
-  font-size: 22px;
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 22px;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #222;
-  font-weight: 500;
-  padding: 5px 3px;
-  transition: 0.3s ease;
-}
-
-/* Hover effect */
-.nav-links a:hover {
-  color: #0066cc;
-}
-
-/* ACTIVE page highlight */
-.nav-links a.active {
-  color: #0066cc;
-  font-weight: 700;
-}
-
-/* ==== HERO SECTION ==== */
-.hero {
-  height: 70vh;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  margin-top: 60px;
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.25);
-}
-
-.hero-text {
-  position: absolute;
-  bottom: 80px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  color: white;
-}
-
-.hero-text h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
-}
-
-.hero-text p {
-  font-size: 20px;
-}
-/* ---------- GLOBAL CONTENT LAYOUT ---------- */
-
-.content-section {
-  max-width: 950px;
-  margin: 50px auto;
-  padding: 0 20px;
-  line-height: 1.65;
-  color: #222;
-}
-
-.content-section h1,
-.content-section h2 {
-  font-family: 'Montserrat', sans-serif;
-  margin-bottom: 15px;
-  color: #004aad;
-}
-
-.content-section h1 {
-  font-size: 2.2em;
-  margin-bottom: 10px;
-}
-
-.content-section h2 {
-  font-size: 1.6em;
-  border-bottom: 2px solid #eee;
-  padding-bottom: 8px;
-  margin-top: 35px;
-}
-
-.content-section p {
-  font-size: 1.05em;
-  text-align: justify;
-  margin-bottom: 15px;
-}
-
-.content-section ul {
-  padding-left: 20px;
-  margin-bottom: 20px;
-}
-
-.content-section li {
-  margin-bottom: 12px;
-}
-
-.content-section .subtitle {
-  font-size: 1.2em;
-  color: #555;
-  margin-bottom: 25px;
-}
-/* ---------------------------------
-   RESPONSIVE NAVBAR (Desktop + Mobile)
------------------------------------ */
-
-/* NAVBAR WRAPPER */
-.navbar {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 40px;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  background: white;
-  z-index: 9999;
-  border-bottom: 1px solid #eee;
-}
-
-/* LOGO */
-.navbar .logo {
-  font-size: 1.7rem;
-  font-weight: 700;
-  color: #111;
-}
-
-/* DESKTOP MENU */
-.nav-links {
-  display: flex;
-  gap: 25px;
-}
-
-.nav-links a {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #222;
-  text-decoration: none;
-}
-
-.nav-links a.active {
-  color: #0056d6; /* mavi */
-}
-
-.nav-links a:hover {
-  color: #0056d6;
-}
-
-/* HAMBURGER */
-.menu-btn {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-/* ------------------
-   MOBILE OVERLAY MENU
------------------- */
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(12px);
-  background: rgba(0,0,0,0.55);
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 150px;
-}
-
-.mobile-menu a {
-  color: white;
-  font-size: 1.8rem;
-  margin: 15px 0;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.mobile-menu a.active {
-  color: #4da3ff;
-}
-
-/* RESPONSIVE BREAKPOINT */
-@media (max-width: 860px) {
+/* -------------------------
+   RESPONSIVE
+-------------------------- */
+@media (max-width: 850px) {
   .nav-links {
     display: none;
   }
   .menu-btn {
     display: block;
   }
+
+  .hero h1 { font-size: 40px; }
+  .hero h3 { font-size: 20px; }
+  .hero h4 { font-size: 16px; }
 }
 
-
+@media (max-width: 550px) {
+  .hero h1 { font-size: 32px; }
+}
