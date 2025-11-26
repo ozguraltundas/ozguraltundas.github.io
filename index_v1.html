@@ -3,36 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Özgür Altundaş | Plant Breeding & Genetics</title>
   <meta name="description" content="PhD Candidate at University of Nebraska–Lincoln. Research in maize genetics, QTL mapping, and molecular breeding.">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --accent: #0055cc;
-      --text: #222;
-      --text-light: #555;
-      --bg: #ffffff;
-      --bg-light: #f7f7f7;
+      --accent-color: #0066cc;
+      --text-color: #222;
+      --bg-color: #fdfdfd;
+      --secondary-text: #666;
     }
 
     body {
-      margin: 0;
       font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
+      margin: 0;
+      background: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
     }
 
-    /* Header */
     header {
-      background: var(--bg);
-      padding: 25px 0 15px;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      padding: 20px 0;
       text-align: center;
-      border-bottom: 1px solid #e8e8e8;
       position: sticky;
       top: 0;
       z-index: 10;
@@ -40,57 +34,127 @@
 
     header h1 {
       font-family: 'Merriweather', serif;
-      font-size: 1.9em;
       margin: 0;
-      color: var(--accent);
+      font-size: 1.8em;
+      color: var(--accent-color);
     }
 
     header p {
-      margin: 6px 0;
-      color: var(--text-light);
+      margin: 5px 0;
+      color: var(--secondary-text);
+      font-size: 1em;
     }
 
-    /* Navigation */
     nav {
-      margin-top: 12px;
+      margin-top: 10px;
     }
 
     nav a {
       text-decoration: none;
-      color: var(--text);
-      margin: 0 18px;
+      color: var(--text-color);
+      margin: 0 15px;
       font-weight: 600;
-      transition: color 0.25s ease;
+      transition: color 0.3s;
     }
 
     nav a:hover {
-      color: var(--accent);
+      color: var(--accent-color);
     }
 
-    /* Main content */
     main {
-      max-width: 820px;
-      margin: 50px auto;
+      max-width: 800px;
+      margin: 60px auto;
       padding: 0 20px;
     }
 
     main h2 {
       font-family: 'Merriweather', serif;
       font-size: 1.4em;
-      color: var(--accent);
-      margin-top: 45px;
+      color: var(--accent-color);
       margin-bottom: 10px;
     }
 
-    ul {
-      margin-top: 10px;
-      padding-left: 20px;
+    .links a {
+      color: var(--accent-color);
+      text-decoration: none;
+      margin-right: 15px;
+      font-weight: 500;
     }
 
-    a {
-      color: var(--accent);
+    .links a:hover {
+      text-decoration: underline;
     }
 
-    a:hover {
-      text-decora
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: var(--secondary-text);
+      padding: 30px 0;
+      border-top: 1px solid #e0e0e0;
+      background: #fafafa;
+      margin-top: 80px;
+    }
 
+    @media (max-width: 600px) {
+      nav a {
+        margin: 0 8px;
+        font-size: 0.95em;
+      }
+      main {
+        margin: 40px 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Özgür Altundaş</h1>
+    <p>Ph.D. Candidate, Plant Breeding and Genetics</p>
+    <p><strong>University of Nebraska–Lincoln</strong></p>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Research</a>
+      <a href="#">Publications</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>About Me</h2>
+      <p>
+        I am a Ph.D. student at the 
+        <a href="https://agronomy.unl.edu/" target="_blank">Department of Agronomy and Horticulture</a>, 
+        University of Nebraska–Lincoln, working in the 
+        <a href="https://schnablelab.org/" target="_blank">Schnable Lab</a>. 
+        My research focuses on identifying quantitative trait loci (QTLs) associated with yield-related traits in maize.
+      </p>
+    </section>
+
+    <section>
+      <h2>Research Interests</h2>
+      <ul>
+        <li>Quantitative genetics and trait dissection</li>
+        <li>QTL mapping and genome-wide association studies (GWAS)</li>
+        <li>Genomic prediction and plant breeding strategies</li>
+        <li>Maize transformation and embryogenic callus induction</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Links</h2>
+      <div class="links">
+        <a href="https://scholar.google.com/" target="_blank">Google Scholar</a> |
+        <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a> |
+        <a href="https://www.researchgate.net/" target="_blank">ResearchGate</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Özgür Altundaş | Hosted on GitHub Pages
+  </footer>
+</body>
+</html>
