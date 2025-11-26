@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News | Özgür Altundaş</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="secondary-page">
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">Özgür Altundaş</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html">Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="awards.html">Awards</a>
+        <a href="news.html" class="active">News</a>
+        <a href="journal-review.html">Journal Review</a>
+        <a href="books.html">Books & Movies</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero small-hero random-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>News</h1>
+      <p>Updates from research, presentations, and academic life</p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="content-section">
+
+    <!-- NEWS ITEMS START -->
+    <h2 class="section-title">Recent Updates</h2>
+
+    <div class="news-card">
+      <div class="news-date">November 2025</div>
+      <h3>Lightning Talk at UW–Madison Plant Sciences Symposium</h3>
+      <p>
+        Presented a lightning talk on embryogenic callus induction QTL in the B73 × CML216 population.  
+        A great opportunity to meet researchers working on maize transformation and quantitative genetics.
+      </p>
+    </div>
+
+    <div class="news-card">
+      <div class="news-date">November 2025</div>
+      <h3>Poster Presentation — Embryogenic Callus Formation Project</h3>
+      <p>
+        Shared ongoing results from chromosome 2 QTL narrowing work.  
+        Received valuable feedback from faculty and industry scientists.
+      </p>
+    </div>
+
+    <div class="news-card">
+      <div class="news-date">November 2025</div>
+      <h3>Second Place — Elevator Speech Contest</h3>
+      <p>
+        Earned 2nd place in the Agronomy & Horticulture Elevator Speech competition  
+        with a 3-minute talk summarizing the maize callus induction project.
+      </p>
+    </div>
+
+    <div class="news-card">
+      <div class="news-date">October 2025</div>
+      <h3>Bayer × UNL Hackathon — Social Engagement Award</h3>
+      <p>
+        Our team developed a cluster-based model for predicting maize hybrid performance  
+        using limited phenotypic observations. Awarded for teamwork and contribution.
+      </p>
+    </div>
+
+    <div class="news-card">
+      <div class="news-date">September 2025</div>
+      <h3>Started Ph.D. at the University of Nebraska–Lincoln</h3>
+      <p>
+        Officially joined the <strong>Schnable Lab</strong> as a Ph.D. student in Plant Breeding & Genetics.  
+        Focusing on quantitative genetics, transformation efficiency, and high-throughput phenotyping.
+      </p>
+    </div>
+
+    <div class="news-card">
+      <div class="news-date">September–October 2025</div>
+      <h3>New Computational Pipelines for Sorghum & Maize Projects</h3>
+      <p>
+        Designed modular R pipelines for the Sorghum Photosynthetic Traits dataset  
+        and developed multi-environment BLUP/heritability workflows.  
+        VCF alignment & multi-location genotype matching also completed.
+      </p>
+    </div>
+
+    <div class="news-card">
+      <div class="news-date">October 2025</div>
+      <h3>HCC — Globus Workflow Fully Operational</h3>
+      <p>
+        Successfully integrated Globus for large file transfers between UNL cluster and local systems.  
+        Improved efficiency for processing large VCF files and high-resolution phenotyping datasets.
+      </p>
+    </div>
+
+    <div class="news-card">
+      <div class="news-date">October 2025</div>
+      <h3>Maize Callus Induction Project — QTL Refinement</h3>
+      <p>
+        KASP marker work expanded with 7 codominant markers on chromosome 2.  
+        Region narrowing and candidate gene inspection underway.
+      </p>
+    </div>
+
+    <!-- NEWS ITEMS END -->
+
+  </main>
+
+  <footer class="footer">
+    © 2025 Özgür Altundaş | University of Nebraska–Lincoln
+  </footer>
+
+  <!-- RANDOM HERO JS -->
+  <script>
+    const images = [
+      "image1.jpg",
+      "image2.jpg",
+      "image4.jpg",
+      "image5.jpg"
+    ];
+    const random = images[Math.floor(Math.random() * images.length)];
+    document.querySelector(".random-hero").style.backgroundImage = `url('${random}')`;
+  </script>
+
+</body>
+</html>
