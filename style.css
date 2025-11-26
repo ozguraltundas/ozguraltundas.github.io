@@ -18,9 +18,8 @@ img { max-width: 100%; display: block; }
 .navbar {
   width: 100%;
   display: flex;
-  justify-content: flex-start;  /* LOGO + HAMBURGER aynı hizaya */
+  justify-content: space-between;
   align-items: center;
-  gap: 100px;                    /* Logo ile hamburger arasındaki boşluk */
   padding: 18px 20px;
   background: white;
   border-bottom: 1px solid #eee;
@@ -30,7 +29,6 @@ img { max-width: 100%; display: block; }
   z-index: 9999;
 }
 
-
 .logo {
   font-size: 1.6rem;
   font-weight: 700;
@@ -39,7 +37,7 @@ img { max-width: 100%; display: block; }
 
 .nav-links {
   display: flex;
-  gap: 100px;
+  gap: 18px;
 }
 
 .nav-links a {
