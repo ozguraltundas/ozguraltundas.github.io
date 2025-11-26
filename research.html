@@ -100,6 +100,15 @@
   <footer>
     © 2025 Özgür Altundaş — University of Nebraska–Lincoln
   </footer>
+<script>
+  const links = document.querySelectorAll(".nav-links a");
+  const current = window.location.pathname.split("/").pop();
+  links.forEach(link => {
+    if (link.getAttribute("href") === current) {
+      link.classList.add("active");
+    }
+  });
+</script>
 
 </body>
 </html>
