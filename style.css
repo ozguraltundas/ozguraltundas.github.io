@@ -1,14 +1,36 @@
 /* ===========================
-   NAVBAR (Güncellenmiş)
+   GLOBAL SETTINGS
+=========================== */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #fafafa;
+  color: #222;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===========================
+   NAVBAR (Desktop + Mobile)
 =========================== */
 
 .navbar {
   width: 100%;
   display: flex;
-  justify-content: flex-start;   /* Menü sola yaklaşır */
+  justify-content: flex-start;  /* Logo – Menü hizalama */
   align-items: center;
-  gap: 40px;                      /* Logo–menü arası boşluğu kontrol eden kısım */
-  padding: 15px 40px;
+  gap: 40px;                    /* LOGO – MENÜ ARASI BOŞLUK (buradan ayarlıyorsun) */
+  padding: 18px 40px;
   position: fixed;
   top: 0;
   background: white;
@@ -16,7 +38,6 @@
   z-index: 9999;
 }
 
-/* LOGO */
 .navbar .logo {
   font-size: 1.7rem;
   font-weight: 700;
@@ -24,35 +45,35 @@
   white-space: nowrap;
 }
 
-/* DESKTOP MENU */
+/* Desktop Menu */
 .nav-links {
   display: flex;
-  gap: 20px;    /* Menü elemanları arasındaki boşluk */
+  gap: 20px;
 }
 
 .nav-links a {
   font-size: 1.05rem;
   font-weight: 600;
   color: #222;
-  text-decoration: none;
 }
 
 .nav-links a.active {
   color: #0056d6;
+  font-weight: 700;
 }
 
 .nav-links a:hover {
   color: #0056d6;
 }
 
-/* HAMBURGER */
+/* Hamburger (mobile only) */
 .menu-btn {
   display: none;
   font-size: 2rem;
   cursor: pointer;
 }
 
-/* MOBILE MENU */
+/* Mobile Menu */
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -60,7 +81,7 @@
   width: 100%;
   height: 100%;
   backdrop-filter: blur(12px);
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0,0,0,0.55);
   display: none;
   flex-direction: column;
   align-items: center;
@@ -74,7 +95,11 @@
   font-weight: 600;
 }
 
-/* RESPONSIVE */
+.mobile-menu a.active {
+  color: #4da3ff;
+}
+
+/* Responsive */
 @media (max-width: 860px) {
   .nav-links {
     display: none;
@@ -85,3 +110,83 @@
   }
 }
 
+/* ===========================
+   HERO SECTION
+=========================== */
+
+.hero {
+  width: 100%;
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin-top: 80px; /* navbar boşluğu */
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.35);
+}
+
+.hero-content {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.hero h3 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.hero h4 {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* ===========================
+   CONTENT SECTIONS
+=========================== */
+
+.section {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.section h2 {
+  font-size: 32px;
+  color: #0077ff;
+  margin-bottom: 15px;
+}
+
+.section p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #f3f3f3;
+  margin-top: 80px;
+  font-size: 14px;
+  color: #555;
+}
