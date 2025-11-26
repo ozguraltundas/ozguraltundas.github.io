@@ -39,7 +39,7 @@ img { max-width: 100%; display: block; }
 
 .nav-links {
   display: flex;
-  gap: 1px;
+  gap: 100px;
 }
 
 .nav-links a {
