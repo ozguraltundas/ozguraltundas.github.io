@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Books & Movies | Özgür Altundaş</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="secondary-page">
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">Özgür Altundaş</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html">Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="awards.html">Awards</a>
+        <a href="news.html">News</a>
+        <a href="literature-highlights.html">Literature Highlights</a>
+        <a href="books.html" class="active">Books & Movies</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero small-hero random-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Books & Movies</h1>
+      <p>Stories, ideas, and inspirations I enjoy outside research</p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="content-section">
+
+    <h2 class="section-title">Coming Soon</h2>
+    <p>
+      This section will include books I've enjoyed, films and documentaries that inspired me,
+      and personal reflections on impactful stories.  
+      A curated list will be added here over time.
+    </p>
+
+    <hr class="section-divider" />
+
+    <!-- PLACEHOLDER CARD -->
+    <div class="lit-card empty-card">
+      <h3>Book / Movie Title (to be added)</h3>
+      <p class="lit-placeholder">Notes and reflections will appear here...</p>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    © 2025 Özgür Altundaş | University of Nebraska–Lincoln
+  </footer>
+
+  <!-- RANDOM HERO JS -->
+  <script>
+    const images = [
+      "image1.jpg",
+      "image2.jpg",
+      "image4.jpg",
+      "image5.jpg"
+    ];
+    const random = images[Math.floor(Math.random() * images.length)];
+    document.querySelector(".random-hero").style.backgroundImage = `url('${random}')`;
+  </script>
+
+</body>
+</html>
