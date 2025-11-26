@@ -1,14 +1,26 @@
 /* =========================================
-   GLOBAL
+   ACİL FİX — TÜM NAVBAR ÇAKIŞMALARINI TEMİZLER
 ========================================= */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Inter', sans-serif;
-  background: #fafafa;
-  color: #222;
+.navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0;
+    width: 100%;
+    z-index: 99999 !important;
+    background: white;
 }
 
+body {
+    margin: 0;
+    padding-top: 90px !important; /* Navbar yüksekliği kadar pay */
+    font-family: 'Inter', sans-serif;
+    background: #fafafa;
+    color: #222;
+}
+
+/* =========================================
+   GLOBAL
+========================================= */
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; display: block; }
 
@@ -16,161 +28,152 @@ img { max-width: 100%; display: block; }
    NAVBAR
 ========================================= */
 .navbar {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 18px 24px;
-
-  background: #ffffff;
-  border-bottom: 1px solid #eee;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px;
+    border-bottom: 1px solid #eee;
 }
 
 .logo {
-  font-size: 1.6rem;
-  font-weight: 700;
-  white-space: nowrap;
+    font-size: 1.6rem;
+    font-weight: 700;
+    white-space: nowrap;
 }
 
 .nav-links {
-  display: flex;
-  gap: 20px;
+    display: flex;
+    gap: 20px;
 }
 
 .nav-links a {
-  font-size: 1.05rem;
-  font-weight: 600;
+    font-size: 1.05rem;
+    font-weight: 600;
 }
 
 .nav-links a.active {
-  color: #0056d6;
+    color: #0056d6;
 }
 
 .nav-links a:hover {
-  color: #0056d6;
+    color: #0056d6;
 }
 
-/* Hamburger Button */
+/* =========================================
+   HAMBURGER BUTTON
+========================================= */
 .menu-btn {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
 }
-
 
 /* =========================================
    MOBILE MENU
 ========================================= */
 .mobile-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
 
-  width: 100%;
-  height: 100%;
+    width: 100%;
+    height: 100%;
 
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(12px);
 
-  display: none;
-  flex-direction: column;
-  align-items: center;
-
-  padding-top: 150px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 150px;
 }
 
 .mobile-menu a {
-  font-size: 1.7rem;
-  margin: 12px 0;
-  color: white;
-  font-weight: 600;
+    font-size: 1.7rem;
+    margin: 14px 0;
+    color: white;
+    font-weight: 600;
 }
 
 .mobile-menu a.active {
-  color: #4da3ff;
+    color: #4da3ff;
 }
-
 
 /* =========================================
-   RESPONSIVE RULES
+   RESPONSIVE — MOBİL
 ========================================= */
 @media (max-width: 860px) {
-  .nav-links { display: none; }
-  .menu-btn { display: block; }
-}
+    .nav-links { display: none; }
+    .menu-btn { display: block; }
 
+    .navbar {
+        justify-content: space-between !important;
+        padding: 14px 16px !important;
+    }
+}
 
 /* =========================================
    HERO SECTION
 ========================================= */
 .hero {
-  width: 100%;
-  height: 70vh;
+    width: 100%;
+    height: 70vh;
 
-  background-size: cover;
-  background-position: center;
+    background-size: cover;
+    background-position: center;
 
-  position: relative;
-
-  /* 🔥 SABİT NAVBAR YÜZÜNDEN GEREKLİ */
-  margin-top: 90px;
+    position: relative;
+    margin-top: 0 !important; /* Çakışmayı durdurur */
 }
 
 .hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.35);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.35);
 }
 
 .hero-content {
-  position: absolute;
-  bottom: 80px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  color: white;
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
 }
 
 .hero h1 { font-size: 44px; margin-bottom: 12px; }
 .hero h3 { font-size: 22px; margin-bottom: 6px; }
 .hero h4 { font-size: 18px; opacity: 0.9; }
 
-
 /* =========================================
    CONTENT SECTIONS
 ========================================= */
 .section {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 0 20px;
-  line-height: 1.7;
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+    line-height: 1.7;
 }
 
 .section h2 {
-  font-size: 32px;
-  color: #0077ff;
-  margin-bottom: 15px;
+    font-size: 32px;
+    color: #0077ff;
+    margin-bottom: 15px;
 }
-
 
 /* =========================================
    FOOTER
 ========================================= */
 footer {
-  text-align: center;
-  padding: 25px;
-  background: #f3f3f3;
-  margin-top: 80px;
-  font-size: 14px;
-  color: #555;
+    text-align: center;
+    padding: 25px;
+    background: #f3f3f3;
+    margin-top: 80px;
+    font-size: 14px;
+    color: #555;
 }
