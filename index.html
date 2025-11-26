@@ -4,19 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Özgür Altundaş | Plant Breeding & Genetics</title>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- ================================
-     NAVBAR (Tüm sayfalarda aynı)
-================================ -->
-<div class="navbar">
-  <div class="logo">Özgür Altundaş</div>
+  <!-- ============================
+        NAVBAR
+  ============================= -->
+  <div class="navbar">
+    <div class="logo">Özgür Altundaş</div>
 
-  <div class="nav-links">
+    <!-- DESKTOP MENU -->
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="research.html">Research</a>
+      <a href="projects.html">Projects</a>
+      <a href="publications.html">Publications</a>
+      <a href="awards.html">Awards</a>
+      <a href="news.html">News</a>
+      <a href="journal.html">Literature Highlights</a>
+      <a href="books.html">Books & Movies</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- MOBILE MENU BUTTON -->
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  </div>
+
+  <!-- MOBILE OVERLAY MENU -->
+  <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="research.html">Research</a>
@@ -29,80 +52,71 @@
     <a href="contact.html">Contact</a>
   </div>
 
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
-</div>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="research.html">Research</a>
-  <a href="projects.html">Projects</a>
-  <a href="publications.html">Publications</a>
-  <a href="awards.html">Awards</a>
-  <a href="news.html">News</a>
-  <a href="journal.html">Literature Highlights</a>
-  <a href="books.html">Books & Movies</a>
-  <a href="contact.html">Contact</a>
-</div>
+  <!-- ============================
+        HERO SECTION
+  ============================= -->
+  <section class="hero" style="background-image: url('image3.jpg');">
+    <div class="hero-content">
+      <h1>ÖZGÜR ALTUNDAŞ</h1>
+      <h3>PhD Candidate in Plant Breeding & Genetics</h3>
+      <h4>University of Nebraska–Lincoln | Schnable Lab</h4>
+    </div>
+  </section>
 
 
-<!-- ================================
-     HERO (image3.jpg)
-================================ -->
-<section class="hero" style="background-image: url('image3.jpg');">
-  <div class="hero-content">
-    <h1>ÖZGÜR ALTUNDAŞ</h1>
-    <h3>PhD Candidate in Plant Breeding & Genetics</h3>
-    <h4>University of Nebraska–Lincoln | Schnable Lab</h4>
+  <!-- ============================
+        MAIN CONTENT
+  ============================= -->
+  <div class="section">
+    <h2>Welcome</h2>
+
+    <p>
+      I am a Ph.D. candidate at the University of Nebraska–Lincoln in the Department of Agronomy and
+      Horticulture, specializing in Plant Breeding & Genetics. My research focuses on maize genomics,
+      quantitative genetics, high-throughput phenotyping, and genetic improvement for agronomic traits.
+    </p>
+
+    <p>
+      I work in the Schnable Lab, where I focus on multi-environment trait analysis, high-dimensional phenotyping,
+      and genotype–phenotype integration pipelines.
+    </p>
+
+    <a class="btn" href="about.html">Learn More →</a>
   </div>
-</section>
 
 
-<!-- ================================
-     MAIN CONTENT
-================================ -->
-<div class="section">
-  <h2>Welcome</h2>
-
-  <p>
-    I am a Ph.D. candidate at the University of Nebraska–Lincoln in the Department of Agronomy and
-    Horticulture, specializing in Plant Breeding & Genetics. My research focuses on maize genomics,
-    quantitative genetics, high-throughput phenotyping, and genetic improvement for agronomic traits.
-  </p>
-
-  <p>
-    I am part of the Schnable Lab, where I work on multi-environment trait analysis, high-dimensional
-    plant phenotyping platforms, and genotype–phenotype integration pipelines.
-  </p>
-
-  <a class="btn" href="about.html">Learn More →</a>
-</div>
+  <!-- ============================
+        FOOTER
+  ============================= -->
+  <footer>
+    © 2025 Özgür Altundaş — University of Nebraska–Lincoln
+  </footer>
 
 
-<!-- ================================
-     FOOTER
-================================ -->
-<footer>
-  © 2025 Özgür Altundaş — University of Nebraska–Lincoln
-</footer>
+  <!-- ============================
+        SCRIPTS
+  ============================= -->
 
+  <!-- MOBILE MENU -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+    }
+  </script>
 
-<!-- ================================
-     SCRIPTS (Tüm sayfalarda aynı)
-================================ -->
-<script>
-function toggleMenu() {
-  const menu = document.getElementById("mobileMenu");
-  menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-}
+  <!-- ACTIVE LINK HIGHLIGHT -->
+  <script>
+    const links = document.querySelectorAll(".nav-links a, .mobile-menu a");
+    const current = window.location.pathname.split("/").pop();
 
-const currentPage = window.location.pathname.split("/").pop();
-document.querySelectorAll(".nav-links a, .mobile-menu a").forEach(link => {
-  if (link.getAttribute("href") === currentPage) {
-    link.classList.add("active");
-  }
-});
-</script>
+    links.forEach(link => {
+      if (link.getAttribute("href") === current) {
+        link.classList.add("active");
+      }
+    });
+  </script>
 
 </body>
 </html>
