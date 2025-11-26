@@ -25,15 +25,17 @@ p {
 .navbar {
     width: 100%;
     background: #ffffff;
-    padding: 15px 30px;
+    padding: 5px 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;     /* space-between → flex-start */
     align-items: center;
+    gap: 40px;                       /* logo ile menü arası kontrollü boşluk */
     border-bottom: 1px solid #eee;
     position: sticky;
     top: 0;
     z-index: 999;
 }
+
 
 .logo {
     font-size: 1.5rem;
