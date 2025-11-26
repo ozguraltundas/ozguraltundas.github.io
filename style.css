@@ -124,8 +124,10 @@ img { max-width: 100%; display: block; }
     background-position: center;
 
     position: relative;
-    margin-top: 0 !important; /* Çakışmayı durdurur */
+
+    margin-top: 90px !important;  /* 🔥 HERO ARTIK NAVBAR'DAN SONRA BAŞLIYOR */
 }
+
 
 .hero::before {
     content: "";
