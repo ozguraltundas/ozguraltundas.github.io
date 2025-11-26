@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Awards | Özgür Altundaş</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="secondary-page">
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">Özgür Altundaş</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html">Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="awards.html" class="active">Awards</a>
+        <a href="news.html">News</a>
+        <a href="journal-review.html">Journal Review</a>
+        <a href="books.html">Books & Movies</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero small-hero random-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Awards & Honors</h1>
+      <p>Recognitions from academic, research, and industry achievements</p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="content-section">
+
+    <!-- MAJOR AWARDS -->
+    <h2 class="section-title">Major Awards</h2>
+
+    <div class="award-card">
+      <h3>YLSY Scholarship (Full Government Fellowship)</h3>
+      <p class="award-year">2023 – Present</p>
+      <p>
+        Awarded by the Republic of Türkiye to support doctoral studies abroad.  
+        A competitive and prestigious national fellowship covering full graduate education funding.
+      </p>
+    </div>
+
+    <div class="award-card">
+      <h3>Second Place – Elevator Speech Contest</h3>
+      <p class="award-year">2025</p>
+      <p>
+        Agronomy & Horticulture Department, University of Nebraska–Lincoln.  
+        Awarded for a 3-minute research lightning talk on maize callus induction QTL.
+      </p>
+    </div>
+
+    <div class="award-card">
+      <h3>Social Engagement Award – Bayer × UNL Hackathon</h3>
+      <p class="award-year">2025</p>
+      <p>
+        Recognized for contributions to collaborative data science and predictive modeling  
+        in maize yield estimation during the Bayer–UNL Plant Science Hackathon.
+      </p>
+    </div>
+
+    <hr class="section-divider" />
+
+    <!-- COMPETITIONS -->
+    <h2 class="section-title">Competitions & Scientific Achievements</h2>
+
+    <div class="award-card">
+      <h3>3rd Place – National Plant Breeding Project Competition</h3>
+      <p class="award-year">2023</p>
+      <p>
+        Awarded for tomato biofortification and disease-resistant hybrid development project  
+        evaluated by Turkish plant breeding companies and academic jury panels.
+      </p>
+    </div>
+
+    <div class="award-card">
+      <h3>Special Recognition Award – ARGETO Agriculture</h3>
+      <p class="award-year">2023</p>
+      <p>
+        Recognition for contributions to molecular marker development and  
+        establishment of a universal positive control system for tomato breeding programs.
+      </p>
+    </div>
+
+    <hr class="section-divider" />
+
+    <!-- ACADEMIC & EARLY AWARDS -->
+    <h2 class="section-title">Academic Awards & Early Achievements</h2>
+
+    <div class="award-card">
+      <h3>Highest Honors – Undergraduate Thesis</h3>
+      <p class="award-year">2020</p>
+      <p>
+        Awarded for the thesis work on PVY/PVX resistance screening in potato breeding lines  
+        using molecular markers.
+      </p>
+    </div>
+
+    <div class="award-card">
+      <h3>Multiple Student Congress & Symposium Awards</h3>
+      <p class="award-year">2017 – 2019</p>
+      <p>
+        Recognized for presentations, posters, and scientific contributions in various national  
+        agricultural congresses during undergraduate studies.
+      </p>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    © 2025 Özgür Altundaş | University of Nebraska–Lincoln
+  </footer>
+
+  <!-- RANDOM HERO JS -->
+  <script>
+    const images = [
+      "image1.jpg",
+      "image2.jpg",
+      "image4.jpg",
+      "image5.jpg"
+    ];
+    const random = images[Math.floor(Math.random() * images.length)];
+    document.querySelector(".random-hero").style.backgroundImage = `url('${random}')`;
+  </script>
+
+</body>
+</html>
