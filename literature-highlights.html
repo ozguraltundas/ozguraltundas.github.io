@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Literature Highlights | Özgür Altundaş</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="secondary-page">
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">Özgür Altundaş</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html">Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="awards.html">Awards</a>
+        <a href="news.html">News</a>
+        <a href="literature-highlights.html" class="active">Literature Highlights</a>
+        <a href="books.html">Books & Movies</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero small-hero random-hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Literature Highlights</h1>
+      <p>Selected papers, insights, and research notes</p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="content-section">
+
+    <h2 class="section-title">Coming Soon</h2>
+    <p>
+      This page will feature weekly research papers, figure breakdowns, and key takeaways.
+      Highlights from plant genetics, transformation, physiology, and quantitative genomics
+      will be added here regularly.
+    </p>
+
+    <hr class="section-divider" />
+
+    <!-- TEMPLATE (empty for now, but ready for entries) -->
+    <div class="lit-card empty-card">
+      <h3>Paper Title (to be added)</h3>
+      <p class="lit-meta">Authors — Journal — Year</p>
+      <p class="lit-placeholder">Summary and highlights will appear here...</p>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    © 2025 Özgür Altundaş | University of Nebraska–Lincoln
+  </footer>
+
+  <!-- RANDOM HERO JS -->
+  <script>
+    const images = [
+      "image1.jpg",
+      "image2.jpg",
+      "image4.jpg",
+      "image5.jpg"
+    ];
+    const random = images[Math.floor(Math.random() * images.length)];
+    document.querySelector(".random-hero").style.backgroundImage = `url('${random}')`;
+  </script>
+
+</body>
+</html>
