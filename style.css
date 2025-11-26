@@ -29,7 +29,7 @@ p {
     display: flex;
     justify-content: flex-start;     /* space-between → flex-start */
     align-items: center;
-    gap: 10px;                       /* logo ile menü arası kontrollü boşluk */
+    gap: 0px;                       /* logo ile menü arası kontrollü boşluk */
     border-bottom: 1px solid #eee;
     position: sticky;
     top: 0;
