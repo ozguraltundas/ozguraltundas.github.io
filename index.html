@@ -113,6 +113,23 @@
     }
   });
 </script>
+<script>
+/* --- Açılır Menü --- */
+function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+}
+
+/* --- Aktif Link Belirleme --- */
+const links = document.querySelectorAll(".nav-links a, .mobile-menu a");
+const current = window.location.pathname.split("/").pop();
+
+links.forEach(link => {
+  if (link.getAttribute("href") === current) {
+    link.classList.add("active");
+  }
+});
+</script>
 
 </body>
 </html>
