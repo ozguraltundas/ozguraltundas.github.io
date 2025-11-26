@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>News | Özgür Altundaş</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
+
+<body>
+
+<!-- NAVBAR -->
 <div class="navbar">
   <div class="logo">Özgür Altundaş</div>
-
-  <!-- DESKTOP LINKS -->
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -22,12 +25,9 @@
     <a href="books.html">Books & Movies</a>
     <a href="contact.html">Contact</a>
   </div>
-
-  <!-- HAMBURGER BUTTON -->
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
 </div>
 
-<!-- MOBILE OVERLAY MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
@@ -41,166 +41,27 @@
   <a href="contact.html">Contact</a>
 </div>
 
-<body class="secondary-page">
-
-<!-- ==== NAVBAR (SABİT) ==== -->
-<header class="navbar">
-  <div class="nav-container">
-    <div class="logo">Özgür Altundaş</div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="awards.html">Awards</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="journal.html">Literature Highlights</a></li>
-        <li><a href="books.html">Books & Movies</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<!-- ==== HERO IMAGE (Sayfaya göre değişecek) ==== -->
-<section class="hero" style="background-image: url('image3.jpg');">
-  <div class="hero-overlay"></div>
-  <div class="hero-text">
-    <h1>PAGE TITLE HERE</h1>
-    <p>Subtitle / Description here</p>
+<!-- HERO -->
+<section class="hero" style="background-image: url('image2.jpg');">
+  <div class="hero-content">
+    <h1>News</h1>
+    <h3>Updates, Events & Activities</h3>
   </div>
 </section>
 
-
-  <!-- MAIN CONTENT -->
-<div class="content-section">
-  <h1>News</h1>
-  <p class="subtitle">Updates from research, presentations, and academic activities.</p>
+<!-- CONTENT -->
+<div class="section">
+  <h2>Recent Highlights</h2>
+  <p>Updates from research, presentations, achievements, and weekly activities will be listed here.</p>
 </div>
-  <main class="content-section">
 
-    <!-- NEWS ITEMS START -->
-    <h2 class="section-title">Recent Updates</h2>
+<!-- FOOTER -->
+<footer>© 2025 Özgür Altundaş — University of Nebraska–Lincoln</footer>
 
-    <div class="news-card">
-      <div class="news-date">November 2025</div>
-      <h3>Lightning Talk at UW–Madison Plant Sciences Symposium</h3>
-      <p>
-        Presented a lightning talk on embryogenic callus induction QTL in the B73 × CML216 population.  
-        A great opportunity to meet researchers working on maize transformation and quantitative genetics.
-      </p>
-    </div>
-
-    <div class="news-card">
-      <div class="news-date">November 2025</div>
-      <h3>Poster Presentation — Embryogenic Callus Formation Project</h3>
-      <p>
-        Shared ongoing results from chromosome 2 QTL narrowing work.  
-        Received valuable feedback from faculty and industry scientists.
-      </p>
-    </div>
-
-    <div class="news-card">
-      <div class="news-date">November 2025</div>
-      <h3>Second Place — Elevator Speech Contest</h3>
-      <p>
-        Earned 2nd place in the Agronomy & Horticulture Elevator Speech competition  
-        with a 3-minute talk summarizing the maize callus induction project.
-      </p>
-    </div>
-
-    <div class="news-card">
-      <div class="news-date">October 2025</div>
-      <h3>Bayer × UNL Hackathon — Social Engagement Award</h3>
-      <p>
-        Our team developed a cluster-based model for predicting maize hybrid performance  
-        using limited phenotypic observations. Awarded for teamwork and contribution.
-      </p>
-    </div>
-
-    <div class="news-card">
-      <div class="news-date">September 2025</div>
-      <h3>Started Ph.D. at the University of Nebraska–Lincoln</h3>
-      <p>
-        Officially joined the <strong>Schnable Lab</strong> as a Ph.D. student in Plant Breeding & Genetics.  
-        Focusing on quantitative genetics, transformation efficiency, and high-throughput phenotyping.
-      </p>
-    </div>
-
-    <div class="news-card">
-      <div class="news-date">September–October 2025</div>
-      <h3>New Computational Pipelines for Sorghum & Maize Projects</h3>
-      <p>
-        Designed modular R pipelines for the Sorghum Photosynthetic Traits dataset  
-        and developed multi-environment BLUP/heritability workflows.  
-        VCF alignment & multi-location genotype matching also completed.
-      </p>
-    </div>
-
-    <div class="news-card">
-      <div class="news-date">October 2025</div>
-      <h3>HCC — Globus Workflow Fully Operational</h3>
-      <p>
-        Successfully integrated Globus for large file transfers between UNL cluster and local systems.  
-        Improved efficiency for processing large VCF files and high-resolution phenotyping datasets.
-      </p>
-    </div>
-
-    <div class="news-card">
-      <div class="news-date">October 2025</div>
-      <h3>Maize Callus Induction Project — QTL Refinement</h3>
-      <p>
-        KASP marker work expanded with 7 codominant markers on chromosome 2.  
-        Region narrowing and candidate gene inspection underway.
-      </p>
-    </div>
-
-    <!-- NEWS ITEMS END -->
-
-  </main>
-
-  <footer class="footer">
-    © 2025 Özgür Altundaş | University of Nebraska–Lincoln
-  </footer>
-
-  <!-- RANDOM HERO JS -->
-  <script>
-    const images = [
-      "image1.jpg",
-      "image2.jpg",
-      "image4.jpg",
-      "image5.jpg"
-    ];
-    const random = images[Math.floor(Math.random() * images.length)];
-    document.querySelector(".random-hero").style.backgroundImage = `url('${random}')`;
-  </script>
 <script>
-  const links = document.querySelectorAll(".nav-links a");
-  const current = window.location.pathname.split("/").pop();
-  links.forEach(link => {
-    if (link.getAttribute("href") === current) {
-      link.classList.add("active");
-    }
-  });
-</script>
-<script>
-/* --- Açılır Menü --- */
-function toggleMenu() {
-  const menu = document.getElementById("mobileMenu");
-  menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-}
-
-/* --- Aktif Link Belirleme --- */
-const links = document.querySelectorAll(".nav-links a, .mobile-menu a");
-const current = window.location.pathname.split("/").pop();
-
-links.forEach(link => {
-  if (link.getAttribute("href") === current) {
-    link.classList.add("active");
-  }
-});
+function toggleMenu(){const m=document.getElementById("mobileMenu");m.style.display=m.style.display==="flex"?"none":"flex";}
+const current=window.location.pathname.split("/").pop();
+document.querySelectorAll(".nav-links a,.mobile-menu a").forEach(a=>{if(a.getAttribute("href")===current){a.classList.add("active");}});
 </script>
 
 </body>
