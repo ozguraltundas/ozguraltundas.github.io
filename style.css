@@ -352,4 +352,96 @@ footer {
   color: #555;
   margin-bottom: 25px;
 }
+/* ---------------------------------
+   RESPONSIVE NAVBAR (Desktop + Mobile)
+----------------------------------- */
+
+/* NAVBAR WRAPPER */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  background: white;
+  z-index: 9999;
+  border-bottom: 1px solid #eee;
+}
+
+/* LOGO */
+.navbar .logo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #111;
+}
+
+/* DESKTOP MENU */
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+  text-decoration: none;
+}
+
+.nav-links a.active {
+  color: #0056d6; /* mavi */
+}
+
+.nav-links a:hover {
+  color: #0056d6;
+}
+
+/* HAMBURGER */
+.menu-btn {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* ------------------
+   MOBILE OVERLAY MENU
+------------------ */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(12px);
+  background: rgba(0,0,0,0.55);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 150px;
+}
+
+.mobile-menu a {
+  color: white;
+  font-size: 1.8rem;
+  margin: 15px 0;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.mobile-menu a.active {
+  color: #4da3ff;
+}
+
+/* RESPONSIVE BREAKPOINT */
+@media (max-width: 860px) {
+  .nav-links {
+    display: none;
+  }
+  .menu-btn {
+    display: block;
+  }
+}
+
 
