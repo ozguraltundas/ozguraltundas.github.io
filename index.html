@@ -1,214 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Özgür Altundaş | Plant Breeding & Genetics</title>
-  <meta name="description" content="PhD Candidate at University of Nebraska–Lincoln. Research in maize genetics, QTL mapping, and molecular breeding.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --accent-color: #0066cc;
-      --text-color: #222;
-      --bg-color: #fdfdfd;
-      --secondary-text: #666;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      background: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-    }
-
-    header {
-      background: white;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      padding: 20px 0;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    header h1 {
-      font-family: 'Merriweather', serif;
-      margin: 0;
-      font-size: 1.8em;
-      color: var(--accent-color);
-    }
-
-    header p {
-      margin: 5px 0;
-      color: var(--secondary-text);
-      font-size: 1em;
-    }
-
-    nav {
-      margin-top: 10px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: var(--text-color);
-      margin: 0 15px;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--accent-color);
-    }
-
-    main {
-      max-width: 800px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-
-    main h2 {
-      font-family: 'Merriweather', serif;
-      font-size: 1.4em;
-      color: var(--accent-color);
-      margin-bottom: 10px;
-    }
-
-    .links a {
-      color: var(--accent-color);
-      text-decoration: none;
-      margin-right: 15px;
-      font-weight: 500;
-    }
-
-    .links a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.9em;
-      color: var(--secondary-text);
-      padding: 30px 0;
-      border-top: 1px solid #e0e0e0;
-      background: #fafafa;
-      margin-top: 80px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <header>
-    <h1>Özgür Altundaş</h1>
-    <p>Ph.D. Candidate, Plant Breeding and Genetics</p>
-    <p><strong>University of Nebraska–Lincoln</strong></p>
-
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="research.html">Research</a>
-      <a href="publication.html">Publications</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <!-- Header -->
+  <header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Özgür Altundaş</h1>
+      <h3>Ph.D. Candidate, Plant Breeding and Genetics</h3>
+      <h4>University of Nebraska–Lincoln | Schnable Lab</h4>
+      <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="awards.html">Awards</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section>
+  <!-- About Section -->
+  <section class="about">
+    <div class="container">
       <h2>About Me</h2>
       <p>
-        I am a Ph.D. student at the 
-        <a href="https://agronomy.unl.edu/" target="_blank" rel="noopener noreferrer">Department of Agronomy and Horticulture</a>, 
-        University of Nebraska–Lincoln, working in the 
-        <a href="https://schnablelab.org/" target="_blank" rel="noopener noreferrer">Schnable Lab</a>. 
-        My research focuses on identifying quantitative trait loci (QTLs) associated with yield-related traits in maize.
+        I am an agricultural genetic engineer and a Ph.D. candidate in Plant Breeding and Genetics 
+        at the University of Nebraska–Lincoln, working in the <a href="https://schnablelab.org" target="_blank">Schnable Lab</a>. 
+        My doctoral studies are supported by the YLSY Scholarship from the Republic of Türkiye. 
+        I have experience in both academia and industry, having contributed to plant breeding projects and research in plant physiology.
       </p>
-    </section>
+      <p>
+        My research focuses on genetic dissection of complex traits and developing innovative approaches 
+        for enhancing crop productivity. I received awards such as the 
+        <strong>Social Engagement Award</strong> at the Bayer-UNL Hackathon, 
+        <strong>Second Place</strong> in the Elevator Speech Contest, 
+        and presented my work at the <strong>15th Annual Plant Sciences Symposium (UW–Madison)</strong>.
+      </p>
+    </div>
+  </section>
 
-    <section>
-      <h2>Research Interests</h2>
-      <ul>
-        <li>Quantitative genetics and trait dissection</li>
-        <li>QTL mapping and genome-wide association studies (GWAS)</li>
-        <li>Genomic prediction and plant breeding strategies</li>
-        <li>Maize transformation and embryogenic callus induction</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Links</h2>
-      <div class="links">
-        <a href="https://scholar.google.com/citations?user=xqjVHMIAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer">Google Scholar</a> |
-        <a href="https://www.linkedin.com/in/%C3%B6zg%C3%BCraltundas/" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
-        <a href="https://www.researchgate.net/profile/Oezguer-Altundas" target="_blank" rel="noopener noreferrer">ResearchGate</a>
-      </div>
-    </section>
-  </main>
-
+  <!-- Footer -->
   <footer>
-    © 2025 Özgür Altundaş | Hosted on GitHub Pages
+    <p>© 2025 Özgür Altundaş | Hosted on GitHub Pages</p>
   </footer>
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Özgür Altundaş | Plant Breeding & Genetics</title>
-  <meta name="description" content="Ph.D. Candidate at the University of Nebraska–Lincoln. Research in maize genetics, QTL mapping, and molecular breeding.">
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-</head>
-
-<body>
-  <header>
-    <h1>Özgür Altundaş</h1>
-    <p>Ph.D. Candidate, Plant Breeding and Genetics</p>
-    <p><strong>University of Nebraska–Lincoln</strong></p>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="research.html">Research</a>
-      <a href="publication.html">Publications</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <p>
-        I am a Ph.D. student at the <a href="https://agronomy.unl.edu/" target="_blank" rel="noopener noreferrer">Department of Agronomy and Horticulture</a>,
-        University of Nebraska–Lincoln, working in the
-        <a href="https://schnablelab.org/" target="_blank" rel="noopener noreferrer">Schnable Lab</a>.
-        My research focuses on identifying quantitative trait loci (QTLs) associated with yield-related traits in maize.
-      </p>
-    </section>
-
-    <section>
-      <h2>Research Interests</h2>
-      <div>
-        <span class="tag">Quantitative Genetics</span>
-        <span class="tag">QTL Mapping</span>
-        <span class="tag">GWAS</span>
-        <span class="tag">Genomic Prediction</span>
-        <span class="tag">Maize Transformation</span>
-        <span class="tag">Embryogenic Callus Induction</span>
-      </div>
-    </section>
-
-    <section>
-      <h2>Links</h2>
-      <ul>
-        <li><a href="https://scholar.google.com/citations?user=xqjVHMIAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a></li>
-        <li><a href="https://www.linkedin.com/in/%C3%B6zg%C3%BCraltundas/" target="_blank">LinkedIn</a></li>
-        <li><a href="https://www.researchgate.net/profile/Oezguer-Altundas" target="_blank">ResearchGate</a></li>
-        <li><a href="https://ozguraltundas.academia.edu/" target="_blank">Academia.edu</a></li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    © 2025 Özgür Altundaş | 
-  </footer>
-</body>
-</html>
-
