@@ -38,7 +38,7 @@ a {
 
 /* MENÜ LİSTESİ */
 .nav-links {
-  margin-left: -40px;
+  margin-left: -5px;
   display: flex;
   gap: 18px;  /* MENÜ İÇİ BOŞLUKLAR */
   margin-left: 20px; /* LOGOYA YAKLAŞTIRIR */
