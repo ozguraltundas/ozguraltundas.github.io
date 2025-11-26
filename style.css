@@ -150,8 +150,8 @@ img { max-width: 100%; display: block; }
 }
 
 
-.hero h1 { font-size: 44px; margin-bottom: 12px; }
-.hero h3 { font-size: 22px; margin-bottom: 6px; }
+.hero h1 { font-size: 44px; margin-bottom: 6px; }
+.hero h3 { font-size: 22px; margin-bottom: 4px; }
 .hero h4 { font-size: 18px; opacity: 0.9; }
 
 /* =========================================
