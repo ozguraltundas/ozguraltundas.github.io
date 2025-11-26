@@ -1,20 +1,3 @@
-/* ===============================
-      GLOBAL STYLES
-================================*/
-body {
-    margin: 0;
-    padding: 0;
-    font-family: "Inter", sans-serif;
-    background: #fafafa;
-    color: #222;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* ===============================
       NAVBAR (DESKTOP)
 ================================*/
 .navbar {
@@ -42,6 +25,8 @@ a {
     display: flex;
     gap: 12px;  /* Değişiklik: 18px'ten 12px'e düşürüldü (Daha iyi sığması için) */
     /* Eski: margin-left: 20px; - KALDIRILDI */
+    gap: 10px;  /* Menü boşlukları küçültüldü */
+    margin-left: 8px; /* Menü, logoya yaklaştırıldı */
 }
 
 /* MENÜ LINKLERİ */
@@ -65,40 +50,4 @@ a {
     cursor: pointer;
     display: none;
     margin-left: auto;
-}
-
-/* ===============================
-      MOBILE MENU (OVERLAY)
-================================*/
-.mobile-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.55);
-    backdrop-filter: blur(10px);
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 150px;
-    z-index: 99999;
-}
-
-.mobile-menu a {
-    color: white;
-    font-size: 1.8rem;
-    margin: 12px 0;
-}
-
-/* ===============================
-      RESPONSIVE (TABLET & PHONE)
-================================*/
-@media (max-width: 900px) {
-    .nav-links {
-        display: none;
-    }
-    .menu-btn {
-        display: block;
-    }
 }
