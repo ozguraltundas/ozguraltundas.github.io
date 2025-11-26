@@ -19,7 +19,7 @@ h1, h2, h3, h4 {
     padding: 8px 20px;
     display: flex;
     align-items: center;
-    gap: 20px; /* LOGO – MENU boşluğu sadece bu */
+    gap: 40px; /* LOGO – MENU boşluğu sadece bu */
     border-bottom: 1px solid #eee;
     position: sticky;
     top: 0;
