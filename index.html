@@ -4,13 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Özgür Altundaş | Plant Breeding & Genetics</title>
+
+  <!-- STYLES -->
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 </head>
+
+<body>
+
+<!-- ================================
+     UNIFIED NAVBAR (TEK VERSİYON)
+================================= -->
 <div class="navbar">
   <div class="logo">Özgür Altundaş</div>
 
-  <!-- DESKTOP LINKS -->
+  <!-- DESKTOP MENU -->
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -24,7 +32,7 @@
     <a href="contact.html">Contact</a>
   </div>
 
-  <!-- HAMBURGER BUTTON -->
+  <!-- MOBILE MENU BUTTON -->
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
 </div>
 
@@ -38,98 +46,4 @@
   <a href="awards.html">Awards</a>
   <a href="news.html">News</a>
   <a href="journal.html">Literature Highlights</a>
-  <a href="books.html">Books & Movies</a>
-  <a href="contact.html">Contact</a>
-</div>
-
-<body>
-
-  <!-- ============================
-       NAVBAR (SABIT ÜSTTE)
-  ============================= -->
-  <nav class="navbar">
-    <div class="logo">Özgür Altundaş</div>
-
-    <ul>
-      <li><a class="active" href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="research.html">Research</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="publications.html">Publications</a></li>
-      <li><a href="awards.html">Awards</a></li>
-      <li><a href="news.html">News</a></li>
-      <li><a href="journal.html">Journal Club</a></li>
-      <li><a href="books_movies.html">Books & Movies</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-
-
-  <!-- ============================
-       HERO SECTION (image3.jpg)
-  ============================= -->
-  <section class="hero" style="background-image: url('image3.jpg');">
-    <div class="hero-content">
-      <h1>ÖZGÜR ALTUNDAŞ</h1>
-      <h3>PhD Candidate in Plant Breeding & Genetics</h3>
-      <h4>University of Nebraska–Lincoln | Schnable Lab</h4>
-    </div>
-  </section>
-
-
-
-  <!-- ============================
-       MAIN CONTENT (kısa tanıtım)
-  ============================= -->
-  <div class="section">
-    <h2>Welcome</h2>
-    <p>
-      I am a Ph.D. candidate at the University of Nebraska–Lincoln in the Department of Agronomy and
-      Horticulture, specializing in Plant Breeding & Genetics. My research focuses on maize genomics,
-      quantitative genetics, high-throughput phenotyping, and genetic improvement for agronomic traits.  
-    </p>
-
-    <p>
-      I am part of the Schnable Lab, where I work on multi-environment trait analysis, high-dimensional
-      plant phenotyping platforms, and genotype–phenotype integration pipelines.
-    </p>
-
-    <a class="btn" href="about.html">Learn More →</a>
-  </div>
-
-
-  <!-- ============================
-       FOOTER
-  ============================= -->
-  <footer>
-    © 2025 Özgür Altundaş — University of Nebraska–Lincoln
-  </footer>
-<script>
-  const links = document.querySelectorAll(".nav-links a");
-  const current = window.location.pathname.split("/").pop();
-  links.forEach(link => {
-    if (link.getAttribute("href") === current) {
-      link.classList.add("active");
-    }
-  });
-</script>
-<script>
-/* --- Açılır Menü --- */
-function toggleMenu() {
-  const menu = document.getElementById("mobileMenu");
-  menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-}
-
-/* --- Aktif Link Belirleme --- */
-const links = document.querySelectorAll(".nav-links a, .mobile-menu a");
-const current = window.location.pathname.split("/").pop();
-
-links.forEach(link => {
-  if (link.getAttribute("href") === current) {
-    link.classList.add("active");
-  }
-});
-</script>
-
-</body>
-</html>
+  <a href="books.html">Books & Movies</
