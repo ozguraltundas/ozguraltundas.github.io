@@ -44,8 +44,10 @@ img { max-width: 100%; display: block; }
 
 .nav-links {
     display: flex;
+    justify-content: flex-start;     /* SOLA HİZALAR */
     gap: 20px;
 }
+
 
 .nav-links a {
     font-size: 1.05rem;
