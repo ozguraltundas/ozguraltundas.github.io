@@ -129,25 +129,24 @@ img { max-width: 100%; display: block; }
 }
 
 
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
+.hero {
+    position: relative;        /* BUNU EKLEMEK ZORUNLU */
     width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.35);
+    height: 500px;
+    background-size: cover;
+    background-position: center;
 }
 
 .hero-content {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 50%;                  /* DİKEY ORTALAMA */
+    left: 50%;                 /* YATAY ORTALAMA */
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
     width: 100%;
 }
+
 
 
 .hero h1 { font-size: 44px; margin-bottom: 12px; }
