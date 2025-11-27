@@ -11,12 +11,12 @@ body {
 .navbar {
     width: 100%;
     background: #ffffff;
-    padding: 28px 40px;           /* NAVBAR'ı aşağı çekiyoruz  */
+    padding: 32px 60px;           /* daha ferah üst-alt boşluk */
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 50px;                    /* logo ile menü arası */
-    border-bottom: 1px solid #eee;
+    gap: 70px;                    /* logo ile menü arasındaki boşluk */
+    border-bottom: 1px solid #e5e5e5;
     position: sticky;
     top: 0;
     z-index: 999;
@@ -24,7 +24,7 @@ body {
 
 /* Logo */
 .logo {
-    font-size: 2.3rem;            /* daha büyük logo */
+    font-size: 2.6rem;            /* daha büyük logo */
     font-weight: 900;
     color: #003366;
     white-space: nowrap;
@@ -33,15 +33,16 @@ body {
 /* Desktop Menu */
 .nav-links {
     display: flex;
-    gap: 35px;                    /* MENÜ ELEMANLARI ARASI BOŞLUK */
+    gap: 45px;                    /* menü elemanları arası boşluk */
 }
 
 .nav-links a {
     text-decoration: none;
     color: #222;
-    font-size: 1.35rem;           /* daha büyük yazı */
+    font-size: 1.35rem;           /* büyük menü yazıları */
     font-weight: 700;
-    white-space: nowrap;          /* satır kaymasını engeller */
+    letter-spacing: 0.5px;        /* profesyonel görünüm */
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
