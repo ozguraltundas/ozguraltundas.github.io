@@ -3,48 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title>About Me | Özgür Altundaş</title>
     <link rel="stylesheet" href="style.css">
 
     <style>
-        .about-container {
-    max-width: 1200px;   /* Daha geniş görünüm */
-    margin: 140px auto 80px auto;
-    padding: 0 20px;
-}
+        /* HERO IMAGE (no text on top) */
+        .hero-about {
+            width: 100%;
+            height: 350px;
+            background-image: url("image5.jpeg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-top: 70px; /* navbar boşluğu */
+        }
+
+        /* CONTENT AREA */
         .about-container {
             max-width: 900px;
-            margin: 140px auto 80px auto;
+            margin: 60px auto;
             padding: 0 20px;
             line-height: 1.7;
             font-size: 1.05rem;
-            color: #333;
-        }
-
-        .about-container h1 {
-            font-size: 2.4rem;
-            color: #003366;
-            text-align: center;
-            margin-bottom: 40px;
         }
 
         .about-container h2 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: #003366;
-            margin-top: 30px;
+            margin-bottom: 25px;
+            text-align: left;
         }
 
         .about-container a {
             color: #003366;
-            font-weight: 600;
+            font-weight: bold;
+            text-decoration: none;
         }
 
-        .highlight {
-            font-weight: 600;
-            color: #003366;
+        .about-container ul {
+            margin-top: 10px;
+        }
+
+        .about-container li {
+            margin-bottom: 6px;
         }
     </style>
-
 </head>
 
 <body>
@@ -60,66 +63,62 @@
             <li><a href="news.html">News</a></li>
             <li><a href="journal.html">Literature Highlights</a></li>
             <li><a href="books.html">Books & Movies</a></li>
-            <li><a href="people.html">People I Work With</a></li>
+            <li><a href="people.html">People I Work With in Schnable Lab</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </div>
 
-    <!-- ABOUT CONTENT -->
-    <div class="about-container">
+    <!-- HERO IMAGE -->
+    <div class="hero-about"></div>
 
-        <h1>Who I Am</h1>
+    <!-- CONTENT -->
+    <div class="about-container">
 
         <h2>About Me</h2>
 
         <p>
-            If you are reading this, I believe we may share something in common — maybe you are a graduate student,
-            a professor, a researcher, or one of my friends. In any case, I would like to tell you why I created this website.
-        </p>
-
-        <p>
+            If you are reading this, I believe we may share something in common — maybe you are a graduate student, 
+            a professor, a researcher, or one of my friends. I would like to tell you why I created this website.
             I believe science should belong to everyone — not to a small group. It should be 
-            <span class="highlight">accessible, understandable, and shareable</span>.
-            This website is my small contribution to that idea. I want to share my work with you and support open, clear scientific communication.
+            <strong>accessible, understandable, and shareable</strong>.  
+            This website is my small contribution to that idea.
         </p>
 
         <p>
-            Since my childhood, I have always been curious, wanting to understand the details of how things work.
-            That curiosity is probably why I chose to pursue my academic career abroad. I grew up in a village, in a farming family,
-            surrounded by animals, plants, and nature. That is why I chose <span class="highlight">agriculture</span> as my field of study.
+            Since my childhood, I have always been curious, wanting to understand every detail of how things work. 
+            That curiosity is probably why I chose to pursue my academic career abroad. I grew up in a village, 
+            surrounded by animals, plants, and nature — which shaped why I studied 
+            <strong>agriculture</strong>.
         </p>
 
         <p>
-            Life was not always easy. Like everyone else, I experienced ups and downs. I worked many different jobs outside my field —
-            from hotel reception to agricultural labor and produce handling. But I also won Türkiye’s most prestigious fellowships twice,
-            worked on national research projects, applied for a patent, won competitions, and was selected as 
-            <span class="highlight">“Employee of the Year.”</span>
+            I worked many different jobs — hotel reception, agricultural labor, produce handling — and I experienced 
+            ups and downs like everyone else. But I also won Türkiye’s most prestigious fellowships twice, worked on 
+            national research projects, applied for a patent, won competitions, and was selected as 
+            <strong>“Employee of the Year.”</strong>
         </p>
 
         <p>
-            Today, I am a PhD student, hoping to deepen my skills and knowledge in 
-            <span class="highlight">plant breeding, plant genetics, and quantitative genomics</span>.
-            I am currently a member of the 
+            Today, I am a PhD student in the 
             <a href="https://schnablelab.org/" target="_blank">Schnable Lab</a> 
-            at the University of Nebraska–Lincoln.
+            at the University of Nebraska–Lincoln, researching plant breeding, plant genetics, and 
+            quantitative genomics.
         </p>
 
         <p>
-            Outside of research, I love horse riding, reading books, playing football, walking, and giving presentations.
-            I actually have a horse named <span class="highlight">Gece</span> — my best friend. I even dedicated my master’s thesis to him.
+            Outside the lab, I love horse riding, reading books, walking, football, and giving presentations.
+            I also have a horse named <strong>Gece</strong> — my best friend. I even dedicated my master's thesis to him.
         </p>
 
-        <p>
-            You can check my CV if you’d like to learn more about my academic background.
-        </p>
+        <br>
 
         <h2>Quick Background</h2>
 
-        <p>
-            • BSc in Agricultural Engineering — Nigde Omer Halisdemir University <br>
-            • MSc in Plant Biotechnology — Gebze Technical University <br>
-            • PhD in Plant Breeding & Genetics — University of Nebraska–Lincoln (ongoing)
-        </p>
+        <ul>
+            <li>BSc in Agricultural Engineering — Niğde Ömer Halisdemir University</li>
+            <li>MSc in Plant Biotechnology — Gebze Technical University</li>
+            <li>PhD in Plant Breeding & Genetics — University of Nebraska–Lincoln (ongoing)</li>
+        </ul>
 
     </div>
 
