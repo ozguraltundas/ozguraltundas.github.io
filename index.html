@@ -54,6 +54,12 @@
     © 2025 Özgür Altundaş — University of Nebraska–Lincoln
 </footer>
 
-<script src="script.js"></script>
+<script>
+window.addEventListener("scroll", function () {
+    document.querySelector(".navbar")
+        .classList.toggle("scrolled", window.scrollY > 10);
+});
+</script>
+
 </body>
 </html>
