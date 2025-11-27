@@ -6,14 +6,14 @@
     <title>Research | Özgür Altundaş</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
+<!-- NAVBAR -->
 <nav class="navbar">
     <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a class="active" href="research.html">Research</a></li>
+        <li><a href="research.html">Research</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="publications.html">Publications</a></li>
         <li><a href="news.html">News</a></li>
@@ -24,17 +24,34 @@
     </ul>
 </nav>
 
-<section class="hero small-hero">
+<!-- HERO -->
+<section class="hero">
     <div class="hero-content">
         <h1>Research</h1>
+        <h3>Genetics • Genomics • Maize • High-Throughput Phenotyping</h3>
     </div>
 </section>
 
+<!-- PAGE CONTENT -->
 <section class="section">
-    <h2>Research</h2>
-    <p>This page will contain information about my research.</p>
+    <h2>My Research Focus</h2>
+    <p>
+        This page will describe your major research areas, 
+        your PhD work, maize genomics, SNP analysis, SpATS, BLUE/BLUP workflows, 
+        callus induction QTL mapping, and more.
+    </p>
 </section>
+
+<footer>
+    © 2025 Özgür Altundaş — University of Nebraska–Lincoln
+</footer>
+
+<script>
+window.addEventListener("scroll", function () {
+    document.querySelector(".navbar")
+        .classList.toggle("scrolled", window.scrollY > 10);
+});
+</script>
 
 </body>
 </html>
-
