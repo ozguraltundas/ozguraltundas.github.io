@@ -255,4 +255,57 @@ footer {
     }
 }
 
+/* ============================
+   PAGE-SPECIFIC HERO IMAGES
+============================ */
+
+/* Home */
+.hero.home {
+    background-image: url('image3.jpg');
+}
+
+/* About */
+.hero.about {
+    background-image: url('image1.jpg');
+}
+
+/* Research */
+.hero.research {
+    background-image: url('image2.jpg');
+}
+
+/* Projects */
+.hero.projects {
+    background-image: url('image4.jpg');
+}
+
+/* Publications */
+.hero.publications {
+    background-image: url('image5.jpg');
+}
+
+/* News (tekrar image1 kullanıyoruz) */
+.hero.news {
+    background-image: url('image1.jpg');
+}
+
+/* Literature Highlights */
+.hero.literature {
+    background-image: url('image2.jpg');
+}
+
+/* Books & Movies */
+.hero.books {
+    background-image: url('image4.jpg');
+}
+
+/* People */
+.hero.people {
+    background-image: url('image5.jpg');
+}
+
+/* Contact */
+.hero.contact {
+    background-image: url('image2.jpg');
+}
 
