@@ -214,3 +214,45 @@ footer {
     }
 }
 
+/* =======================================
+   HAMBURGER MENU (MOBILE)
+======================================= */
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0 20px;
+}
+
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: #ffffff;
+    padding: 15px 0;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+.mobile-menu a {
+    padding: 12px 25px;
+    text-decoration: none;
+    color: #222;
+    font-size: 1.05rem;
+}
+
+.mobile-menu a:hover {
+    background: #f5f5f5;
+}
+
+/* Show hamburger + hide normal menu on mobile */
+@media (max-width: 900px) {
+    .nav-links {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+    }
+}
+
+
