@@ -7,13 +7,14 @@ body {
 }
 
 /* NAVBAR -------------------------------------------- */
+
 .navbar {
   width: 100%;
   display: flex;
-  justify-content: center;   /* HER ŞEY ORTADA */
+  justify-content: center;
   align-items: center;
-  gap: 40px;                 /* logo ↔ menü boşluğu */
-  padding: 12px 0;
+  gap: 40px;
+  padding: 20px 0;   /* önce 12px idi → artık daha şık */
   background: white;
   border-bottom: 1px solid #eee;
   position: sticky;
@@ -21,16 +22,21 @@ body {
   z-index: 1000;
 }
 
+
 .logo {
-  font-size: 1.6rem;
+  font-size: 2rem;     /* önce 1.6rem idi */
   font-weight: 800;
   color: #003366;
 }
 
-.nav-links {
-  display: flex;
-  gap: 18px;
+
+.nav-links a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.15rem;   /* önce 1rem idi */
 }
+
 
 .nav-links a {
   color: #222;
