@@ -33,7 +33,7 @@ body {
 /* Desktop Menu */
 .nav-links {
     display: flex;
-    gap: 60px;                    /* menü elemanları arası boşluk */
+    gap: 100px;                    /* menü elemanları arası boşluk */
 }
 
 .nav-links a {
