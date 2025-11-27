@@ -8,15 +8,16 @@
 
     <style>
         /* HERO IMAGE (no text on top) */
-        .hero-about {
-            width: 100%;
-            height: 350px;
-            background-image: url("image5.jpg");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            margin-top: 70px; /* navbar boşluğu */
-        }
+   .hero-about {
+    width: 100%;
+    height: 520px; /* büyüttük */
+    background-image: url("image5.jpg");
+    background-size: cover;
+    background-position: center top; /* görüntü daha yukarıdan başlasın */
+    background-repeat: no-repeat;
+    margin-top: 70px;
+}
+
 
         /* CONTENT AREA */
         .about-container {
@@ -121,6 +122,12 @@
         </ul>
 
     </div>
+@media (max-width: 768px) {
+    .hero-about {
+        height: 350px; /* mobil için ideal */
+        background-position: center;
+    }
+}
 
 </body>
 </html>
