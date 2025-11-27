@@ -309,3 +309,18 @@ footer {
     background-image: url('image2.jpg');
 }
 
+.profile-btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 14px;
+    background: #0077b5; /* LinkedIn blue */
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.profile-btn:hover {
+    background: #005582;
+}
