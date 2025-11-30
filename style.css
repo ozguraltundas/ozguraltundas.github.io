@@ -324,9 +324,12 @@ footer {
 .profile-btn:hover {
     background: #005582;
 }
-<style>
-  p {
+/* =======================================
+   JUSTIFY TEXT FOR ALL PARAGRAPHS
+======================================= */
+p {
     text-align: justify;
-  }
-</style>
+    text-justify: inter-word;
+}
+
 
