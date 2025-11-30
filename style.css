@@ -324,3 +324,9 @@ footer {
 .profile-btn:hover {
     background: #005582;
 }
+<style>
+  p {
+    text-align: justify;
+  }
+</style>
+
