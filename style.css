@@ -332,4 +332,60 @@ p {
     text-justify: inter-word;
 }
 
+/* ================================
+   MODERN TIMELINE DESIGN
+================================ */
+
+.timeline {
+    position: relative;
+    margin: 50px auto;
+    max-width: 760px;
+    padding-left: 25px;
+    border-left: 3px solid #003366; /* main theme color */
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -11px;
+    top: 5px;
+    width: 18px;
+    height: 18px;
+    background: #003366;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 3px #003366;
+}
+
+.timeline-content {
+    padding-left: 15px;
+}
+
+.timeline-content h3 {
+    font-size: 1.35rem;
+    color: #003366;
+    margin-bottom: 6px;
+    font-weight: 700;
+}
+
+.timeline-content p {
+    margin: 0;
+    color: #444;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Mobile Optimization */
+@media (max-width: 600px) {
+    .timeline {
+        padding-left: 20px;
+    }
+    .timeline-content h3 {
+        font-size: 1.2rem;
+    }
+}
 
