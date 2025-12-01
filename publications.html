@@ -201,6 +201,18 @@ function toggleMenu() {
 window.addEventListener("scroll", () =>
 document.querySelector(".navbar").classList.toggle("scrolled", window.scrollY > 10));
 </script>
+...
+<!-- Sayfanın en altı -->
+<script>
+document.querySelectorAll(".accordion-header").forEach(btn => {
+    btn.addEventListener("click", () => {
+        btn.parentElement.classList.toggle("active");
+    });
+});
+</script>
+
+</body>
+</html>
 
 </body>
 </html>
