@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://ozguraltundas.com/</loc>
+    <lastmod>2025-11-30</lastmod>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://ozguraltundas.com/about.html</loc>
+    <lastmod>2025-11-30</lastmod>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://ozguraltundas.com/research.html</loc>
+    <lastmod>2025-11-30</lastmod>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://ozguraltundas.com/projects.html</loc>
+    <lastmod>2025-11-30</lastmod>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://ozguraltundas.com/publications.html</loc>
+    <lastmod>2025-11-30</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://ozguraltundas.com/news.html</loc>
+    <lastmod>2025-11-30</lastmod>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://ozguraltundas.com/journal.html</loc>
+    <lastmod>2025-11-30</lastmod>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://ozguraltundas.com/books.html</loc>
+    <lastmod>2025-11-30</lastmod>
+    <priority>0.60</priority>
+  </url>
+
+  <url>
+    <loc>https://ozguraltundas.com/people.html</loc>
+    <lastmod>2025-11-30</lastmod>
+    <priority>0.60</priority>
+  </url>
+
+  <url>
+    <loc>https://ozguraltundas.com/contact.html</loc>
+    <lastmod>2025-11-30</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+</urlset>
