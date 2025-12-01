@@ -390,6 +390,15 @@ p {
 }
 
 
+/* YEAR HEADINGS */
+.year-heading {
+    margin-top: 50px;
+    color: #003366;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+
 /* ===========================
    ACCORDION (PROJECTS PAGE)
 =========================== */
