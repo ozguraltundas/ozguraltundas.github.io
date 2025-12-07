@@ -189,61 +189,74 @@ function loadStage() {
         window.wrongChoice = function () {
             document.getElementById("feedback").innerHTML =
                 "<span style='color:red;'>Not correct — yellow anthers are fertile. Try again!</span>";
-        };
+        `;
     }
 
-    // ---------------- Stage 3 ----------------
-    if (stage === 3) {
+        if (stage === 3) {
         area.innerHTML = `
             <h1>🧬 Bulk Segregant Mapping</h1>
             <p>To locate the gene causing male sterility, we compare DNA from fertile and sterile bulks.</p>
 
-            <p><i>Which chromosome shows a peak associated with male sterility?</i></p>
+            <p><i>Select the chromosome where the BSA peak appears.</i></p>
 
-            <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center; margin-top:30px;">
-                <div onclick="wrongChr()" class="chrBox">Chr1</div>
-                <div onclick="wrongChr()" class="chrBox">Chr2</div>
-                <div onclick="wrongChr()" class="chrBox">Chr3</div>
+            <div style="display:flex; gap:40px; justify-content:center; align-items:flex-start; margin-top:30px; flex-wrap:wrap;">
 
-                <div onclick="correctChr()" class="chrBox" style="border:3px solid #4caf50;">
-                    Chr4<br><small>(Peak 56–64 Mb)</small>
+                <!-- LEFT: Chromosome list -->
+                <div style="display:flex; flex-direction:column; gap:15px;">
+                    <div onclick="wrongChr()" class="chrBox">Chr1</div>
+                    <div onclick="wrongChr()" class="chrBox">Chr2</div>
+                    <div onclick="wrongChr()" class="chrBox">Chr3</div>
+                    <div onclick="correctChr()" class="chrBox" id="chr4">Chr4 (Expected Peak)</div>
+                    <div onclick="wrongChr()" class="chrBox">Chr5</div>
+                    <div onclick="wrongChr()" class="chrBox">Chr6</div>
+                    <div onclick="wrongChr()" class="chrBox">Chr7</div>
+                    <div onclick="wrongChr()" class="chrBox">Chr8</div>
+                    <div onclick="wrongChr()" class="chrBox">Chr9</div>
+                    <div onclick="wrongChr()" class="chrBox">Chr10</div>
                 </div>
 
-                <div onclick="wrongChr()" class="chrBox">Chr5</div>
-                <div onclick="wrongChr()" class="chrBox">Chr6</div>
-                <div onclick="wrongChr()" class="chrBox">Chr7</div>
-                <div onclick="wrongChr()" class="chrBox">Chr8</div>
-                <div onclick="wrongChr()" class="chrBox">Chr9</div>
-                <div onclick="wrongChr()" class="chrBox">Chr10</div>
+                <!-- RIGHT: Real BSA Graph -->
+                <div style="padding:10px;">
+                    <img id="bsaGraph" src="fig1_ems.png" 
+                         style="width:420px; border-radius:12px; border:3px solid transparent; transition:0.3s;">
+                    <p style="text-align:center; font-size:14px; color:#555;">Real BSA peak from Fig. 1 (EMS study)</p>
+                </div>
+
             </div>
 
             <p id="mapFeedback" style="margin-top:25px; font-size:18px; font-weight:bold;"></p>
         `;
 
+        // Style left chromosome boxes
         document.querySelectorAll(".chrBox").forEach(el => {
             el.style.cursor = "pointer";
             el.style.background = "#eef";
-            el.style.padding = "18px";
+            el.style.padding = "14px 20px";
             el.style.borderRadius = "10px";
-            el.style.width = "140px";
+            el.style.width = "150px";
             el.style.textAlign = "center";
             el.style.boxShadow = "0 0 5px rgba(0,0,0,0.15)";
             el.style.fontSize = "18px";
+            el.style.transition = "0.2s";
         });
 
-        window.correctChr = function () {
+        window.correctChr = function() {
+            // highlight graph
+            document.getElementById("bsaGraph").style.border = "3px solid #4caf50";
+
             document.getElementById("mapFeedback").innerHTML = `
-                <span style='color:green;'>Correct! The peak maps the sterile phenotype to <b>chromosome 4</b>.</span><br><br>
+                <span style='color:green;'>Correct! The BSA peak identifies <b>chromosome 4</b> as the candidate region.</span><br><br>
                 <div class='button' onclick='nextStage()'>Continue</div>
             `;
         };
 
-        window.wrongChr = function () {
+        window.wrongChr = function() {
+            document.getElementById("bsaGraph").style.border = "3px solid transparent";
             document.getElementById("mapFeedback").innerHTML =
-                "<span style='color:red;'>No associated peak here — try another chromosome.</span>";
+                "<span style='color:red;'>No peak on this chromosome — check another one.</span>";
         };
     }
-}
+
 
 
 function nextStage() {
