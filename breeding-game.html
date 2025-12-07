@@ -89,6 +89,30 @@ let f1_value = null;
 let current_mean = null;
 let histogramChart = null;
 
+// ----------------- HISTOGRAM FUNCTION (ÖNCE GELMELİ!) -----------------
+function drawHistogram(data) {
+
+    const ctx = document.getElementById("histogramCanvas").getContext("2d");
+
+    if (histogramChart) histogramChart.destroy();
+
+    histogramChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: data.map((_, i) => `P${i+1}`),
+            datasets: [{
+                label: "F2 Values",
+                data: data,
+                backgroundColor: "rgba(50,150,50,0.7)"
+            }]
+        },
+        options: {
+            plugins: { legend: { display: false } },
+            scales: { y: { beginAtZero: false } }
+        }
+    });
+}
+
 // ----------------- CREATE F1 -----------------
 function makeF1() {
     let p1 = Number(document.getElementById("p1").value);
@@ -120,8 +144,33 @@ function makeF2() {
 
     document.getElementById("f2-list").innerHTML = html;
 
+    // 🔥 BURASI ARTIK ÇALIŞACAK!
     drawHistogram(window.f2);
 }
+
+// ----------------- SELECTION -----------------
+function selectBest() {
+    if (!window.f2) {
+        alert("Generate F2 first!");
+        return;
+    }
+
+    let best = [...window.f2].sort((a,b)=>b-a).slice(0,3);
+    let new_mean = Math.round(best.reduce((a,b)=>a+b, 0) / 3);
+
+    let gain = new_mean - current_mean;
+
+    document.getElementById("selection-result").innerHTML =
+        `<b>Selected:</b> ${best.join(", ")}<br>
+         <b>New Mean:</b> ${new_mean}<br>
+         <b>Genetic Gain:</b> ${gain}`;
+
+    current_mean = new_mean;
+    f1_value = new_mean;
+}
+
+</script>
+
 
 // ----------------- DRAW HISTOGRAM -----------------
 function drawHistogram(data) {
