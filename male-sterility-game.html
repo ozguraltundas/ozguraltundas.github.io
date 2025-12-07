@@ -120,38 +120,39 @@ function loadStage() {
     }
 
     // ---------------- Stage 1 ----------------
-    if (stage === 1) {
-        area.innerHTML = `
-            <h1>🌱 What is Male Sterility?</h1>
-            <p>
-                Some plants produce normal pollen (male-fertile), while others fail to make pollen (male-sterile).
-                Male sterility is extremely important in hybrid seed production.
-            </p>
+    // ---------------- Stage 1 ----------------
+if (stage === 1) {
+    area.innerHTML = `
+        <h1>🌱 What is Male Sterility?</h1>
+        <p>
+            Some plants produce normal pollen (male-fertile), while others fail to make pollen (male-sterile).
+            Male sterility is extremely important in hybrid seed production.
+        </p>
 
-            <div style="display:flex; gap:40px; justify-content:center; margin-top:30px;">
-                <div onclick="alert('Male-fertile plants produce viable pollen. They can self or cross. Used as male parents.')"
-                     style="cursor:pointer; background:#e0ffe0; padding:20px; border-radius:12px; width:240px; border: 2px solid #94d694;">
-                    <h3>🟩 Male-Fertile Plant</h3>
-                    <p>Produces pollen</p>
-                </div>
-
-                <div onclick="alert('Male-sterile plants do NOT produce pollen. They cannot self-fertilize. Used as FEMALE parents in hybrid production.')"
-                     style="cursor:pointer; background:#ffe0e0; padding:20px; border-radius:12px; width:240px; border:2px solid #d69494;">
-                    <h3>🟥 Male-Sterile Plant</h3>
-                    <p>No pollen</p>
-                </div>
+        <div style="display:flex; gap:40px; justify-content:center; margin-top:30px;">
+            <div onclick="alert('Male-fertile plants produce viable pollen. They can self or cross. Used as male parents.')"
+                 style="cursor:pointer; background:#e0ffe0; padding:20px; border-radius:12px; width:240px; border: 2px solid #94d694;">
+                <h3>🟩 Male-Fertile Plant</h3>
+                <p>Produces pollen</p>
             </div>
 
-            <p style="margin-top:30px; font-size:17px; max-width:650px; margin-left:auto; margin-right:auto;">
-                <b>Why is male sterility important?</b><br>
-                Because a male-sterile plant cannot self-fertilize. This guarantees that 
-                <b>all seeds it produces must come from another parent</b> — meaning they are <b>hybrids</b>.
-                Hybrid seeds give higher yield, uniformity, and vigor.
-            </p>
+            <div onclick="alert('Male-sterile plants do NOT produce pollen. They cannot self-fertilize. Used as FEMALE parents in hybrid production.')"
+                 style="cursor:pointer; background:#ffe0e0; padding:20px; border-radius:12px; width:240px; border:2px solid #d69494;">
+                <h3>🟥 Male-Sterile Plant</h3>
+                <p>No pollen</p>
+            </div>
+        </div>
 
-            <div class="button" onclick="nextStage()">Continue</div>
-        `;
-    }
+        <p style="margin-top:30px; font-size:17px; max-width:650px; margin-left:auto; margin-right:auto;">
+            <b>Why is male sterility important?</b><br>
+            Because a male-sterile plant cannot self-fertilize. This guarantees that 
+            <b>all seeds it produces must come from another parent</b> — meaning they are <b>hybrids</b>.
+            Hybrid seeds give higher yield, uniformity, and vigor.
+        </p>
+
+        <div class="button" onclick="nextStage()">Continue</div>
+    `;
+}
 
     // ---------------- Stage 2 ----------------
     if (stage === 2) {
