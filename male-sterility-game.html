@@ -13,12 +13,10 @@
 
         .game-container {
             width: 100%;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
             padding: 20px;
             box-sizing: border-box;
         }
@@ -30,15 +28,12 @@
             padding: 30px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
             animation: fadein 0.5s ease;
+            text-align: center;
         }
 
         @keyframes fadein {
             from {opacity: 0; transform: translateY(20px);}
             to {opacity: 1; transform: translateY(0);}
-        }
-
-        h1, h2, p {
-            margin-bottom: 20px;
         }
 
         .button {
@@ -61,49 +56,11 @@
 
 <div class="game-container">
     <div id="stageArea" class="stage">
-        <!-- STAGES WILL LOAD HERE -->
-            if (stage === 1) {
-        area.innerHTML = `
-            <h1>🌱 What is Male Sterility?</h1>
-            <p>
-                Some plants produce normal pollen (male-fertile), while others fail to make pollen (male-sterile).
-                Male sterility is extremely important in hybrid seed production.
-            </p>
-
-            <div style="display:flex; gap:40px; justify-content:center; margin-top:30px;">
-
-                <div onclick="alert('Male-fertile plants produce viable pollen. They can self-fertilize or pollinate other plants. Used as male parent in hybrid breeding.')"
-                     style="cursor:pointer; background:#e5ffe5; padding:20px; border-radius:12px; width:230px; border:2px solid #70c070;">
-                    <h3>🟩 Male-Fertile Plant</h3>
-                    <p>Produces pollen</p>
-                </div>
-
-                <div onclick="alert('Male-sterile plants do not produce pollen. They cannot self-fertilize. This makes them ideal female parents in hybrid seed production.')"
-                     style="cursor:pointer; background:#ffe5e5; padding:20px; border-radius:12px; width:230px; border:2px solid #d07070;">
-                    <h3>🟥 Male-Sterile Plant</h3>
-                    <p>No pollen</p>
-                </div>
-
-            </div>
-
-            <p style="margin-top:30px; font-size:17px; max-width:700px; margin-left:auto; margin-right:auto;">
-                <b>Why is male sterility important?</b><br>
-                Because a male-sterile plant cannot self-fertilize.  
-                This guarantees that <b>all seeds it produces must come from another parent</b> — meaning they are <b>hybrids</b>.  
-                Hybrid seeds give higher yield, uniformity, and vigor.
-            </p>
-
-            <div class="button" onclick="nextStage()">Continue</div>
-        
-    }
-
+        <!-- Content loads here -->
     </div>
 </div>
 
 <script>
-// -------------------------------
-// BASIC GAME ENGINE (Stage Loader)
-// -------------------------------
 let stage = 0;
 
 function loadStage() {
@@ -120,48 +77,38 @@ function loadStage() {
     }
 
     // ---------------- Stage 1 ----------------
-    // ---------------- Stage 1 ----------------
-if (stage === 1) {
-    area.innerHTML = `
-        <h1>🌱 What is Male Sterility?</h1>
-        <p>
-            Some plants produce normal pollen (male-fertile), while others fail to make pollen (male-sterile).
-            Male sterility is extremely important in hybrid seed production.
-        </p>
+    if (stage === 1) {
+        area.innerHTML = `
+            <h1>🌱 What is Male Sterility?</h1>
+            <p>Some plants produce viable pollen (male-fertile), while others fail to make pollen (male-sterile).</p>
 
-        <div style="display:flex; gap:40px; justify-content:center; margin-top:30px;">
-            <div onclick="alert('Male-fertile plants produce viable pollen. They can self or cross. Used as male parents.')"
-                 style="cursor:pointer; background:#e0ffe0; padding:20px; border-radius:12px; width:240px; border: 2px solid #94d694;">
-                <h3>🟩 Male-Fertile Plant</h3>
-                <p>Produces pollen</p>
+            <div style="display:flex; gap:40px; justify-content:center; margin-top:30px;">
+                <div onclick="alert('Male-fertile plants produce viable pollen. They can self or cross. Used as male parents.')"
+                     style="cursor:pointer; background:#e0ffe0; padding:20px; border-radius:12px; width:240px;">
+                    <h3>🟩 Male-Fertile Plant</h3>
+                    <p>Produces pollen</p>
+                </div>
+
+                <div onclick="alert('Male-sterile plants do NOT produce pollen. They cannot self-fertilize. Used as FEMALE parents in hybrid production.')"
+                     style="cursor:pointer; background:#ffe0e0; padding:20px; border-radius:12px; width:240px;">
+                    <h3>🟥 Male-Sterile Plant</h3>
+                    <p>No pollen</p>
+                </div>
             </div>
 
-            <div onclick="alert('Male-sterile plants do NOT produce pollen. They cannot self-fertilize. Used as FEMALE parents in hybrid production.')"
-                 style="cursor:pointer; background:#ffe0e0; padding:20px; border-radius:12px; width:240px; border:2px solid #d69494;">
-                <h3>🟥 Male-Sterile Plant</h3>
-                <p>No pollen</p>
-            </div>
-        </div>
+            <p style="margin-top:30px; font-size:17px;">
+                Male sterility ensures that all seeds must come from another parent — meaning they are <b>hybrids</b>.
+            </p>
 
-        <p style="margin-top:30px; font-size:17px; max-width:650px; margin-left:auto; margin-right:auto;">
-            <b>Why is male sterility important?</b><br>
-            Because a male-sterile plant cannot self-fertilize. This guarantees that 
-            <b>all seeds it produces must come from another parent</b> — meaning they are <b>hybrids</b>.
-            Hybrid seeds give higher yield, uniformity, and vigor.
-        </p>
-
-        <div class="button" onclick="nextStage()">Continue</div>
-    `;
-}
+            <div class="button" onclick="nextStage()">Continue</div>
+        `;
+    }
 
     // ---------------- Stage 2 ----------------
     if (stage === 2) {
         area.innerHTML = `
             <h1>🌾 Recognizing the Sterile Phenotype</h1>
-            <p>
-                Male-sterile sorghum plants produce <b>white anthers</b> instead of yellow ones.
-                This is the key phenotype used to detect sterility in the field.
-            </p>
+            <p>Male-sterile sorghum plants produce <b>white anthers</b> instead of yellow ones.</p>
 
             <p><i>Which anther is from a male-sterile plant?</i></p>
 
@@ -177,7 +124,7 @@ if (stage === 1) {
                 </div>
             </div>
 
-            <p id="feedback" style="margin-top:30px; font-size:18px; font-weight:bold;"></p>
+            <p id="feedback" style="margin-top:30px; font-size:18px;"></p>
         `;
 
         window.correctChoice = function () {
@@ -196,436 +143,230 @@ if (stage === 1) {
     if (stage === 3) {
         area.innerHTML = `
             <h1>🧬 Bulk Segregant Mapping</h1>
-            <p>To locate the gene causing male sterility, we compare DNA from fertile and sterile bulks.</p>
+            <p>Select the chromosome where the BSA peak appears.</p>
 
-            <p><i>Select the chromosome where the BSA peak appears.</i></p>
-
-            <div style="display:flex; gap:40px; justify-content:center; align-items:flex-start; margin-top:30px; flex-wrap:wrap;">
-
-                <!-- LEFT: Chromosome list -->
-                <div style="display:flex; flex-direction:column; gap:15px;">
-                    <div onclick="wrongChr()" class="chrBox">Chr1</div>
-                    <div onclick="wrongChr()" class="chrBox">Chr2</div>
-                    <div onclick="wrongChr()" class="chrBox">Chr3</div>
-                    <div onclick="correctChr()" class="chrBox" id="chr4">Chr4 (Expected Peak)</div>
-                    <div onclick="wrongChr()" class="chrBox">Chr5</div>
-                    <div onclick="wrongChr()" class="chrBox">Chr6</div>
-                    <div onclick="wrongChr()" class="chrBox">Chr7</div>
-                    <div onclick="wrongChr()" class="chrBox">Chr8</div>
-                    <div onclick="wrongChr()" class="chrBox">Chr9</div>
-                    <div onclick="wrongChr()" class="chrBox">Chr10</div>
-                </div>
-
-                <!-- RIGHT: Real BSA Graph -->
-                <div style="padding:10px;">
-                    <img id="bsaGraph" src="fig1_ems.png" 
-                         style="width:420px; border-radius:12px; border:3px solid transparent; transition:0.3s;">
-                    <p style="text-align:center; font-size:14px; color:#555;">Real BSA peak from Fig. 1 (EMS study)</p>
-                </div>
-
+            <div style="display:flex; gap:40px; justify-content:center; flex-wrap:wrap;">
+                <div onclick="wrongChr()" class="chrBox">Chr1</div>
+                <div onclick="wrongChr()" class="chrBox">Chr2</div>
+                <div onclick="wrongChr()" class="chrBox">Chr3</div>
+                <div onclick="correctChr()" class="chrBox" style="border:2px solid #4caf50;">Chr4 (Peak)</div>
             </div>
 
-            <p id="mapFeedback" style="margin-top:25px; font-size:18px; font-weight:bold;"></p>
+            <p id="mapFeedback" style="margin-top:25px; font-size:18px;"></p>
+
+            <img src="fig1_ems.png" style="width:420px; margin-top:20px; border-radius:10px;">
         `;
 
         document.querySelectorAll(".chrBox").forEach(el => {
             el.style.cursor = "pointer";
             el.style.background = "#eef";
-            el.style.padding = "14px 20px";
+            el.style.padding = "15px";
             el.style.borderRadius = "10px";
-            el.style.width = "150px";
+            el.style.width = "120px";
             el.style.textAlign = "center";
-            el.style.boxShadow = "0 0 5px rgba(0,0,0,0.15)";
-            el.style.fontSize = "18px";
-            el.style.transition = "0.2s";
+            el.style.margin = "5px";
         });
 
-        window.correctChr = function() {
-            document.getElementById("bsaGraph").style.border = "3px solid #4caf50";
-
-            document.getElementById("mapFeedback").innerHTML = `
-                <span style='color:green;'>Correct! The BSA peak identifies <b>chromosome 4</b> as the candidate region.</span><br><br>
-                <div class='button' onclick='nextStage()'>Continue</div>
-            `;
+        window.correctChr = function () {
+            document.getElementById("mapFeedback").innerHTML =
+                "<span style='color:green;'>Correct! The BSA peak is on chromosome 4.</span><br><br>" +
+                "<div class='button' onclick='nextStage()'>Continue</div>";
         };
 
-        window.wrongChr = function() {
-            document.getElementById("bsaGraph").style.border = "3px solid transparent";
+        window.wrongChr = function () {
             document.getElementById("mapFeedback").innerHTML =
-                "<span style='color:red;'>No peak on this chromosome — check another one.</span>";
+                "<span style='color:red;'>Incorrect — try another chromosome.</span>";
         };
     }
-        // ---------------- Stage 4 ----------------
+
+    // ---------------- Stage 4 ----------------
     if (stage === 4) {
         area.innerHTML = `
             <h1>🌿 Phylogeny of MS8 (Fig. 2)</h1>
 
-            <p>
-                MS8 is a <b>bHLH transcription factor</b>.  
-                In the study, MS8 and its mutant alleles (ms8-1, ms8-2) cluster within a 
-                <b>distinct male-sterility–associated clade</b> of bHLH proteins.
-            </p>
-
             <p><i>Which clade contains MS8?</i></p>
 
-            <div style="display:flex; gap:25px; justify-content:center; margin-top:30px; flex-wrap:wrap;">
-
-                <!-- Wrong options -->
-                <div onclick="wrongClade()" class="cladeBox" style="border-top:6px solid #1f77b4;">
-                    MS32 Clade
-                </div>
-
-                <div onclick="wrongClade()" class="cladeBox" style="border-top:6px solid #ff7f0e;">
-                    Zm bHLH122 Clade
-                </div>
-
-                <!-- Correct -->
-                <div onclick="correctClade()" class="cladeBox" style="border-top:6px solid #2ca02c;">
-                    MS8 / ms8-1 / ms8-2 Clade
-                </div>
-
-                <div onclick="wrongClade()" class="cladeBox" style="border-top:6px solid #d62728;">
-                    Zm bHLH51 Clade
-                </div>
-
+            <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+                <div onclick="wrongClade()" class="cladeBox">MS32 Clade</div>
+                <div onclick="wrongClade()" class="cladeBox">Zm bHLH51 Clade</div>
+                <div onclick="correctClade()" class="cladeBox" style="border:2px solid #2ca02c;">MS8 / ms8-1 / ms8-2 Clade</div>
             </div>
 
-            <p id="cladeFeedback" style="margin-top:25px; font-size:18px; font-weight:bold;"></p>
+            <p id="cladeFeedback" style="margin-top:25px; font-size:18px;"></p>
 
-            <div style="margin-top:20px; text-align:center;">
-                <img src="fig2_phylogeny.png" style="width:450px; border-radius:8px;">
-                <p style="font-size:13px; color:#666;">Phylogeny from Fig. 2 (optional reference)</p>
-            </div>
+            <img src="fig2_phylogeny.png" style="width:450px; margin-top:20px; border-radius:10px;">
         `;
 
-        // Style the clade selection boxes
         document.querySelectorAll(".cladeBox").forEach(el => {
             el.style.cursor = "pointer";
             el.style.background = "#f5f5f5";
-            el.style.padding = "20px";
+            el.style.padding = "18px";
+            el.style.borderRadius = "10px";
             el.style.width = "220px";
             el.style.textAlign = "center";
-            el.style.borderRadius = "12px";
-            el.style.boxShadow = "0 0 6px rgba(0,0,0,0.15)";
-            el.style.fontSize = "18px";
-            el.style.fontWeight = "600";
-            el.style.transition = "0.2s";
+            el.style.margin = "5px";
         });
 
-        // Correct selection
         window.correctClade = function () {
-            document.getElementById("cladeFeedback").innerHTML = `
-                <span style='color:green;'>✔ Correct!<br>
-                MS8 clusters within the <b>male sterility–associated bHLH clade</b>, 
-                together with its alleles ms8-1 and ms8-2.</span>
-                <br><br>
-                <div class='button' onclick='nextStage()'>Continue</div>
-            `;
+            document.getElementById("cladeFeedback").innerHTML =
+                "<span style='color:green;'>Correct! MS8 clusters in the male-sterility-associated bHLH clade.</span><br><br>" +
+                "<div class='button' onclick='nextStage()'>Continue</div>";
         };
 
-        // Wrong selection
         window.wrongClade = function () {
             document.getElementById("cladeFeedback").innerHTML =
-                "<span style='color:red;'>❌ Not the correct clade — check the cluster containing MS8 alleles.</span>";
+                "<span style='color:red;'>Incorrect clade — try again.</span>";
         };
     }
-        // ---------------- Stage 5 ----------------
+
+    // ---------------- Stage 5 ----------------
     if (stage === 5) {
         area.innerHTML = `
-            <h1>🧬 Genetic Models Explaining ms8 Sectoring (Fig. 3)</h1>
+            <h1>🧬 Genetic Models (Fig. 3)</h1>
+            <p>Which model best explains ms8 sectoring?</p>
 
-            <p>
-                The ms8 phenotype shows <b>rare sterile sectors</b>.  
-                Simple recessive models cannot explain this.  
-                The paper tests three possible models.
-            </p>
-
-            <p><i>Which model best explains the ms8 sectoring pattern?</i></p>
-
-            <div style="display:flex; gap:25px; justify-content:center; margin-top:30px; flex-wrap:wrap;">
-
-                <!-- Model A -->
-                <div onclick="wrongModel()" class="modelBox" style="border-top:6px solid #1f77b4;">
-                    <b>Model A:</b><br>
-                    Simple Recessive Mutation<br>
-                    <small>(single-locus loss-of-function)</small>
-                </div>
-
-                <!-- Model B -->
-                <div onclick="wrongModel()" class="modelBox" style="border-top:6px solid #ff7f0e;">
-                    <b>Model B:</b><br>
-                    Developmental Mosaicism<br>
-                    <small>(random cell lineage defects)</small>
-                </div>
-
-                <!-- Model C (Correct) -->
-                <div onclick="correctModel()" class="modelBox" style="border-top:6px solid #2ca02c;">
-                    <b>Model C:</b><br>
-                    Linked Dominant Sterility + Complementation<br>
-                    <small>(explains rare sectors)</small>
-                </div>
-
+            <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+                <div onclick="wrongModel()" class="modelBox">Model A — Simple Recessive</div>
+                <div onclick="wrongModel()" class="modelBox">Model B — Mosaicism</div>
+                <div onclick="correctModel()" class="modelBox" style="border:2px solid #2ca02c;">Model C — Linked Dominant + Complementation</div>
             </div>
 
-            <p id="modelFeedback" style="margin-top:25px; font-size:18px; font-weight:bold;"></p>
+            <p id="modelFeedback" style="margin-top:25px; font-size:18px;"></p>
 
-            <div style="margin-top:20px; text-align:center;">
-                <img src="fig3_genetic_models.png" style="width:500px; border-radius:8px;">
-                <p style="font-size:13px; color:#666;">Genetic models from Fig. 3a–c</p>
-            </div>
+            <img src="fig3_genetic_models.png" style="width:480px; margin-top:20px; border-radius:10px;">
         `;
 
-        // Style boxes
         document.querySelectorAll(".modelBox").forEach(el => {
             el.style.cursor = "pointer";
-            el.style.background = "#f5f5f5";
+            el.style.background = "#eee";
             el.style.padding = "20px";
+            el.style.borderRadius = "10px";
             el.style.width = "260px";
             el.style.textAlign = "center";
-            el.style.borderRadius = "12px";
-            el.style.boxShadow = "0 0 6px rgba(0,0,0,0.15)";
-            el.style.fontSize = "18px";
-            el.style.transition = "0.2s";
+            el.style.margin = "8px";
         });
 
         window.correctModel = function () {
-            document.getElementById("modelFeedback").innerHTML = `
-                <span style='color:green;'>✔ Correct!<br>
-                The <b>linked dominant sterility + complementation model</b> explains:<br>
-                - rare chimeras,<br>
-                - non-Mendelian segregation,<br>
-                - fertility rescue in specific allelic combinations.<br><br>
-                This matches the biological behavior of ms8.</span>
-                <br><br>
-                <div class='button' onclick='nextStage()'>Continue</div>
-            `;
+            document.getElementById("modelFeedback").innerHTML =
+                "<span style='color:green;'>Correct! Model C explains rare chimera formation.</span><br><br>" +
+                "<div class='button' onclick='nextStage()'>Continue</div>";
         };
 
         window.wrongModel = function () {
             document.getElementById("modelFeedback").innerHTML =
-                "<span style='color:red;'>❌ This model does not explain the rarity or pattern of ms8 sterile sectors.</span>";
+                "<span style='color:red;'>Incorrect model — try again.</span>";
         };
-    } 
-       // ---------------- Stage 6 ----------------
+    }
+
+    // ---------------- Stage 6 ----------------
     if (stage === 6) {
         area.innerHTML = `
-            <h1>🧬 Sequencing the ms8 Alleles (Fig. 5)</h1>
+            <h1>🧬 Sequencing Mutations (Fig. 5)</h1>
+            <p>Select the mutation most consistent with loss of function.</p>
 
-            <p>
-                Sequencing of <b>ms8-1</b> and <b>ms8-2</b> alleles revealed several mutations 
-                that can disrupt protein function.
-                <br><br>
-                <b>Which mutation is most consistent with a loss-of-function allele?</b>
-            </p>
-
-            <div style="display:flex; gap:25px; justify-content:center; flex-wrap:wrap; margin-top:30px;">
-
-                <!-- Option 1 (missense) -->
-                <div onclick="wrongSeq()" class="seqBox" style="border-top:6px solid #1f77b4;">
-                    P98S  
-                    <br><small>Missense mutation</small>
-                </div>
-
-                <!-- Option 2 (correct stop-gain) -->
-                <div onclick="correctSeq()" class="seqBox" style="border-top:6px solid #2ca02c;">
-                    Q111*  
-                    <br><small>Premature stop codon</small>
-                </div>
-
-                <!-- Option 3 (also stop-gain but not the primary allele shown in Fig. 5) -->
-                <div onclick="wrongSeq()" class="seqBox" style="border-top:6px solid #d62728;">
-                    Q150*  
-                    <br><small>Late stop codon</small>
-                </div>
-
+            <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+                <div onclick="wrongSeq()" class="seqBox">P98S — Missense</div>
+                <div onclick="correctSeq()" class="seqBox" style="border:2px solid #2ca02c;">Q111* — STOP codon</div>
+                <div onclick="wrongSeq()" class="seqBox">Q150* — Late STOP</div>
             </div>
 
-            <p id="seqFeedback" style="margin-top:25px; font-size:18px; font-weight:bold;"></p>
+            <p id="seqFeedback" style="margin-top:25px; font-size:18px;"></p>
 
-            <div style="margin-top:20px; text-align:center;">
-                <img src="fig5_mutations.png" style="width:480px; border-radius:8px;">
-                <p style="font-size:13px; color:#666;">Mutations mapped onto MS8 protein (Fig. 5)</p>
-            </div>
+            <img src="fig5_mutations.png" style="width:480px; margin-top:20px; border-radius:10px;">
         `;
 
-        // Style mutation selection boxes
         document.querySelectorAll(".seqBox").forEach(el => {
             el.style.cursor = "pointer";
-            el.style.background = "#f5f5f5";
+            el.style.background = "#eee";
             el.style.padding = "20px";
-            el.style.width = "220px";
+            el.style.borderRadius = "10px";
+            el.style.width = "240px";
             el.style.textAlign = "center";
-            el.style.borderRadius = "12px";
-            el.style.boxShadow = "0 0 6px rgba(0,0,0,0.15)";
-            el.style.fontSize = "18px";
-            el.style.transition = "0.2s";
+            el.style.margin = "8px";
         });
 
         window.correctSeq = function () {
-            document.getElementById("seqFeedback").innerHTML = `
-                <span style='color:green;'>✔ Correct!<br>
-                <b>Q111*</b> introduces a premature stop codon, 
-                producing a truncated and nonfunctional protein.<br>
-                This is strong evidence that MS8 loss-of-function causes male sterility.
-                </span>
-                <br><br>
-                <div class='button' onclick='nextStage()'>Continue</div>
-            `;
+            document.getElementById("seqFeedback").innerHTML =
+                "<span style='color:green;'>Correct! Q111* is a strong loss-of-function mutation.</span><br><br>" +
+                "<div class='button' onclick='nextStage()'>Continue</div>";
         };
 
         window.wrongSeq = function () {
             document.getElementById("seqFeedback").innerHTML =
-                "<span style='color:red;'>❌ Not the primary loss-of-function allele shown in Fig. 5.</span>";
+                "<span style='color:red;'>Incorrect — examine Fig. 5 more closely.</span>";
         };
     }
-        // ---------------- Stage 7 ----------------
+
+    // ---------------- Stage 7 ----------------
     if (stage === 7) {
         area.innerHTML = `
-            <h1>🧬 CRISPR Validation of MS8 Function (Fig. 6)</h1>
+            <h1>🧬 CRISPR Validation (Fig. 6)</h1>
+            <p>Which CRISPR allele disrupts the bHLH domain?</p>
 
-            <p>
-                To confirm that <b>MS8</b> is truly required for male fertility, the researchers used 
-                <b>CRISPR-Cas9</b> to introduce targeted mutations in the MS8 gene.
-                <br><br>
-                Only alleles that disrupt the critical <b>bHLH DNA-binding domain</b> reproduce the 
-                male-sterile phenotype.
-            </p>
-
-            <p><i>Which CRISPR allele knocks out MS8 and causes male sterility?</i></p>
-
-            <div style="display:flex; gap:25px; justify-content:center; flex-wrap:wrap; margin-top:30px;">
-
-                <!-- wrong option -->
-                <div onclick="wrongCrispr()" class="crisprBox" style="border-top:6px solid #1f77b4;">
-                    CRISPR-1<br>
-                    <small>Synonymous edit<br>(protein unchanged)</small>
-                </div>
-
-                <!-- correct option -->
-                <div onclick="correctCrispr()" class="crisprBox" style="border-top:6px solid #2ca02c;">
-                    CRISPR-2<br>
-                    <small>bHLH domain disrupted<br>(loss-of-function)</small>
-                </div>
-
-                <!-- wrong option -->
-                <div onclick="wrongCrispr()" class="crisprBox" style="border-top:6px solid #d62728;">
-                    CRISPR-3<br>
-                    <small>3′ UTR edit<br>(no phenotype)</small>
-                </div>
-
+            <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+                <div onclick="wrongCrispr()" class="crisprBox">CRISPR-1 — Synonymous</div>
+                <div onclick="correctCrispr()" class="crisprBox" style="border:2px solid #2ca02c;">CRISPR-2 — bHLH disrupted</div>
+                <div onclick="wrongCrispr()" class="crisprBox">CRISPR-3 — 3′UTR</div>
             </div>
 
-            <p id="crisprFeedback" style="margin-top:25px; font-size:18px; font-weight:bold;"></p>
+            <p id="crisprFeedback" style="margin-top:25px; font-size:18px;"></p>
 
-            <div style="margin-top:20px; text-align:center;">
-                <img src="fig6_crispr_validation.png" style="width:460px; border-radius:8px;">
-                <p style="font-size:13px; color:#666;">CRISPR alleles validating MS8 function (Fig. 6)</p>
-            </div>
+            <img src="fig6_crispr_validation.png" style="width:480px; margin-top:20px; border-radius:10px;">
         `;
 
-        // Style CRISPR selection boxes
         document.querySelectorAll(".crisprBox").forEach(el => {
             el.style.cursor = "pointer";
-            el.style.background = "#f5f5f5";
+            el.style.background = "#eee";
             el.style.padding = "20px";
-            el.style.width = "220px";
+            el.style.borderRadius = "10px";
+            el.style.width = "240px";
             el.style.textAlign = "center";
-            el.style.borderRadius = "12px";
-            el.style.boxShadow = "0 0 6px rgba(0,0,0,0.15)";
-            el.style.fontSize = "18px";
-            el.style.transition = "0.2s";
+            el.style.margin = "8px";
         });
 
         window.correctCrispr = function () {
-            document.getElementById("crisprFeedback").innerHTML = `
-                <span style='color:green;'>✔ Correct!<br>
-                The allele that disrupts the <b>bHLH domain</b> reproduces the ms8 phenotype.
-                <br><br>
-                This provides <b>causal proof</b> that MS8 is required for male fertility in sorghum.
-                </span>
-                <br><br>
-                <div class='button' onclick='nextStage()'>Finish Mission</div>
-            `;
+            document.getElementById("crisprFeedback").innerHTML =
+                "<span style='color:green;'>Correct! CRISPR-2 reproduces the ms8 phenotype.</span><br><br>" +
+                "<div class='button' onclick='nextStage()'>Finish Mission</div>";
         };
 
         window.wrongCrispr = function () {
             document.getElementById("crisprFeedback").innerHTML =
-                "<span style='color:red;'>❌ This CRISPR edit does not affect MS8 function.</span>";
+                "<span style='color:red;'>Incorrect — this edit does not disrupt MS8.</span>";
         };
     }
+
     // ---------------- Stage 8 ----------------
     if (stage === 8) {
         area.innerHTML = `
             <h1>🏁 Mission Complete!</h1>
-
-            <p>You have successfully identified and validated the male sterility gene <b>MS8</b> in sorghum.</p>
-
-            <h3>🔬 What you accomplished:</h3>
+            <p>You successfully identified and validated the male sterility gene <b>MS8</b> in sorghum.</p>
 
             <ul style="text-align:left; max-width:600px; margin:auto; font-size:18px;">
-                <li>Recognized male-sterile vs male-fertile phenotypes</li>
-                <li>Located the BSA peak on <b>chromosome 4</b></li>
-                <li>Identified the correct <b>bHLH phylogenetic clade</b></li>
-                <li>Selected the correct <b>genetic model</b> explaining ms8 sectoring</li>
-                <li>Detected <b>loss-of-function mutations</b> (Q111*, P98S, Q150*)</li>
-                <li>Confirmed MS8 function using <b>CRISPR</b> gene editing</li>
+                <li>Identified male-sterile phenotype</li>
+                <li>Mapped locus to Chr4</li>
+                <li>Selected correct phylogenetic clade</li>
+                <li>Chose the correct genetic model</li>
+                <li>Interpreted sequencing mutations</li>
+                <li>Validated MS8 using CRISPR</li>
             </ul>
 
-            <div style="margin-top:30px;">
-                <h3>🌾 Relevance to Plant Breeding</h3>
-                <p style="max-width:650px; margin:auto; font-size:18px;">
-                    Male sterility is crucial for <b>hybrid seed production</b>.  
-                    Understanding genes like MS8 allows breeders to develop stable female lines 
-                    that produce <b>100% hybrid seeds</b> without manual detasseling.
-                </p>
-            </div>
-
-            <div style="margin-top:35px;">
-                <div class='button' onclick='nextStage()'>Take the Quiz ➜</div>
-            </div>
-        };
-    }
-    // ---------------- Stage 8 ----------------
-    if (stage === 8) {
-        area.innerHTML = `
-            <h1>🏁 Mission Complete!</h1>
-
-            <p>You have successfully identified and validated the male sterility gene <b>MS8</b> in sorghum.</p>
-
-            <h3>🔬 What you accomplished:</h3>
-
-            <ul style="text-align:left; max-width:650px; margin:auto; font-size:18px; line-height:1.5;">
-                <li>Distinguished male-fertile and male-sterile phenotypes</li>
-                <li>Identified the BSA mapping peak on <b>Chromosome 4</b></li>
-                <li>Recognized the correct <b>bHLH clade</b> from phylogeny</li>
-                <li>Chose the correct <b>genetic model</b> explaining ms8 sectoring</li>
-                <li>Detected key mutations: <b>P98S, Q111*, Q150*</b></li>
-                <li>Validated MS8 function using <b>CRISPR gene editing</b></li>
-            </ul>
-
-            <div style="margin-top:35px;">
-                <h3>🌾 Why This Matters for Hybrid Breeding</h3>
-                <p style="max-width:700px; margin:auto; font-size:18px;">
-                    Male sterility is essential in hybrid breeding because it prevents self-pollination.
-                    Understanding MS8 allows breeders to develop stable female lines that produce 
-                    <b>100% hybrid seeds</b> — improving yield, uniformity, and vigor.
-                </p>
-            </div>
-
-            <div style="margin-top:40px;">
-                <div class='button' onclick='nextStage()'>Take the Quiz ➜</div>
+            <div class="button" onclick="window.location.href='quiz-menu.html'">
+                Take the Quiz ➜
             </div>
         `;
     }
-
 }
-// ---------------- Next Stage Function ----------------
+
+// ---------------- Next Stage ----------------
 function nextStage() {
     stage++;
     loadStage();
 }
+
+// Load first stage
+loadStage();
 </script>
 
 </body>
 </html>
-
