@@ -478,6 +478,82 @@ if (stage === 1) {
                 "<span style='color:red;'>❌ Not the primary loss-of-function allele shown in Fig. 5.</span>";
         };
     }
+        // ---------------- Stage 7 ----------------
+    if (stage === 7) {
+        area.innerHTML = `
+            <h1>🧬 CRISPR Validation of MS8 Function (Fig. 6)</h1>
+
+            <p>
+                To confirm that <b>MS8</b> is truly required for male fertility, the researchers used 
+                <b>CRISPR-Cas9</b> to introduce targeted mutations in the MS8 gene.
+                <br><br>
+                Only alleles that disrupt the critical <b>bHLH DNA-binding domain</b> reproduce the 
+                male-sterile phenotype.
+            </p>
+
+            <p><i>Which CRISPR allele knocks out MS8 and causes male sterility?</i></p>
+
+            <div style="display:flex; gap:25px; justify-content:center; flex-wrap:wrap; margin-top:30px;">
+
+                <!-- wrong option -->
+                <div onclick="wrongCrispr()" class="crisprBox" style="border-top:6px solid #1f77b4;">
+                    CRISPR-1<br>
+                    <small>Synonymous edit<br>(protein unchanged)</small>
+                </div>
+
+                <!-- correct option -->
+                <div onclick="correctCrispr()" class="crisprBox" style="border-top:6px solid #2ca02c;">
+                    CRISPR-2<br>
+                    <small>bHLH domain disrupted<br>(loss-of-function)</small>
+                </div>
+
+                <!-- wrong option -->
+                <div onclick="wrongCrispr()" class="crisprBox" style="border-top:6px solid #d62728;">
+                    CRISPR-3<br>
+                    <small>3′ UTR edit<br>(no phenotype)</small>
+                </div>
+
+            </div>
+
+            <p id="crisprFeedback" style="margin-top:25px; font-size:18px; font-weight:bold;"></p>
+
+            <div style="margin-top:20px; text-align:center;">
+                <img src="fig6_crispr_validation.png" style="width:460px; border-radius:8px;">
+                <p style="font-size:13px; color:#666;">CRISPR alleles validating MS8 function (Fig. 6)</p>
+            </div>
+        `;
+
+        // Style CRISPR selection boxes
+        document.querySelectorAll(".crisprBox").forEach(el => {
+            el.style.cursor = "pointer";
+            el.style.background = "#f5f5f5";
+            el.style.padding = "20px";
+            el.style.width = "220px";
+            el.style.textAlign = "center";
+            el.style.borderRadius = "12px";
+            el.style.boxShadow = "0 0 6px rgba(0,0,0,0.15)";
+            el.style.fontSize = "18px";
+            el.style.transition = "0.2s";
+        });
+
+        window.correctCrispr = function () {
+            document.getElementById("crisprFeedback").innerHTML = `
+                <span style='color:green;'>✔ Correct!<br>
+                The allele that disrupts the <b>bHLH domain</b> reproduces the ms8 phenotype.
+                <br><br>
+                This provides <b>causal proof</b> that MS8 is required for male fertility in sorghum.
+                </span>
+                <br><br>
+                <div class='button' onclick='nextStage()'>Finish Mission</div>
+            `;
+        };
+
+        window.wrongCrispr = function () {
+            document.getElementById("crisprFeedback").innerHTML =
+                "<span style='color:red;'>❌ This CRISPR edit does not affect MS8 function.</span>";
+        };
+    }
+
 }
 // ---------------- Next Stage Function ----------------
 function nextStage() {
