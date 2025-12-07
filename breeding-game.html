@@ -39,6 +39,57 @@
         .f2-item {
             padding: 5px;
             border-bottom: 1px solid #eee;
+            let histogramChart = null;
+
+function drawHistogram(data) {
+    // Bin sayısı
+    const numBins = 10;
+
+    const min = Math.min(...data);
+    const max = Math.max(...data);
+    
+    const binSize = (max - min) / numBins;
+
+    // Binleri oluştur
+    const bins = new Array(numBins).fill(0);
+
+    data.forEach(value => {
+        let index = Math.floor((value - min) / binSize);
+        if (index === numBins) index--; 
+        bins[index]++;
+    });
+
+    // Bin etiketleri
+    const labels = bins.map((_, i) => {
+        let start = Math.round(min + i * binSize);
+        let end = Math.round(start + binSize);
+        return `${start}-${end}`;
+    });
+
+    const ctx = document.getElementById("histogramCanvas").getContext("2d");
+
+    // Daha önce bir grafik varsa sil
+    if (histogramChart) histogramChart.destroy();
+
+    // Yeni histogram oluştur
+    histogramChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: "F2 Distribution",
+                data: bins,
+                backgroundColor: "rgba(46, 125, 50, 0.7)"
+            }]
+        },
+        options: {
+            scales: {
+                y: { beginAtZero: true }
+            }
+        }
+    });
+}
+
         }
     </style>
 </head>
