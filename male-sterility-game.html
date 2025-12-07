@@ -553,6 +553,38 @@ if (stage === 1) {
                 "<span style='color:red;'>❌ This CRISPR edit does not affect MS8 function.</span>";
         };
     }
+    // ---------------- Stage 8 ----------------
+    if (stage === 8) {
+        area.innerHTML = `
+            <h1>🏁 Mission Complete!</h1>
+
+            <p>You have successfully identified and validated the male sterility gene <b>MS8</b> in sorghum.</p>
+
+            <h3>🔬 What you accomplished:</h3>
+
+            <ul style="text-align:left; max-width:600px; margin:auto; font-size:18px;">
+                <li>Recognized male-sterile vs male-fertile phenotypes</li>
+                <li>Located the BSA peak on <b>chromosome 4</b></li>
+                <li>Identified the correct <b>bHLH phylogenetic clade</b></li>
+                <li>Selected the correct <b>genetic model</b> explaining ms8 sectoring</li>
+                <li>Detected <b>loss-of-function mutations</b> (Q111*, P98S, Q150*)</li>
+                <li>Confirmed MS8 function using <b>CRISPR</b> gene editing</li>
+            </ul>
+
+            <div style="margin-top:30px;">
+                <h3>🌾 Relevance to Plant Breeding</h3>
+                <p style="max-width:650px; margin:auto; font-size:18px;">
+                    Male sterility is crucial for <b>hybrid seed production</b>.  
+                    Understanding genes like MS8 allows breeders to develop stable female lines 
+                    that produce <b>100% hybrid seeds</b> without manual detasseling.
+                </p>
+            </div>
+
+            <div style="margin-top:35px;">
+                <div class='button' onclick='nextStage()'>Take the Quiz ➜</div>
+            </div>
+        `;
+    }
 
 }
 // ---------------- Next Stage Function ----------------
