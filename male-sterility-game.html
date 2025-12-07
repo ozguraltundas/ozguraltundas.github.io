@@ -191,31 +191,18 @@ function loadStage() {
         };
     }
 
-
-} // ← DO NOT MOVE THIS
-
-// Next stage
-function nextStage() {
-    stage++;
-    loadStage();
-}
-    if (stage === 3) {
+if (stage === 3) {
         area.innerHTML = `
             <h1>🧬 Bulk Segregant Mapping</h1>
-            <p>
-                To locate the gene causing male sterility, we compare DNA from fertile vs. sterile plants.
-                If a region contains the mutation, allele frequencies will form a <b>peak</b> in that area.
-            </p>
+            <p>To locate the gene causing male sterility, we compare DNA...</p>
 
             <p><i>Which chromosome shows a peak associated with male sterility?</i></p>
 
             <div style="display:flex; gap:20px; flex-wrap:wrap; justify-content:center; margin-top:30px;">
-
                 <div onclick="wrongChr()" class="chrBox">Chr1</div>
                 <div onclick="wrongChr()" class="chrBox">Chr2</div>
                 <div onclick="wrongChr()" class="chrBox">Chr3</div>
 
-                <!-- Correct one -->
                 <div onclick="correctChr()" class="chrBox" style="border:3px solid #4caf50;">
                     Chr4<br><small>(Peak 56–64 Mb)</small>
                 </div>
@@ -226,13 +213,12 @@ function nextStage() {
                 <div onclick="wrongChr()" class="chrBox">Chr8</div>
                 <div onclick="wrongChr()" class="chrBox">Chr9</div>
                 <div onclick="wrongChr()" class="chrBox">Chr10</div>
-
             </div>
 
             <p id="mapFeedback" style="margin-top:25px; font-size:18px; font-weight:bold;"></p>
         `;
 
-        // Styling to create chromosome boxes
+        // Style boxes
         document.querySelectorAll(".chrBox").forEach(el => {
             el.style.cursor = "pointer";
             el.style.background = "#eef";
@@ -247,20 +233,22 @@ function nextStage() {
         window.correctChr = function() {
             document.getElementById("mapFeedback").innerHTML = `
                 <span style='color:green;'>Correct! The allele frequency peak maps the sterile phenotype to <b>chromosome 4</b>.</span><br><br>
-                <div class='button' onclick='nextStage()'>Continue</div>
+                <div class="button" onclick="nextStage()">Continue</div>
             `;
         };
 
         window.wrongChr = function() {
-            document.getElementById("mapFeedback").innerHTML = `
-                <span style='color:red;'>No associated peak here — try another chromosome.</span>
-            `;
+            document.getElementById("mapFeedback").innerHTML =
+                "<span style='color:red;'>No associated peak here — try another chromosome.</span>";
         };
     }
+} // ← DO NOT MOVE THIS
 
-
-// Initialize first stage
-loadStage();
+function nextStage() {
+    stage++;
+    loadStage();
+}
+   
 </script>
 
 </body>
