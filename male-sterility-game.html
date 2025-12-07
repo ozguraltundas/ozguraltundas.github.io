@@ -150,6 +150,51 @@ function loadStage() {
 
 }
 
+        if (stage === 2) {
+        area.innerHTML = `
+            <h1>🌾 Recognizing the Sterile Phenotype</h1>
+            <p>
+                Male-sterile sorghum plants produce <b>white anthers</b> instead of yellow ones.
+                This is the key phenotype used to detect sterility in the field.
+            </p>
+
+            <p><i>Which anther is from a male-sterile plant?</i></p>
+
+            <div style="display:flex; gap:40px; justify-content:center; margin-top:30px;">
+
+                <!-- Fertile (Yellow) -->
+                <div onclick="wrongChoice()"
+                     style="cursor:pointer; background:#fff9d6; padding:20px; border-radius:12px; width:200px; border:2px solid #c8b750;">
+                    <h3>🌼 Yellow Anthers</h3>
+                    <p>Fertile</p>
+                </div>
+
+                <!-- Sterile (White) -->
+                <div onclick="correctChoice()"
+                     style="cursor:pointer; background:#f3f3f3; padding:20px; border-radius:12px; width:200px; border:2px solid #888;">
+                    <h3>⚪ White Anthers</h3>
+                    <p>Sterile</p>
+                </div>
+
+            </div>
+
+            <p id="feedback" style="margin-top:30px; font-size:18px; font-weight:bold;"></p>
+        `;
+
+        // Add helper JS functions
+        window.correctChoice = function() {
+            document.getElementById("feedback").innerHTML =
+                "<span style='color:green;'>Correct! White anthers indicate male sterility.</span><br><br>" +
+                "<div class='button' onclick='nextStage()'>Continue</div>";
+        }
+
+        window.wrongChoice = function() {
+            document.getElementById("feedback").innerHTML =
+                "<span style='color:red;'>Not correct — yellow anthers are fertile. Try again!</span>";
+        }
+    }
+
+
 function nextStage() {
     stage++;
     loadStage();
