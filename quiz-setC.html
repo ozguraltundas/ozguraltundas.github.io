@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Set C – Sequencing & CRISPR</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="quiz-style.css">
+<script src="quiz-script.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Set C – Sequencing & CRISPR</h1>
+
+<div class="mode-select">
+    <span class="mode-btn" onclick="setMode('learning')">Learning Mode</span>
+    <span class="mode-btn" onclick="setMode('exam')">Exam Mode</span>
+</div>
+
+<!-- Q1 -->
+<div class="question" data-correct="b">
+    <p>1. What major defect is visible in ms8 anther histology (Fig. 4)?</p>
+    <label><input type="radio" name="q1" value="a">Stomatal collapse</label>
+    <label><input type="radio" name="q1" value="b">Tapetum degeneration and failed pollen development</label>
+    <label><input type="radio" name="q1" value="c">Overgrown microspores</label>
+    <div class="feedback">Tapetum defects directly cause pollen abortion.</div>
+</div>
+
+<!-- Q2 -->
+<div class="question" data-correct="c">
+    <p>2. Why does the sterile sector lack viable pollen?</p>
+    <label><input type="radio" name="q2" value="a">Reduced leaf area</label>
+    <label><input type="radio" name="q2" value="b">Lower nutrient content</label>
+    <label><input type="radio" name="q2" value="c">Mutations disrupt the MS8 transcription factor</label>
+    <div class="feedback">MS8 function is essential for anther development.</div>
+</div>
+
+<!-- Q3 -->
+<div class="question" data-correct="a">
+    <p>3. What type of mutation is Q111*?</p>
+    <label><input type="radio" name="q3" value="a">A premature stop codon (nonsense mutation)</label>
+    <label><input type="radio" name="q3" value="b">Silent mutation</label>
+    <label><input type="radio" name="q3" value="c">Frameshift insertion</label>
+    <div class="feedback">Stop codons truncate essential protein domains.</div>
+</div>
+
+<!-- Q4 -->
+<div class="question" data-correct="b">
+    <p>4. What type of mutation is P98S?</p>
+    <label><input type="radio" name="q4" value="a">Nonsense mutation</label>
+    <label><input type="radio" name="q4" value="b">Missense mutation changing amino acid identity</label>
+    <label><input type="radio" name="q4" value="c">Large deletion</label>
+    <div class="feedback">Missense changes can impair TF activity.</div>
+</div>
+
+<!-- Q5 -->
+<div class="question" data-correct="c">
+    <p>5. What does it mean that P98S and Q111* are “in cis”?</p>
+    <label><input type="radio" name="q5" value="a">They occur in different genes</label>
+    <label><input type="radio" name="q5" value="b">They occur on opposite chromosomes</label>
+    <label><input type="radio" name="q5" value="c">They lie on the same chromosome copy / haplotype</label>
+    <div class="feedback">Cis linkage is key to Model C’s prediction.</div>
+</div>
+
+<!-- Q6 -->
+<div class="question" data-correct="b">
+    <p>6. Why were sterile sectors sequenced rather than whole plants?</p>
+    <label><input type="radio" name="q6" value="a">Whole plants contain no mutations</label>
+    <label><input type="radio" name="q6" value="b">Sector sequencing enriches EMS-induced mutations responsible for sterility</label>
+    <label><input type="radio" name="q6" value="c">Sector DNA gives longer reads</label>
+    <div class="feedback">Sector-only mutations reveal new alleles.</div>
+</div>
+
+<!-- Q7 -->
+<div class="question" data-correct="a">
+    <p>7. What does the IGV visualization in Fig. 5 show?</p>
+    <label><input type="radio" name="q7" value="a">Mutations appear only in sterile tissue reads</label>
+    <label><input type="radio" name="q7" value="b">No differences between sterile and fertile reads</label>
+    <label><input type="radio" name="q7" value="c">Changes in leaf color</label>
+    <div class="feedback">Reads confirm allele specificity to sterile sectors.</div>
+</div>
+
+<!-- Q8 -->
+<div class="question" data-correct="c">
+    <p>8. Why is sequencing depth important in mutation validation?</p>
+    <label><input type="radio" name="q8" value="a">It reveals chloroplast structure</label>
+    <label><input type="radio" name="q8" value="b">It increases plant height</label>
+    <label><input type="radio" name="q8" value="c">It ensures mutation frequency patterns are real</label>
+    <div class="feedback">Low coverage = unreliable variant calling.</div>
+</div>
+
+<!-- Q9 -->
+<div class="question" data-correct="b">
+    <p>9. What phenotype did CRISPR alleles (ms8-3, ms8-4) produce?</p>
+    <label><input type="radio" name="q9" value="a">Normal fertility</label>
+    <label><input type="radio" name="q9" value="b">A sterile phenotype identical to ms8 mutants</label>
+    <label><input type="radio" name="q9" value="c">Tall plants with large panicles</label>
+    <div class="feedback">Phenocopy = direct causal proof.</div>
+</div>
+
+<!-- Q10 -->
+<div class="question" data-correct="a">
+    <p>10. Why is CRISPR considered the strongest evidence for MS8 being causal?</p>
+    <label><input type="radio" name="q10" value="a">It generates clean, independent frameshift alleles</label>
+    <label><input type="radio" name="q10" value="b">It increases seed oil</label>
+    <label><input type="radio" name="q10" value="c">It decreases EMS background</label>
+    <div class="feedback">Novel alleles reproduce the sterile phenotype.</div>
+</div>
+
+<!-- Q11 -->
+<div class="question" data-correct="c">
+    <p>11. Why were sterile and fertile sectors from the same panicle compared?</p>
+    <label><input type="radio" name="q11" value="a">They differ in water uptake</label>
+    <label><input type="radio" name="q11" value="b">They use different promoters</label>
+    <label><input type="radio" name="q11" value="c">They provide internal controls within the same genetic background</label>
+    <div class="feedback">Same plant = perfect control.</div>
+</div>
+
+<!-- Q12 -->
+<div class="question" data-correct="b">
+    <p>12. Why was the ms8-5 allele useful?</p>
+    <label><input type="radio" name="q12" value="a">It increased plant height</label>
+    <label><input type="radio" name="q12" value="b">It was a natural nonsense mutation confirming the gene's role</label>
+    <label><input type="radio" name="q12" value="c">It restored fertility</label>
+    <div class="feedback">Independent allele = strong validation.</div>
+</div>
+
+<!-- Q13 -->
+<div class="question" data-correct="a">
+    <p>13. What is the functional consequence of losing the bHLH domain?</p>
+    <label><input type="radio" name="q13" value="a">Loss of DNA-binding ability and transcriptional regulation</label>
+    <label><input type="radio" name="q13" value="b">Increased tapetum size</label>
+    <label><input type="radio" name="q13" value="c">Enhanced pollen production</label>
+    <div class="feedback">bHLH domains bind E-box sequences.</div>
+</div>
+
+<!-- Q14 -->
+<div class="question" data-correct="b">
+    <p>14. Why do sterile sectors contain mutations not found in fertile sectors?</p>
+    <label><input type="radio" name="q14" value="a">Fertile sectors lack chlorophyll</label>
+    <label><input type="radio" name="q14" value="b">EMS-induced mutations arise somatically in specific cell lineages</label>
+    <label><input type="radio" name="q14" value="c">Sequencing errors</label>
+    <div class="feedback">Somatic mutation → mosaic sector phenotype.</div>
+</div>
+
+<!-- Q15 -->
+<div class="question" data-correct="a">
+    <p>15. Why does sector sequencing reduce the search space for causal mutations?</p>
+    <label><input type="radio" name="q15" value="a">Sector DNA contains fewer irrelevant EMS variants</label>
+    <label><input type="radio" name="q15" value="b">It allows cloning</label>
+    <label><input type="radio" name="q15" value="c">It measures photosynthesis</label>
+    <div class="feedback">Only sterile tissues hold causative alleles.</div>
+</div>
+
+<!-- Q16 -->
+<div class="question" data-correct="c">
+    <p>16. What sequencing evidence rules out structural variants?</p>
+    <label><input type="radio" name="q16" value="a">Plants are fertile</label>
+    <label><input type="radio" name="q16" value="b">No CRISPR edits were detected</label>
+    <label><input type="radio" name="q16" value="c">Reads align normally without large deletions</label>
+    <div class="feedback">No SV signatures in mapped region.</div>
+</div>
+
+<!-- Q17 -->
+<div class="question" data-correct="b">
+    <p>17. What conclusion is supported by the presence of two mutations in cis?</p>
+    <label><input type="radio" name="q17" value="a">Mutations affect different pathways</label>
+    <label><input type="radio" name="q17" value="b">They arose during a single EMS mutagenesis event</label>
+    <label><input type="radio" name="q17" value="c">They occur on different chromosomes</label>
+    <div class="feedback">Cis = same chromosome copy mutated.</div>
+</div>
+
+<!-- Q18 -->
+<div class="question" data-correct="a">
+    <p>18. Why is CRISPR validation particularly convin
