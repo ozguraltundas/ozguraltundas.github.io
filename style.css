@@ -452,3 +452,8 @@ p {
     background: #f5f5f5;
 }
 
+.game-container {
+    max-width: 800px;
+    margin: 0 auto;  /* ORTALAMA */
+    padding: 20px;
+}
