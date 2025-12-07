@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <meta charset="UTF-8">
     <title>Plant Breeding Mini-Game</title>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 40px; 
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
             background: #f9f9f9;
-            line-height: 1.6;
         }
 
         h1 { color: #2b5a2b; }
-
         .box {
             background: white;
             padding: 20px;
@@ -22,7 +23,6 @@
             border: 1px solid #ddd;
             max-width: 500px;
         }
-
         button {
             padding: 10px 18px;
             background: #2b5a2b;
@@ -31,65 +31,8 @@
             cursor: pointer;
             border-radius: 6px;
         }
-
         button:hover {
             background: #3c7a3c;
-        }
-
-        .f2-item {
-            padding: 5px;
-            border-bottom: 1px solid #eee;
-            let histogramChart = null;
-
-function drawHistogram(data) {
-    // Bin sayısı
-    const numBins = 10;
-
-    const min = Math.min(...data);
-    const max = Math.max(...data);
-    
-    const binSize = (max - min) / numBins;
-
-    // Binleri oluştur
-    const bins = new Array(numBins).fill(0);
-
-    data.forEach(value => {
-        let index = Math.floor((value - min) / binSize);
-        if (index === numBins) index--; 
-        bins[index]++;
-    });
-
-    // Bin etiketleri
-    const labels = bins.map((_, i) => {
-        let start = Math.round(min + i * binSize);
-        let end = Math.round(start + binSize);
-        return `${start}-${end}`;
-    });
-
-    const ctx = document.getElementById("histogramCanvas").getContext("2d");
-
-    // Daha önce bir grafik varsa sil
-    if (histogramChart) histogramChart.destroy();
-
-    // Yeni histogram oluştur
-    histogramChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: "F2 Distribution",
-                data: bins,
-                backgroundColor: "rgba(46, 125, 50, 0.7)"
-            }]
-        },
-        options: {
-            scales: {
-                y: { beginAtZero: true }
-            }
-        }
-    });
-}
-
         }
     </style>
 </head>
@@ -129,6 +72,9 @@ function drawHistogram(data) {
     <h3>F2 Population (n = 20)</h3>
     <button onclick="makeF2()">Generate F2</button>
     <div id="f2-list"></div>
+
+    <!-- HISTOGRAM -->
+    <canvas id="histogramCanvas" width="600" height="300" style="margin-top:20px;"></canvas>
 </div>
 
 <div class="box">
@@ -138,9 +84,12 @@ function drawHistogram(data) {
 </div>
 
 <script>
+
 let f1_value = null;
 let current_mean = null;
+let histogramChart = null;
 
+// ----------------- CREATE F1 -----------------
 function makeF1() {
     let p1 = Number(document.getElementById("p1").value);
     let p2 = Number(document.getElementById("p2").value);
@@ -153,6 +102,7 @@ function makeF1() {
     current_mean = f1_value;
 }
 
+// ----------------- GENERATE F2 -----------------
 function makeF2() {
     if (f1_value === null) {
         alert("Create F1 first!");
@@ -165,14 +115,39 @@ function makeF2() {
     for (let i = 0; i < 20; i++) {
         let v = Math.round(f1_value + (Math.random() * 80 - 40));
         window.f2.push(v);
-        html += `<div class="f2-item">Plant ${i + 1}: ${v}</div>`;
+        html += `<div>Plant ${i + 1}: ${v}</div>`;
     }
 
     document.getElementById("f2-list").innerHTML = html;
-    drawHistogram(window.f2);
 
+    drawHistogram(window.f2);
 }
 
+// ----------------- DRAW HISTOGRAM -----------------
+function drawHistogram(data) {
+
+    const ctx = document.getElementById("histogramCanvas").getContext("2d");
+
+    if (histogramChart) histogramChart.destroy();
+
+    histogramChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: data.map((_, i) => `P${i+1}`),
+            datasets: [{
+                label: "F2 Values",
+                data: data,
+                backgroundColor: "rgba(50,150,50,0.7)"
+            }]
+        },
+        options: {
+            plugins: { legend: { display: false } },
+            scales: { y: { beginAtZero: false } }
+        }
+    });
+}
+
+// ----------------- SELECTION -----------------
 function selectBest() {
     if (!window.f2) {
         alert("Generate F2 first!");
@@ -192,10 +167,8 @@ function selectBest() {
     current_mean = new_mean;
     f1_value = new_mean;
 }
+
 </script>
-<div class="game-container">
-</div>
-    <canvas id="histogramCanvas" width="600" height="300" style="margin-top:20px;"></canvas>
 
 </body>
 </html>
