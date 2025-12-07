@@ -83,7 +83,36 @@ function loadStage() {
         `;
     }
 
-    // Future stages will be inserted here one by one.
+      if (stage === 1) {
+        area.innerHTML = `
+            <h1>🌱 What is Male Sterility?</h1>
+            <p>Some plants produce normal pollen (male-fertile), while some fail to produce pollen (male-sterile).</p>
+
+            <div style="display:flex; gap:40px; justify-content:center; margin-top:30px;">
+                
+                <div onclick="alert('Male-fertile: Produces viable pollen. Can self or cross. Used as male parent.')" 
+                     style="cursor:pointer; background:#e0ffe0; padding:20px; border-radius:12px; width:200px;">
+                    <h3>🟩 Male-Fertile Plant</h3>
+                    <p>Produces pollen</p>
+                </div>
+
+                <div onclick="alert('Male-sterile: No pollen. Cannot self. Used as the female parent in hybrid seed production.')" 
+                     style="cursor:pointer; background:#ffe0e0; padding:20px; border-radius:12px; width:200px;">
+                    <h3>🟥 Male-Sterile Plant</h3>
+                    <p>No pollen</p>
+                </div>
+
+            </div>
+
+            <p style="margin-top:30px; font-size:17px;">
+                Male-sterile plants are extremely valuable in hybrid breeding because they cannot self-fertilize.
+                This ensures that <b>all seeds are hybrids</b>.
+            </p>
+
+            <div class="button" onclick="nextStage()">Continue</div>
+        `;
+    }
+
 }
 
 function nextStage() {
