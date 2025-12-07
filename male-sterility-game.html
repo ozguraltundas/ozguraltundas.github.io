@@ -403,6 +403,21 @@ if (stage === 1) {
 
         window.wrongModel = function () {
             document.getElementById("modelFeedback").innerHTML =
+                "<span style='color:red;'>❌ This model does not explain the rarity or pattern of ms8 sterile sectors.</span>";
+        };
+    }  // ← Stage 5 if() buradan kapanıyor
+}      // ← loadStage() buradan kapanıyor
+
+// ---------------- Next Stage Function ----------------
+function nextStage() {
+    stage++;
+    loadStage();
+}
+</script>
+
+</body>
+</html>
+
 
 
 // ---------------- Next Stage Function ----------------
