@@ -145,9 +145,8 @@ function loadStage() {
             </p>
 
             <div class="button" onclick="nextStage()">Continue</div>
-        `;
-    }
-
+    };
+    
     if (stage === 2) {
         area.innerHTML = `
             <h1>🌾 Recognizing the Sterile Phenotype</h1>
@@ -188,7 +187,8 @@ function loadStage() {
         window.wrongChoice = function() {
             document.getElementById("feedback").innerHTML =
                 "<span style='color:red;'>Not correct — yellow anthers are fertile. Try again!</span>";
-        };
+      };
+    
 
 if (stage === 3) {
         area.innerHTML = `
