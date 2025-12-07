@@ -328,6 +328,81 @@ function loadStage() {
                 "<span style='color:red;'>❌ Not the correct clade — check the cluster containing MS8 alleles.</span>";
         };
     }
+        // ---------------- Stage 5 ----------------
+    if (stage === 5) {
+        area.innerHTML = `
+            <h1>🧬 Genetic Models Explaining ms8 Sectoring (Fig. 3)</h1>
+
+            <p>
+                The ms8 phenotype shows <b>rare sterile sectors</b>.  
+                Simple recessive models cannot explain this.  
+                The paper tests three possible models.
+            </p>
+
+            <p><i>Which model best explains the ms8 sectoring pattern?</i></p>
+
+            <div style="display:flex; gap:25px; justify-content:center; margin-top:30px; flex-wrap:wrap;">
+
+                <!-- Model A -->
+                <div onclick="wrongModel()" class="modelBox" style="border-top:6px solid #1f77b4;">
+                    <b>Model A:</b><br>
+                    Simple Recessive Mutation<br>
+                    <small>(single-locus loss-of-function)</small>
+                </div>
+
+                <!-- Model B -->
+                <div onclick="wrongModel()" class="modelBox" style="border-top:6px solid #ff7f0e;">
+                    <b>Model B:</b><br>
+                    Developmental Mosaicism<br>
+                    <small>(random cell lineage defects)</small>
+                </div>
+
+                <!-- Model C (Correct) -->
+                <div onclick="correctModel()" class="modelBox" style="border-top:6px solid #2ca02c;">
+                    <b>Model C:</b><br>
+                    Linked Dominant Sterility + Complementation<br>
+                    <small>(explains rare sectors)</small>
+                </div>
+
+            </div>
+
+            <p id="modelFeedback" style="margin-top:25px; font-size:18px; font-weight:bold;"></p>
+
+            <div style="margin-top:20px; text-align:center;">
+                <img src="fig3_genetic_models.png" style="width:500px; border-radius:8px;">
+                <p style="font-size:13px; color:#666;">Genetic models from Fig. 3a–c</p>
+            </div>
+        `;
+
+        // Style boxes
+        document.querySelectorAll(".modelBox").forEach(el => {
+            el.style.cursor = "pointer";
+            el.style.background = "#f5f5f5";
+            el.style.padding = "20px";
+            el.style.width = "260px";
+            el.style.textAlign = "center";
+            el.style.borderRadius = "12px";
+            el.style.boxShadow = "0 0 6px rgba(0,0,0,0.15)";
+            el.style.fontSize = "18px";
+            el.style.transition = "0.2s";
+        });
+
+        window.correctModel = function () {
+            document.getElementById("modelFeedback").innerHTML = `
+                <span style='color:green;'>✔ Correct!<br>
+                The <b>linked dominant sterility + complementation model</b> explains:<br>
+                - rare chimeras,<br>
+                - non-Mendelian segregation,<br>
+                - fertility rescue in specific allelic combinations.<br><br>
+                This matches the biological behavior of ms8.</span>
+                <br><br>
+                <div class='button' onclick='nextStage()'>Continue</div>
+            `;
+        };
+
+        window.wrongModel = function () {
+            document.getElementById("modelFeedback").innerHTML =
+
 
 }
 
