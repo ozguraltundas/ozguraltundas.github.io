@@ -583,6 +583,38 @@ if (stage === 1) {
             <div style="margin-top:35px;">
                 <div class='button' onclick='nextStage()'>Take the Quiz ➜</div>
             </div>
+        };
+    }
+    // ---------------- Stage 8 ----------------
+    if (stage === 8) {
+        area.innerHTML = `
+            <h1>🏁 Mission Complete!</h1>
+
+            <p>You have successfully identified and validated the male sterility gene <b>MS8</b> in sorghum.</p>
+
+            <h3>🔬 What you accomplished:</h3>
+
+            <ul style="text-align:left; max-width:650px; margin:auto; font-size:18px; line-height:1.5;">
+                <li>Distinguished male-fertile and male-sterile phenotypes</li>
+                <li>Identified the BSA mapping peak on <b>Chromosome 4</b></li>
+                <li>Recognized the correct <b>bHLH clade</b> from phylogeny</li>
+                <li>Chose the correct <b>genetic model</b> explaining ms8 sectoring</li>
+                <li>Detected key mutations: <b>P98S, Q111*, Q150*</b></li>
+                <li>Validated MS8 function using <b>CRISPR gene editing</b></li>
+            </ul>
+
+            <div style="margin-top:35px;">
+                <h3>🌾 Why This Matters for Hybrid Breeding</h3>
+                <p style="max-width:700px; margin:auto; font-size:18px;">
+                    Male sterility is essential in hybrid breeding because it prevents self-pollination.
+                    Understanding MS8 allows breeders to develop stable female lines that produce 
+                    <b>100% hybrid seeds</b> — improving yield, uniformity, and vigor.
+                </p>
+            </div>
+
+            <div style="margin-top:40px;">
+                <div class='button' onclick='nextStage()'>Take the Quiz ➜</div>
+            </div>
         `;
     }
 
