@@ -1,1 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Set D – Methods & Interpretation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="quiz-style.css">
+<script src="quiz-script.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Set D – Methods & Interpretation</h1>
+
+<div class="mode-select">
+    <span class="mode-btn" onclick="setMode('learning')">Learning Mode</span>
+    <span class="mode-btn" onclick="setMode('exam')">Exam Mode</span>
+</div>
+
+<!-- Question Template:
+<div class="question" data-correct="b">
+    <p>1. Question text?</p>
+    <label><input type="radio" name="q1" value="a">Option A</label>
+    <label><input type="radio" name="q1" value="b">Option B</label>
+    <label><input type="radio" name="q1" value="c">Option C</label>
+    <div class="feedback">Explanation appears in learning mode</div>
+</div>
+-->
+
+<!-- Q1 -->
+<div class="question" data-correct="b">
+    <p>1. Why was EMS chosen as the mutagen?</p>
+    <label><input type="radio" name="q1" value="a">To create large deletions</label>
+    <label><input type="radio" name="q1" value="b">To generate point mutations ideal for allele discovery</label>
+    <label><input type="radio" name="q1" value="c">Because it increases seed vigor</label>
+    <div class="feedback">EMS induces G/C→A/T transitions useful for fine mapping.</div>
+</div>
+
+<!-- Q2 -->
+<div class="question" data-correct="a">
+    <p>2. Why is seed mutagenesis used instead of pollen mutagenesis?</p>
+    <label><input type="radio" name="q2" value="a">Pollen is hard to isolate and treat consistently</label>
+    <label><input type="radio" name="q2" value="b">Seeds are immune to EMS</label>
+    <label><input type="radio" name="q2" value="c">Pollen mutagenesis produces no viable plants</label>
+    <div class="feedback">Seed mutagenesis ensures whole-plant mosaicism.</div>
+</div>
+
+<!-- Q3 -->
+<div class="question" data-correct="c">
+    <p>3. What is a major weakness of BSA?</p>
+    <label><input type="radio" name="q3" value="a">It cannot find SNPs</label>
+    <label><input type="radio" name="q3" value="b">It requires thousands of plants</label>
+    <label><input type="radio" name="q3" value="c">It cannot distinguish multiple linked mutations</label>
+    <div class="feedback">Linked loci appear as one peak.</div>
+</div>
+
+<!-- Q4 -->
+<div class="question" data-correct="b">
+    <p>4. Why does sector sequencing improve allele detection?</p>
+    <label><input type="radio" name="q4" value="a">Sector DNA contains fewer SNPs</label>
+    <label><input type="radio" name="q4" value="b">Mutations unique to sterile tissue become enriched</label>
+    <label><input type="radio" name="q4" value="c">Sectors have higher EMS penetration</label>
+    <div class="feedback">Sector sequencing isolates causative variants.</div>
+</div>
+
+<!-- Q5 -->
+<div class="question" data-correct="a">
+    <p>5. Why are CRISPR alleles necessary for causal validation?</p>
+    <label><input type="radio" name="q5" value="a">They phenocopy ms8, showing direct gene-function link</label>
+    <label><input type="radio" name="q5" value="b">They remove all background mutations</label>
+    <label><input type="radio" name="q5" value="c">They increase plant height</label>
+    <div class="feedback">CRISPR creates clean alleles confirming causality.</div>
+</div>
+
+<!-- Q6 -->
+<div class="question" data-correct="b">
+    <p>6. Why were multiple CRISPR alleles generated?</p>
+    <label><input type="radio" name="q6" value="a">To produce male-fertile plants</label>
+    <label><input type="radio" name="q6" value="b">To rule out off-target effects and confirm reproducibility</label>
+    <label><input type="radio" name="q6" value="c">To increase sequencing depth</label>
+    <div class="feedback">Independent alleles strengthen evidence.</div>
+</div>
+
+<!-- Q7 -->
+<div class="question" data-correct="c">
+    <p>7. What is one limitation of EMS mutagenesis?</p>
+    <label><input type="radio" name="q7" value="a">It only mutates coding sequences</label>
+    <label><input type="radio" name="q7" value="b">It creates transposon insertions</label>
+    <label><input type="radio" name="q7" value="c">It introduces many background mutations</label>
+    <div class="feedback">Background load complicates mapping.</div>
+</div>
+
+<!-- Q8 -->
+<div class="question" data-correct="a">
+    <p>8. Why was BTx623 chosen as the reference background?</p>
+    <label><input type="radio" name="q8" value="a">It is fully sequenced and genetically stable</label>
+    <label><input type="radio" name="q8" value="b">It produces larger anthers</label>
+    <label><input type="radio" name="q8" value="c">EMS penetrates it better</label>
+    <div class="feedback">Reference genome simplifies mapping.</div>
+</div>
+
+<!-- Q9 -->
+<div class="question" data-correct="b">
+    <p>9. Why are supplemental figures important?</p>
+    <label><input type="radio" name="q9" value="a">They show plant height</label>
+    <label><input type="radio" name="q9" value="b">They provide supporting evidence not shown in main figures</label>
+    <label><input type="radio" name="q9" value="c">They are decorative</label>
+    <div class="feedback">Supplements strengthen conclusions.</div>
+</div>
+
+<!-- Q10 -->
+<div class="question" data-correct="c">
+    <p>10. What broader question does targeted mutagenesis address?</p>
+    <label><input type="radio" name="q10" value="a">How to increase seed oil</label>
+    <label><input type="radio" name="q10" value="b">How to reduce plant growth</label>
+    <label><input type="radio" name="q10" value="c">How to generate allelic diversity in elite lines</label>
+    <div class="feedback">Directly mutating elite lines avoids introgression.</div>
+</div>
+<!-- Q11 -->
+<div class="question" data-correct="b">
+    <p>11. Why is sequencing sterile sectors more informative than whole-plant sequencing?</p>
+    <label><input type="radio" name="q11" value="a">Whole plants contain fewer SNPs</label>
+    <label><input type="radio" name="q11" value="b">Causative mutations are enriched only in sterile tissue</label>
+    <label><input type="radio" name="q11" value="c">Sector cells divide faster</label>
+    <div class="feedback">Sector sequencing isolates the mutant allele.</div>
+</div>
+
+<!-- Q12 -->
+<div class="question" data-correct="c">
+    <p>12. What limitation does sector sequencing introduce?</p>
+    <label><input type="radio" name="q12" value="a">It cannot detect missense mutations</label>
+    <label><input type="radio" name="q12" value="b">It requires CRISPR validation</label>
+    <label><input type="radio" name="q12" value="c">Somatic mutations may not be heritable</label>
+    <div class="feedback">Some sector mutations do not enter the germline.</div>
+</div>
+
+<!-- Q13 -->
+<div class="question" data-correct="a">
+    <p>13. Why do the authors interpret the Q111* stop codon as the functional cause of ms8-2?</p>
+    <label><input type="radio" name="q13" value="a">It is a truncation that removes essential bHLH domains</label>
+    <label><input type="radio" name="q13" value="b">It increases protein stability</label>
+    <label><input type="radio" name="q13" value="c">It does not affect protein structure</label>
+    <div class="feedback">Stop codons commonly disrupt transcription factor function.</div>
+</div>
+
+<!-- Q14 -->
+<div class="question" data-correct="b">
+    <p>14. What is a major strength of the “Targeted EMS Mutagenesis” method?</p>
+    <label><input type="radio" name="q14" value="a">It eliminates the need for mapping</label>
+    <label><input type="radio" name="q14" value="b">It generates allelic diversity directly in elite lines</label>
+    <label><input type="radio" name="q14" value="c">It avoids all background mutations</label>
+    <div class="feedback">Alleles emerge in the desired genetic background.</div>
+</div>
+
+<!-- Q15 -->
+<div class="question" data-correct="c">
+    <p>15. What supports that ms8 mutations do not affect vegetative growth?</p>
+    <label><input type="radio" name="q15" value="a">Leaf color abnormality</label>
+    <label><input type="radio" name="q15" value="b">Reduced stem elongation</label>
+    <label><input type="radio" name="q15" value="c">Normal height and leaves in mutant plants</label>
+    <div class="feedback">ms8 affects only anther development.</div>
+</div>
+
+<!-- Q16 -->
+<div class="question" data-correct="c">
+    <p>16. What is a key requirement when interpreting IGV alignment tracks?</p>
+    <label><input type="radio" name="q16" value="a">Reads must be at least 300 bp</label>
+    <label><input type="radio" name="q16" value="b">Alleles must be dominant</label>
+    <label><input type="radio" name="q16" value="c">Coverage and variant frequency must support mutation calls</label>
+    <div class="feedback">Depth ensures variant confidence.</div>
+</div>
+
+<!-- Q17 -->
+<div class="question" data-correct="a">
+    <p>17. Why is the bHLH phylogeny important for interpreting MS8 function?</p>
+    <label><input type="radio" name="q17" value="a">It shows MS8 clusters with fertility-associated TFs like ZmbHLH122</label>
+    <label><input type="radio" name="q17" value="b">It predicts leaf shape</label>
+    <label><input type="radio" name="q17" value="c">It determines plant height</label>
+    <div class="feedback">Orthology supports functional conservation.</div>
+</div>
+
+<!-- Q18 -->
+<div class="question" data-correct="b">
+    <p>18. Why is the developmental timing in Fig. 4 essential for interpreting sterility?</p>
+    <label><input type="radio" name="q18" value="a">It measures seed weight</label>
+    <label><input type="radio" name="q18" value="b">It shows tapetum degeneration aligns with pollen abortion</label>
+    <label><input type="radio" name="q18" value="c">It shows leaf senescence</label>
+    <div class="feedback">Timing establishes cause-and-effect.</div>
+</div>
+
+<!-- Q19 -->
+<div class="question" data-correct="c">
+    <p>19. Why did the authors generate multiple independent CRISPR events?</p>
+    <label><input type="radio" name="q19" value="a">To increase plant yield</label>
+    <label><input type="radio" name="q19" value="b">Because MS8 is hard to sequence</label>
+    <label><input type="radio" name="q19" value="c">To confirm phenotype reproducibility and rule out off-targets</label>
+    <div class="feedback">Independent alleles strengthen causal inference.</div>
+</div>
+
+<!-- Q20 -->
+<div class="question" data-correct="a">
+    <p>20. What does the presence of two linked mutations (P98S + Q111*) indicate?</p>
+    <label><input type="radio" name="q20" value="a">They arose from the same EMS haplotype</label>
+    <label><input type="radio" name="q20" value="b">They occurred in different genes</label>
+    <label><input type="radio" name="q20" value="c">They cannot cause sterility</label>
+    <div class="feedback">Cis linkage supports a single mutagenized chromosome.</div>
+</div>
+
+<!-- Q21 -->
+<div class="question" data-correct="b">
+    <p>21. What is a limitation of using BSA alone?</p>
+    <label><input type="radio" name="q21" value="a">It cannot detect SNPs</label>
+    <label><input type="radio" name="q21" value="b">It cannot distinguish between closely linked variants</label>
+    <label><input type="radio" name="q21" value="c">It requires CRISPR editing</label>
+    <div class="feedback">BSA peaks may hide multiple candidates.</div>
+</div>
+
+<!-- Q22 -->
+<div class="question" data-correct="a">
+    <p>22. Why is MS8 function inferred to be conserved across grasses?</p>
+    <label><input type="radio" name="q22" value="a">Phylogenetic clustering with maize and rice orthologs</label>
+    <label><input type="radio" name="q22" value="b">They share similar leaf shapes</label>
+    <label><input type="radio" name="q22" value="c">They have identical promoters</label>
+    <div class="feedback">Clustering with ZmbHLH122 suggests shared roles.</div>
+</div>
+
+<!-- Q23 -->
+<div class="question" data-correct="c">
+    <p>23. What interpretation does Figure S4 most strongly support?</p>
+    <label><input type="radio" name="q23" value="a">MS8 regulates seed oil</label>
+    <label><input type="radio" name="q23" value="b">CRISPR increases read depth</label>
+    <label><input type="radio" name="q23" value="c">Sequencing reads confirm mutation presence and zygosity</label>
+    <div class="feedback">S4 validates mutation calls.</div>
+</div>
+
+<!-- Q24 -->
+<div class="question" data-correct="c">
+    <p>24. Why is the “failure to complement” logic essential in this paper?</p>
+    <label><input type="radio" name="q24" value="a">It proves dominance</label>
+    <label><input type="radio" name="q24" value="b">It predicts plant height</label>
+    <label><input type="radio" name="q24" value="c">It confirms two alleles disrupt the same gene</label>
+    <div class="feedback">Non-complementation = allelism.</div>
+</div>
+
+<!-- Q25 -->
+<div class="question" data-correct="a">
+    <p>25. What experimental design step ensures EMS concentration consistency?</p>
+    <label><input type="radio" name="q25" value="a">Controlling pH and temperature during treatment</label>
+    <label><input type="radio" name="q25" value="b">Measuring leaf width</label>
+    <label><input type="radio" name="q25" value="c">Using CRISPR controls</label>
+    <div class="feedback">EMS activity varies with pH and temperature.</div>
+</div>
+
+<!-- Q26 -->
+<div class="question" data-correct="b">
+    <p>26. Why are multiple types of evidence needed (mapping + sequencing + CRISPR)?</p>
+    <label><input type="radio" name="q26" value="a">To increase plant yield</label>
+    <label><input type="radio" name="q26" value="b">To establish a strong causal chain from phenotype to gene</label>
+    <label><input type="radio" name="q26" value="c">To avoid sequencing</label>
+    <div class="feedback">Multi-step evidence strengthens conclusions.</div>
+</div>
+
+<!-- Q27 -->
+<div class="question" data-correct="b">
+    <p>27. What role does the tapetum play in pollen development?</p>
+    <label><input type="radio" name="q27" value="a">Controls root growth</label>
+    <label><input type="radio" name="q27" value="b">Provides nutrients and materials for microspore maturation</label>
+    <label><input type="radio" name="q27" value="c">Performs photosynthesis</label>
+    <div class="feedback">Tapetum is essential for viable pollen.</div>
+</div>
+
+<!-- Q28 -->
+<div class="question" data-correct="c">
+    <p>28. Why is targeted mutagenesis valuable in long-generation species?</p>
+    <label><input type="radio" name="q28" value="a">It increases recombination</label>
+    <label><input type="radio" name="q28" value="b">It accelerates plant germination</label>
+    <label><input type="radio" name="q28" value="c">It reveals mutant phenotypes without waiting for progeny</label>
+    <div class="feedback">Somatic sectors shorten discovery time.</div>
+</div>
+
+<!-- Q29 -->
+<div class="question" data-correct="a">
+    <p>29. Why is the abstract considered strong for this paper?</p>
+    <label><input type="radio" name="q29" value="a">It clearly states objectives, methods, key results, and implications</label>
+    <label><input type="radio" name="q29" value="b">It focuses only on background</label>
+    <label><input type="radio" name="q29" value="c">It lists every supplemental figure</label>
+    <div class="feedback">Strong abstracts summarize the full story.</div>
+</div>
+
+<!-- Q30 -->
+<div class="question" data-correct="b">
+    <p>30. What agricultural application makes ms8 valuable for breeders?</p>
+    <label><input type="radio" name="q30" value="a">Increasing seed oil content</label>
+    <label><input type="radio" name="q30" value="c">Reducing plant stature</label>
+    <label><input type="radio" name="q30" value="b">Producing stable female parents for hybrid seed production</label>
+    <div class="feedback">Male sterility enables hybridization.</div>
+</div>
+
+
+<div class="submit-btn" onclick="checkAnswersExam()">Submit Answers</div>
+<div id="result"></div>
+
+</div>
+</body>
+</html>
 
