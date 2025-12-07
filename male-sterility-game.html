@@ -62,6 +62,41 @@
 <div class="game-container">
     <div id="stageArea" class="stage">
         <!-- STAGES WILL LOAD HERE -->
+            if (stage === 1) {
+        area.innerHTML = `
+            <h1>🌱 What is Male Sterility?</h1>
+            <p>
+                Some plants produce normal pollen (male-fertile), while others fail to make pollen (male-sterile).
+                Male sterility is extremely important in hybrid seed production.
+            </p>
+
+            <div style="display:flex; gap:40px; justify-content:center; margin-top:30px;">
+
+                <div onclick="alert('Male-fertile plants produce viable pollen. They can self-fertilize or pollinate other plants. Used as male parent in hybrid breeding.')"
+                     style="cursor:pointer; background:#e5ffe5; padding:20px; border-radius:12px; width:230px; border:2px solid #70c070;">
+                    <h3>🟩 Male-Fertile Plant</h3>
+                    <p>Produces pollen</p>
+                </div>
+
+                <div onclick="alert('Male-sterile plants do not produce pollen. They cannot self-fertilize. This makes them ideal female parents in hybrid seed production.')"
+                     style="cursor:pointer; background:#ffe5e5; padding:20px; border-radius:12px; width:230px; border:2px solid #d07070;">
+                    <h3>🟥 Male-Sterile Plant</h3>
+                    <p>No pollen</p>
+                </div>
+
+            </div>
+
+            <p style="margin-top:30px; font-size:17px; max-width:700px; margin-left:auto; margin-right:auto;">
+                <b>Why is male sterility important?</b><br>
+                Because a male-sterile plant cannot self-fertilize.  
+                This guarantees that <b>all seeds it produces must come from another parent</b> — meaning they are <b>hybrids</b>.  
+                Hybrid seeds give higher yield, uniformity, and vigor.
+            </p>
+
+            <div class="button" onclick="nextStage()">Continue</div>
+        `;
+    }
+
     </div>
 </div>
 
