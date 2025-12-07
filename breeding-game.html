@@ -12,17 +12,42 @@
             font-family: Arial, sans-serif;
             margin: 40px;
             background: #f9f9f9;
+            line-height: 1.6;
         }
 
-        h1 { color: #2b5a2b; }
+        h1 { color: #2b5a2b; text-align:center; }
+
+        .game-layout {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: flex-start;
+            margin-top: 30px;
+        }
+
+        .left-col, .right-col {
+            width: 45%;
+        }
+
+        @media (max-width: 900px) {
+            .game-layout {
+                flex-direction: column;
+                align-items: center;
+            }
+            .left-col, .right-col {
+                width: 90%;
+            }
+        }
+
         .box {
             background: white;
             padding: 20px;
             margin-bottom: 20px;
             border-radius: 10px;
             border: 1px solid #ddd;
-            max-width: 500px;
+            box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
         }
+
         button {
             padding: 10px 18px;
             background: #2b5a2b;
@@ -30,9 +55,16 @@
             border: none;
             cursor: pointer;
             border-radius: 6px;
+            font-size: 15px;
         }
+
         button:hover {
             background: #3c7a3c;
+        }
+
+        canvas {
+            width: 100% !important;
+            height: auto !important;
         }
     </style>
 </head>
@@ -40,47 +72,64 @@
 <body>
 
 <h1>🌱 Plant Breeding Mini-Game</h1>
-<p>Try crossing different genotypes and observe how selection produces genetic gain!</p>
 
-<div class="box">
-    <h3>Choose Parents</h3>
+<p style="text-align:center;">
+    Try crossing different genotypes and observe how selection produces genetic gain!
+</p>
 
-    <label>Parent 1:</label><br>
-    <select id="p1">
-        <option value="280">Genotype A (KPE = 280)</option>
-        <option value="320">Genotype B (KPE = 320)</option>
-        <option value="410">Genotype C (KPE = 410)</option>
-    </select>
+<div class="game-layout">
 
-    <br><br>
+    <!-- LEFT COLUMN -->
+    <div class="left-col">
 
-    <label>Parent 2:</label><br>
-    <select id="p2">
-        <option value="280">Genotype A (KPE = 280)</option>
-        <option value="320">Genotype B (KPE = 320)</option>
-        <option value="410">Genotype C (KPE = 410)</option>
-    </select>
+        <div class="box">
+            <h3>Choose Parents</h3>
 
-    <br><br>
+            <label>Parent 1:</label><br>
+            <select id="p1">
+                <option value="280">Genotype A (KPE = 280)</option>
+                <option value="320">Genotype B (KPE = 320)</option>
+                <option value="410">Genotype C (KPE = 410)</option>
+            </select>
 
-    <button onclick="makeF1()">Create F1</button>
+            <br><br>
 
-    <div id="f1-result" style="margin-top: 10px;"></div>
-</div>
+            <label>Parent 2:</label><br>
+            <select id="p2">
+                <option value="280">Genotype A (KPE = 280)</option>
+                <option value="320">Genotype B (KPE = 320)</option>
+                <option value="410">Genotype C (KPE = 410)</option>
+            </select>
 
-<div class="box">
-    <h3>F2 Population (n = 20)</h3>
-    <button onclick="makeF2()">Generate F2</button>
-    <div id="f2-list"></div>
+            <br><br>
 
-    <!-- HISTOGRAM -->
-    <canvas id="histogramCanvas" width="600" height="300" style="margin-top:20px;"></canvas>
-</div>
+            <button onclick="makeF1()">Create F1</button>
 
-<div class="box">
-    <h3>Selection</h3>
-    <button onclick="selectBest()">Select Best 3 → Next Generation</button>
-    <div id="selection-result" style="margin-top: 10px;"></div>
+            <div id="f1-result" style="margin-top: 15px; font-weight:bold;"></div>
+        </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN -->
+    <div class="right-col">
+
+        <div class="box">
+            <h3>F2 Population (n = 20)</h3>
+            <button onclick="makeF2()">Generate F2</button>
+
+            <div id="f2-list" style="margin-top:20px;"></div>
+
+            <canvas id="histogramCanvas" style="margin-top:20px;"></canvas>
+        </div>
+
+        <div class="box">
+            <h3>Selection</h3>
+            <button onclick="selectBest()">Select Best 3 → Next Generation</button>
+            <div id="selection-result" style="margin-top: 15px; font-weight:bold;"></div>
+        </div>
+
+    </div>
+
 </div>
 
 <script>
@@ -89,7 +138,7 @@ let f1_value = null;
 let current_mean = null;
 let histogramChart = null;
 
-// ----------------- HISTOGRAM FUNCTION (ÖNCE GELMELİ!) -----------------
+// ----------------- HISTOGRAM FUNCTION -----------------
 function drawHistogram(data) {
 
     const ctx = document.getElementById("histogramCanvas").getContext("2d");
@@ -99,7 +148,7 @@ function drawHistogram(data) {
     histogramChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: data.map((_, i) => `P${i+1}`),
+            labels: data.map((_, i) => `Plant ${i+1}`),
             datasets: [{
                 label: "F2 Values",
                 data: data,
@@ -121,7 +170,7 @@ function makeF1() {
     f1_value = Math.round((p1 + p2) / 2 + (Math.random() * 20 - 10));
 
     document.getElementById("f1-result").innerHTML =
-        "<b>F1 KPE:</b> " + f1_value;
+        "F1 KPE: " + f1_value;
 
     current_mean = f1_value;
 }
@@ -144,7 +193,6 @@ function makeF2() {
 
     document.getElementById("f2-list").innerHTML = html;
 
-    // 🔥 BURASI ARTIK ÇALIŞACAK!
     drawHistogram(window.f2);
 }
 
@@ -161,57 +209,9 @@ function selectBest() {
     let gain = new_mean - current_mean;
 
     document.getElementById("selection-result").innerHTML =
-        `<b>Selected:</b> ${best.join(", ")}<br>
-         <b>New Mean:</b> ${new_mean}<br>
-         <b>Genetic Gain:</b> ${gain}`;
-
-    current_mean = new_mean;
-    f1_value = new_mean;
-}
-
-</script>
-
-
-// ----------------- DRAW HISTOGRAM -----------------
-function drawHistogram(data) {
-
-    const ctx = document.getElementById("histogramCanvas").getContext("2d");
-
-    if (histogramChart) histogramChart.destroy();
-
-    histogramChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: data.map((_, i) => `P${i+1}`),
-            datasets: [{
-                label: "F2 Values",
-                data: data,
-                backgroundColor: "rgba(50,150,50,0.7)"
-            }]
-        },
-        options: {
-            plugins: { legend: { display: false } },
-            scales: { y: { beginAtZero: false } }
-        }
-    });
-}
-
-// ----------------- SELECTION -----------------
-function selectBest() {
-    if (!window.f2) {
-        alert("Generate F2 first!");
-        return;
-    }
-
-    let best = [...window.f2].sort((a,b)=>b-a).slice(0,3);
-    let new_mean = Math.round(best.reduce((a,b)=>a+b, 0) / 3);
-
-    let gain = new_mean - current_mean;
-
-    document.getElementById("selection-result").innerHTML =
-        `<b>Selected:</b> ${best.join(", ")}<br>
-         <b>New Mean:</b> ${new_mean}<br>
-         <b>Genetic Gain:</b> ${gain}`;
+        `Selected: ${best.join(", ")}<br>
+         New Mean: ${new_mean}<br>
+         Genetic Gain: ${gain}`;
 
     current_mean = new_mean;
     f1_value = new_mean;
