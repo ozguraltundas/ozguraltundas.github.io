@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Set A – Phenotype & Mapping</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="quiz-style.css">
+<script src="quiz-script.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Set A – Phenotype & Mapping</h1>
+
+<div class="mode-select">
+    <span class="mode-btn" onclick="setMode('learning')">Learning Mode</span>
+    <span class="mode-btn" onclick="setMode('exam')">Exam Mode</span>
+</div>
+
+<!-- Q1 -->
+<div class="question" data-correct="b">
+    <p>1. What is the observable phenotype of the ms8-1 mutant?</p>
+    <label><input type="radio" name="q1" value="a">Large yellow anthers that shed pollen</label>
+    <label><input type="radio" name="q1" value="b">Small white anthers lacking pollen</label>
+    <label><input type="radio" name="q1" value="c">Elongated florets</label>
+    <div class="feedback">ms8 mutants produce white, non-dehiscent anthers.</div>
+</div>
+
+<!-- Q2 -->
+<div class="question" data-correct="a">
+    <p>2. Why is male sterility useful for hybrid seed production?</p>
+    <label><input type="radio" name="q2" value="a">Prevents self-pollination, ensuring hybrid seeds</label>
+    <label><input type="radio" name="q2" value="b">Increases photosynthesis</label>
+    <label><input type="radio" name="q2" value="c">Improves seed storage</label>
+    <div class="feedback">Male sterility guarantees cross-pollination.</div>
+</div>
+
+<!-- Q3 -->
+<div class="question" data-correct="c">
+    <p>3. What feature distinguishes fertile from sterile anthers in this study?</p>
+    <label><input type="radio" name="q3" value="a">Fertile anthers are brown</label>
+    <label><input type="radio" name="q3" value="b">Sterile anthers are yellow</label>
+    <label><input type="radio" name="q3" value="c">Sterile anthers are white and lack pollen</label>
+    <div class="feedback">Color and pollen presence distinguish phenotype.</div>
+</div>
+
+<!-- Q4 -->
+<div class="question" data-correct="b">
+    <p>4. Why were heterozygous MS8/ms8-1 seeds used for EMS mutagenesis?</p>
+    <label><input type="radio" name="q4" value="a">To reduce EMS toxicity</label>
+    <label><input type="radio" name="q4" value="b">To allow “failure to complement” screens in M1 sectors</label>
+    <label><input type="radio" name="q4" value="c">To avoid root damage</label>
+    <div class="feedback">Heterozygosity enables allelic discovery.</div>
+</div>
+
+<!-- Q5 -->
+<div class="question" data-correct="a">
+    <p>5. What phenotype were researchers searching for in M1 plants?</p>
+    <label><input type="radio" name="q5" value="a">Chimeric heads with sterile sectors</label>
+    <label><input type="radio" name="q5" value="b">Entirely sterile plants</label>
+    <label><input type="radio" name="q5" value="c">Purple leaves</label>
+    <div class="feedback">Sector sterility indicates new mutant alleles.</div>
+</div>
+
+<!-- Q6 -->
+<div class="question" data-correct="b">
+    <p>6. What method was used to map the ms8 locus?</p>
+    <label><input type="radio" name="q6" value="a">GWAS</label>
+    <label><input type="radio" name="q6" value="b">Bulked Segregant Analysis (BSA)</label>
+    <label><input type="radio" name="q6" value="c">QTL Mapping with RILs</label>
+    <div class="feedback">BSA reveals allele frequency shifts linked to phenotype.</div>
+</div>
+
+<!-- Q7 -->
+<div class="question" data-correct="c">
+    <p>7. What does a peak in the BSA allele frequency plot indicate?</p>
+    <label><input type="radio" name="q7" value="a">Increased seed size</label>
+    <label><input type="radio" name="q7" value="b">Reduced recombination</label>
+    <label><input type="radio" name="q7" value="c">Region enriched for homozygous mutant alleles</label>
+    <div class="feedback">The peak marks linkage to causative gene.</div>
+</div>
+
+<!-- Q8 -->
+<div class="question" data-correct="b">
+    <p>8. On which chromosome was the ms8 interval located?</p>
+    <label><input type="radio" name="q8" value="a">Chromosome 1</label>
+    <label><input type="radio" name="q8" value="b">Chromosome 4</label>
+    <label><input type="radio" name="q8" value="c">Chromosome 10</label>
+    <div class="feedback">BSA showed a clear peak on Chr4.</div>
+</div>
+
+<!-- Q9 -->
+<div class="question" data-correct="a">
+    <p>9. What does the absence of fertile pollen indicate?</p>
+    <label><input type="radio" name="q9" value="a">Defective tapetum or microspore development</label>
+    <label><input type="radio" name="q9" value="b">Normal anther maturation</label>
+    <label><input type="radio" name="q9" value="c">Increased plant height</label>
+    <div class="feedback">The ms8 mutation disrupts anther development.</div>
+</div>
+
+<!-- Q10 -->
+<div class="question" data-correct="c">
+    <p>10. Why do sterile sectors appear on otherwise fertile heads?</p>
+    <label><input type="radio" name="q10" value="a">Nutrient deficiency</label>
+    <label><input type="radio" name="q10" value="b">Tissue-specific gene expression</label>
+    <label><input type="radio" name="q10" value="c">Somatic EMS mutations arising in specific cell lineages</label>
+    <div class="feedback">EMS induces mosaicism in M1 plants.</div>
+</div>
+
+<!-- Q11 -->
+<div class="question" data-correct="b">
+    <p>11. Why does BSA require contrasting bulks?</p>
+    <label><input type="radio" name="q11" value="a">To increase sequencing cost</label>
+    <label><input type="radio" name="q11" value="b">To compare allele frequency shifts between fertile & sterile pools</label>
+    <label><input type="radio" name="q11" value="c">To remove heterozygosity</label>
+    <div class="feedback">Contrasting bulks reveal linkage peaks.</div>
+</div>
+
+<!-- Q12 -->
+<div class="question" data-correct="a">
+    <p>12. Why does the fertile bulk show no peak for ms8?</p>
+    <label><input type="radio" name="q12" value="a">It lacks enrichment for the mutant haplotype</label>
+    <label><input type="radio" name="q12" value="b">It was sequenced at lower coverage</label>
+    <label><input type="radio" name="q12" value="c">It contains structural variants</label>
+    <div class="feedback">Only the sterile pool enriches causal alleles.</div>
+</div>
+
+<!-- Q13 -->
+<div class="question" data-correct="c">
+    <p>13. What does the mapping interval initially contain?</p>
+    <label><input type="radio" name="q13" value="a">A single candidate gene</label>
+    <label><input type="radio" name="q13" value="b">Only regulatory regions</label>
+    <label><input type="radio" name="q13" value="c">Nearly 1,000 genes</label>
+    <div class="feedback">Initial BSA intervals are large.</div>
+</div>
+
+<!-- Q14 -->
+<div class="question" data-correct="b">
+    <p>14. Why was BTx623 used as the genetic background for mapping?</p>
+    <label><input type="radio" name="q14" value="a">It produces larger panicles</label>
+    <label><input type="radio" name="q14" value="b">It is fully sequenced and widely used in sorghum genetics</label>
+    <label><input type="radio" name="q14" value="c">It is resistant to EMS</label>
+    <div class="feedback">Reference genome simplifies interpretation.</div>
+</div>
+
+<!-- Q15 -->
+<div class="question" data-correct="a">
+    <p>15. What does allele homozygosity in the sterile bulk indicate?</p>
+    <label><input type="radio" name="q15" value="a">Causative mutation is linked to that region</label>
+    <label><input type="radio" name="q15" value="b">Plants are outcrossing</label>
+    <label><input type="radio" name="q15" value="c">Incorrect sequencing</label>
+    <div class="feedback">High homozygosity suggests strong linkage.</div>
+</div>
+
+<div class="submit-btn" onclick="checkAnswersExam()">Submit Answers</div>
+<div id="result"></div>
+
+</div>
+</body>
+</html>
