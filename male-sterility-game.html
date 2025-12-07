@@ -118,20 +118,20 @@ function loadStage() {
         `;
     }
 
-      if (stage === 1) {
+    if (stage === 1) {
         area.innerHTML = `
             <h1>🌱 What is Male Sterility?</h1>
             <p>Some plants produce normal pollen (male-fertile), while some fail to produce pollen (male-sterile).</p>
 
             <div style="display:flex; gap:40px; justify-content:center; margin-top:30px;">
                 
-                <div onclick="alert('Male-fertile: Produces viable pollen. Can self or cross. Used as male parent.')" 
+                <div onclick="alert('Male-fertile: Produces viable pollen. Can self or cross. Used as male parent.')"
                      style="cursor:pointer; background:#e0ffe0; padding:20px; border-radius:12px; width:200px;">
                     <h3>🟩 Male-Fertile Plant</h3>
                     <p>Produces pollen</p>
                 </div>
 
-                <div onclick="alert('Male-sterile: No pollen. Cannot self. Used as the female parent in hybrid seed production.')" 
+                <div onclick="alert('Male-sterile: No pollen. Cannot self. Used as female parent in hybrid seed production.')"
                      style="cursor:pointer; background:#ffe0e0; padding:20px; border-radius:12px; width:200px;">
                     <h3>🟥 Male-Sterile Plant</h3>
                     <p>No pollen</p>
@@ -148,9 +148,7 @@ function loadStage() {
         `;
     }
 
-}
-
-        if (stage === 2) {
+    if (stage === 2) {
         area.innerHTML = `
             <h1>🌾 Recognizing the Sterile Phenotype</h1>
             <p>
@@ -181,24 +179,26 @@ function loadStage() {
             <p id="feedback" style="margin-top:30px; font-size:18px; font-weight:bold;"></p>
         `;
 
-        // Add helper JS functions
         window.correctChoice = function() {
             document.getElementById("feedback").innerHTML =
                 "<span style='color:green;'>Correct! White anthers indicate male sterility.</span><br><br>" +
                 "<div class='button' onclick='nextStage()'>Continue</div>";
-        }
+        };
 
         window.wrongChoice = function() {
             document.getElementById("feedback").innerHTML =
                 "<span style='color:red;'>Not correct — yellow anthers are fertile. Try again!</span>";
-        }
+        };
     }
 
+} // ← DO NOT MOVE THIS
 
+// Next stage
 function nextStage() {
     stage++;
     loadStage();
 }
+
 
 // Initialize first stage
 loadStage();
