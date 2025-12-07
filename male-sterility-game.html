@@ -109,15 +109,17 @@ let stage = 0;
 function loadStage() {
     const area = document.getElementById("stageArea");
 
+    // ---------------- Stage 0 ----------------
     if (stage === 0) {
         area.innerHTML = `
             <h1>🌾 Male Sterility Discovery Game</h1>
             <h2>You are a geneticist at the Danforth Plant Science Center</h2>
             <p>Your mission is to discover the gene responsible for male sterility in sorghum.</p>
             <div class="button" onclick="nextStage()">Begin Mission</div>
-        };
+        `;
     }
 
+    // ---------------- Stage 1 ----------------
     if (stage === 1) {
         area.innerHTML = `
             <h1>🌱 What is Male Sterility?</h1>
@@ -145,8 +147,10 @@ function loadStage() {
             </p>
 
             <div class="button" onclick="nextStage()">Continue</div>
-    };
-    
+        `;
+    }
+
+    // ---------------- Stage 2 ----------------
     if (stage === 2) {
         area.innerHTML = `
             <h1>🌾 Recognizing the Sterile Phenotype</h1>
@@ -158,42 +162,37 @@ function loadStage() {
             <p><i>Which anther is from a male-sterile plant?</i></p>
 
             <div style="display:flex; gap:40px; justify-content:center; margin-top:30px;">
-
-                <!-- Fertile (Yellow) -->
-                <div onclick="wrongChoice()"
-                     style="cursor:pointer; background:#fff9d6; padding:20px; border-radius:12px; width:200px; border:2px solid #c8b750;">
+                <div onclick="wrongChoice()" style="cursor:pointer; background:#fff9d6; padding:20px; border-radius:12px; width:200px;">
                     <h3>🌼 Yellow Anthers</h3>
                     <p>Fertile</p>
                 </div>
 
-                <!-- Sterile (White) -->
-                <div onclick="correctChoice()"
-                     style="cursor:pointer; background:#f3f3f3; padding:20px; border-radius:12px; width:200px; border:2px solid #888;">
+                <div onclick="correctChoice()" style="cursor:pointer; background:#f3f3f3; padding:20px; border-radius:12px; width:200px;">
                     <h3>⚪ White Anthers</h3>
                     <p>Sterile</p>
                 </div>
-
             </div>
 
             <p id="feedback" style="margin-top:30px; font-size:18px; font-weight:bold;"></p>
         `;
 
-        window.correctChoice = function() {
+        window.correctChoice = function () {
             document.getElementById("feedback").innerHTML =
                 "<span style='color:green;'>Correct! White anthers indicate male sterility.</span><br><br>" +
                 "<div class='button' onclick='nextStage()'>Continue</div>";
         };
 
-        window.wrongChoice = function() {
+        window.wrongChoice = function () {
             document.getElementById("feedback").innerHTML =
                 "<span style='color:red;'>Not correct — yellow anthers are fertile. Try again!</span>";
-      };
-    
+        };
+    }
 
-if (stage === 3) {
+    // ---------------- Stage 3 ----------------
+    if (stage === 3) {
         area.innerHTML = `
             <h1>🧬 Bulk Segregant Mapping</h1>
-            <p>To locate the gene causing male sterility, we compare DNA...</p>
+            <p>To locate the gene causing male sterility, we compare DNA from fertile and sterile bulks.</p>
 
             <p><i>Which chromosome shows a peak associated with male sterility?</i></p>
 
@@ -217,7 +216,6 @@ if (stage === 3) {
             <p id="mapFeedback" style="margin-top:25px; font-size:18px; font-weight:bold;"></p>
         `;
 
-        // Style boxes
         document.querySelectorAll(".chrBox").forEach(el => {
             el.style.cursor = "pointer";
             el.style.background = "#eef";
@@ -229,19 +227,20 @@ if (stage === 3) {
             el.style.fontSize = "18px";
         });
 
-        window.correctChr = function() {
+        window.correctChr = function () {
             document.getElementById("mapFeedback").innerHTML = `
-                <span style='color:green;'>Correct! The allele frequency peak maps the sterile phenotype to <b>chromosome 4</b>.</span><br><br>
-                <div class="button" onclick="nextStage()">Continue</div>
+                <span style='color:green;'>Correct! The peak maps the sterile phenotype to <b>chromosome 4</b>.</span><br><br>
+                <div class='button' onclick='nextStage()'>Continue</div>
             `;
         };
 
-        window.wrongChr = function() {
+        window.wrongChr = function () {
             document.getElementById("mapFeedback").innerHTML =
                 "<span style='color:red;'>No associated peak here — try another chromosome.</span>";
         };
     }
-} // ← DO NOT MOVE THIS
+}
+
 
 function nextStage() {
     stage++;
