@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Sweet Corn Paper Quiz</title>
+<title>Sweet Corn Flavor Genetics Quiz</title>
 
 <style>
 body {
@@ -11,50 +11,35 @@ body {
   margin: 0;
   padding: 40px;
 }
-
 h1 {
   text-align: center;
   margin-bottom: 10px;
 }
-
 .mode-buttons {
   text-align: center;
   margin-bottom: 30px;
 }
-
 .mode-buttons button {
   padding: 10px 20px;
   margin: 0 10px;
   font-size: 16px;
   cursor: pointer;
 }
-
 .question-box {
   background: white;
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 20px;
 }
-
 .question {
   font-weight: bold;
   margin-bottom: 10px;
 }
-
 .option {
-  margin: 5px 0;
+  margin: 6px 0;
 }
-
-.correct {
-  color: green;
-  font-weight: bold;
-}
-
-.wrong {
-  color: red;
-  font-weight: bold;
-}
-
+.correct { color: green; font-weight: bold; }
+.wrong { color: red; font-weight: bold; }
 #submitBtn {
   display: block;
   margin: 40px auto;
@@ -66,7 +51,7 @@ h1 {
 
 <body>
 
-<h1>🌽 Sweet Corn Flavor Genetics Quiz</h1>
+<h1>🌽 Sweet Corn Flavor Genetics — Paper Quiz (85 Questions)</h1>
 
 <div class="mode-buttons">
   <button onclick="setMode('learning')">Learning Mode</button>
@@ -81,17 +66,104 @@ h1 {
 let mode = "learning";
 
 const questions = [
-  {
-    q: "Which sweet corn genome did the researchers sequence to better understand structural variation?",
-    options: ["Ia453", "RC", "B73"],
-    answer: 1
-  },
-  {
-    q: "What is the assembled genome size of the RC sweet corn line?",
-    options: ["2,171.95 Mb", "2,113.72 Mb", "51.84 Mb"],
-    answer: 0
-  }
-  // 🔴 BURAYA DİĞER 58 SORUYU AYNI FORMATTA EKLE
+
+/* ===================== Population Genomics ===================== */
+{ q: "1. Which sweet corn genome was sequenced to study structural variation?", options: ["Ia453", "RC", "B73"], answer: 1 },
+{ q: "2. What is the assembled genome size of the RC line?", options: ["2,171.95 Mb", "2,113.72 Mb", "51.84 Mb"], answer: 0 },
+{ q: "3. What percentage of conserved BUSCO genes aligned to the RC genome?", options: ["97.3%", "98.7%", "95.0%"], answer: 1 },
+{ q: "4. How many gene models were annotated in the RC genome?", options: ["20,073", "32,000", "43,023"], answer: 2 },
+{ q: "5. How much RC-specific genome sequence was observed vs B73?", options: ["10.5–15.2 Mb", "23.1–32.2 Mb", "50.1–60.5 Mb"], answer: 1 },
+{ q: "6. How many sweet-corn accessions were collected?", options: ["507", "295", "213"], answer: 1 },
+{ q: "7. Which allele was present in most sweet corn accessions?", options: ["su1", "sh2-R", "wx1"], answer: 1 },
+{ q: "8. What was the average WGS coverage depth?", options: ["5.26×", "11.8×", "22.5×"], answer: 1 },
+{ q: "9. How many high-quality SNPs were identified?", options: ["4.6 million", "9.9 million", "7.3 million"], answer: 1 },
+{ q: "10. How did LD decay in sweet corn compare to field corn?", options: ["Faster", "Slower", "Identical"], answer: 1 },
+{ q: "11. What % of large LD blocks were unique to sweet corn?", options: ["15.2%", "34.7%", "75.0%"], answer: 1 },
+{ q: "12. What % of the maize genome was under selection?", options: ["5.7%", "10.3%", "25.0%"], answer: 1 },
+{ q: "13. Besides carbohydrates, which metabolism differed?", options: ["Lipid metabolism", "Nucleotide metabolism regulation", "Secondary metabolites"], answer: 1 },
+
+/* ===================== sh2 & su1 ===================== */
+{ q: "14. sh2-R showed 95% identity with which genome?", options: ["B73", "Ia453", "Tx303"], answer: 1 },
+{ q: "15. Which structural variant in Sh2 is shared with Tx303?", options: ["Intermediate inversion", "Large deletion", "Translocation"], answer: 0 },
+{ q: "16. What does the Su1 gene encode?", options: ["Starch synthase", "Starch debranching enzyme", "Glucose transporter"], answer: 1 },
+{ q: "17. How many Su1 alleles were identified?", options: ["Two", "Five", "Three"], answer: 2 },
+{ q: "18. Which substitution defines Su1-KE?", options: ["Lys→Glu at 707", "Arg→His at 500", "Ala→Val at 300"], answer: 0 },
+{ q: "19. What phenotype did sh2/su1 knockouts show?", options: ["Increased starch", "Shrunken kernels", "Thicker pericarp"], answer: 1 },
+{ q: "20. Shared DEGs were enriched for response to?", options: ["Light & temperature", "Abiotic stimuli & hormones", "Pathogens"], answer: 1 },
+{ q: "21. How many DEGs overlapped selection signals?", options: ["171", "205", "400"], answer: 1 },
+
+/* ===================== Transcriptomics & eQTL ===================== */
+{ q: "22. At what stage were kernels harvested for RNA-seq?", options: ["10 DAP", "15 DAP", "20 DAP"], answer: 1 },
+{ q: "23. How many genes were expressed?", options: ["18,972", "20,073", "43,023"], answer: 1 },
+{ q: "24. Which eQTL type was more prevalent?", options: ["cis-eQTL", "trans-eQTL", "Local"], answer: 1 },
+{ q: "25. Which eQTL type had larger R²?", options: ["cis-eQTL", "trans-eQTL", "Equal"], answer: 0 },
+{ q: "26. How many eQTL hotspots in sweet corn?", options: ["25", "35", "41"], answer: 2 },
+{ q: "27. eQTL hotspots were enriched in?", options: ["Cell wall", "Chloroplast & oxidoreduction", "Lipids"], answer: 1 },
+
+/* ===================== Metabolomics & Flavor ===================== */
+{ q: "28. At what stage for metabolomics?", options: ["15 DAP", "20 DAP", "25 DAP"], answer: 1 },
+{ q: "29. How many metabolites were identified?", options: ["234 GC-MS & 260 LC-MS", "100 & 150", "500"], answer: 0 },
+{ q: "30. What % mQTLs had major effects?", options: ["25.5%", "50.0%", "68.3%"], answer: 2 },
+{ q: "31. GWAS signals were enriched in?", options: ["Lipids", "Glyco & amino acid metabolism", "Photosynthesis"], answer: 1 },
+{ q: "32. Metabolites associated with sh2/su1?", options: ["10", "22", "37"], answer: 1 },
+{ q: "33. sh2 associations depended on?", options: ["se1", "su1", "wx1"], answer: 1 },
+{ q: "34. Flavor components include?", options: ["Sugar, acid, texture", "Taste, mouthfeel, aroma", "Size, color, shape"], answer: 1 },
+{ q: "35. Broad-sense heritability (H²)?", options: ["0.50", "0.67", "0.81"], answer: 1 },
+{ q: "36. Correlation between consumers & BLUPs?", options: ["0.67", "0.81", "0.95"], answer: 0 },
+{ q: "37. Strongest GWAS signals?", options: ["ZmAPS1 & ZmSK1", "sh2 & su1", "se1 & wx1"], answer: 0 },
+{ q: "38. Which Su1 allele improved flavor?", options: ["Su1-B73", "Su1-RC", "Su1-KE"], answer: 2 },
+{ q: "39. Main physical contributor to flavor?", options: ["Kernel size", "Thinner pericarp", "Volatiles"], answer: 1 },
+
+/* ===================== Yield & Validation ===================== */
+{ q: "40. Which gene underlies quinic acid mQTL?", options: ["ZmAPS1", "ZmSK1", "ZmCRR5"], answer: 1 },
+{ q: "41. ZmSK1 expression vs quinic acid?", options: ["Positive", "Negative", "None"], answer: 1 },
+{ q: "42. Yield reduction in ZmCRR5 knockout?", options: ["5%", "16%", "42.5%"], answer: 1 },
+{ q: "43. Which haplotype showed highest yield?", options: ["HG1", "HG2", "HG3"], answer: 1 },
+{ q: "44. How many genes validated by CRISPR?", options: ["Three", "Five", "Two"], answer: 0 },
+
+/* ===================== Concept & Terminology ===================== */
+{ q: "45. What does de novo genome assembly mean?", options: ["Using B73 as reference", "Assembling without a reference", "Only coding regions"], answer: 1 },
+{ q: "46. Difference between contig and scaffold?", options: ["Contigs are continuous; scaffolds link contigs with gaps", "Contigs are RNA", "Scaffolds contain only genes"], answer: 0 },
+{ q: "47. What does anchoring sequences mean?", options: ["Assigning physical chromosomal positions", "Mitochondrial DNA", "Sequence identity"], answer: 0 },
+{ q: "48. BUSCO assesses?", options: ["Repetitive DNA", "Conserved single-copy genes", "SNP counts"], answer: 1 },
+{ q: "49. LTRs represent?", options: ["Gene starts", "Retrotransposon repeats", "Sweet corn sugar genes"], answer: 1 },
+{ q: "50. Main goal of WGS?", options: ["Only sh2/su1", "Genome-wide variants", "Only expressed genes"], answer: 1 },
+{ q: "51. What is an inversion?", options: ["Segment reversed orientation", "Single SNP", "Gene deletion"], answer: 0 },
+{ q: "52. Slower LD decay implies?", options: ["Independent variants", "Large inherited blocks", "Mutation resistance"], answer: 1 },
+{ q: "53. XP-CLR / XP-EHH detect?", options: ["Mutation rate", "Positive selection", "Sweetness"], answer: 1 },
+{ q: "54. What is a haplotype?", options: ["Rare mutation", "Linked variant combination", "Chromosome number"], answer: 1 },
+{ q: "55. What are DEGs?", options: ["Misassembled genes", "Differential expression", "Nuclear genes"], answer: 1 },
+{ q: "56. What is an eQTL?", options: ["Expression-linked variant", "Protein mutation", "Junk DNA"], answer: 0 },
+{ q: "57. cis-eQTL definition?", options: ["Distant chromosome", "Nearby variant", "Sweet-corn specific"], answer: 1 },
+{ q: "58. trans-eQTL definition?", options: ["Distant regulator", "Promoter mutation", "Gene transfer"], answer: 0 },
+{ q: "59. Why use GC-MS and LC-MS together?", options: ["DNA vs RNA", "Broader metabolite coverage", "Technical replication"], answer: 1 },
+{ q: "60. mGWAS links?", options: ["SNPs & metabolites", "Flavor perception", "Plant height"], answer: 0 },
+{ q: "61. mQTL represents?", options: ["Metabolite-linked locus", "Organelle", "Metabolic rate"], answer: 0 },
+{ q: "62. BLUP is used to?", options: ["Taste device", "Estimate genetic value", "Expert-only scores"], answer: 1 },
+{ q: "63. H² = 0.67 means?", options: ["67% genetic contribution", "67% sweet", "67% genes known"], answer: 0 },
+{ q: "64. PCA was used to?", options: ["Count chromosomes", "Visualize population structure", "Detect dominance"], answer: 1 },
+{ q: "65. Role of indel in ZmAPS1?", options: ["Gene duplication", "3'-UTR variation", "Chemical inhibition"], answer: 1 },
+{ q: "66. Defective sh2/su1 alleles mean?", options: ["Loss of starch conversion", "Disease susceptibility", "Gene loss"], answer: 0 },
+{ q: "67. CRISPR-Cas9 used to?", options: ["Redesign genome", "Validate candidate genes", "Insect resistance"], answer: 1 },
+{ q: "68. GO analysis reveals?", options: ["Gene length", "Biological function", "Discovery year"], answer: 1 },
+{ q: "69. LD blocks represent?", options: ["Linked inherited variants", "Noncoding gaps", "Chromosome fusion"], answer: 0 },
+{ q: "70. Structural variant refers to?", options: ["Large genome rearrangement", "Single SNP", "Expression change"], answer: 0 },
+{ q: "71. trans-eQTLs indicate?", options: ["Network rewiring", "Local control", "Artifacts"], answer: 0 },
+{ q: "72. Why haplotype-based breeding?", options: ["Gene removal", "Fine-tuned selection", "High mutation"], answer: 1 },
+{ q: "73. LAI measures?", options: ["Gene density", "LTR assembly quality", "SNP accuracy"], answer: 1 },
+{ q: "74. What is selective sweep?", options: ["Random drift", "Strong selection region", "Recombination hotspot"], answer: 1 },
+{ q: "75. Why slower LD in sweet corn?", options: ["High recombination", "Breeding bottleneck", "Low SNPs"], answer: 1 },
+{ q: "76. mGWAS differs from GWAS because it uses?", options: ["Metabolites as traits", "Proteins", "RNA"], answer: 0 },
+{ q: "77. eQTL hotspot indicates?", options: ["Many genes regulated", "High SNP density", "Gene desert"], answer: 0 },
+{ q: "78. GC-MS best detects?", options: ["Volatile compounds", "Proteins", "DNA"], answer: 0 },
+{ q: "79. LC-MS advantage?", options: ["Non-volatile metabolites", "Higher mutation rate", "Gene detection"], answer: 0 },
+{ q: "80. Why validate with CRISPR?", options: ["Correlation to causation", "Increase yield", "Speed breeding"], answer: 0 },
+{ q: "81. Positive selection means?", options: ["Adaptive allele increase", "Random change", "Negative fitness"], answer: 0 },
+{ q: "82. XP-EHH uses what information?", options: ["Haplotype length", "Expression", "Metabolites"], answer: 0 },
+{ q: "83. XP-CLR uses what information?", options: ["Allele frequency", "Protein structure", "RNA"], answer: 0 },
+{ q: "84. Structural variants are hard to detect because?", options: ["Large size", "Low expression", "Protein folding"], answer: 0 },
+{ q: "85. Why integrate WGS, RNA-seq, metabolomics?", options: ["Holistic trait architecture", "Cost reduction", "Replication"], answer: 0 }
+
 ];
 
 function setMode(m) {
@@ -102,24 +174,14 @@ function setMode(m) {
 function renderQuiz() {
   const quizDiv = document.getElementById("quiz");
   quizDiv.innerHTML = "";
-
   questions.forEach((item, idx) => {
-    let html = `
-      <div class="question-box">
-        <div class="question">${idx + 1}. ${item.q}</div>
-    `;
-
+    let html = `<div class="question-box">
+      <div class="question">${item.q}</div>`;
     item.options.forEach((opt, i) => {
-      html += `
-        <div class="option">
-          <label>
-            <input type="radio" name="q${idx}" value="${i}">
-            ${opt}
-          </label>
-        </div>
-      `;
+      html += `<div class="option">
+        <label><input type="radio" name="q${idx}" value="${i}"> ${opt}</label>
+      </div>`;
     });
-
     html += `<div id="feedback-${idx}"></div></div>`;
     quizDiv.innerHTML += html;
   });
@@ -127,18 +189,22 @@ function renderQuiz() {
 
 function submitQuiz() {
   let score = 0;
-
   questions.forEach((item, idx) => {
-    const selected = document.querySelector(`input[name="q${idx}"]:checked`);
-    const feedback = document.getElementById(`feedback-${idx}`);
-
-    if (!selected) return;
-
-    if (parseInt(selected.value) === item.answer) {
+    const sel = document.querySelector(`input[name="q${idx}"]:checked`);
+    const fb = document.getElementById(`feedback-${idx}`);
+    if (!sel) return;
+    if (parseInt(sel.value) === item.answer) {
       score++;
-      if (mode === "learning") {
-        feedback.innerHTML = "<span class='correct'>✔ Correct</span>";
-      }
+      if (mode === "learning") fb.innerHTML = "<span class='correct'>✔ Correct</span>";
     } else {
-      if (mode === "learning") {
-        feedback.in
+      if (mode === "learning") fb.innerHTML = "<span class='wrong'>✘ Wrong</span>";
+    }
+  });
+  if (mode === "exam") alert(`Score: ${score} / ${questions.length}`);
+}
+
+renderQuiz();
+</script>
+
+</body>
+</html>
