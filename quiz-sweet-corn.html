@@ -61,6 +61,7 @@ h1 {
 <div id="quiz"></div>
 
 <button id="submitBtn" onclick="submitQuiz()">Submit</button>
+<div id="resultBox" style="text-align:center; font-size:18px; margin-top:20px;"></div>
 
 <script>
 let mode = "learning";
@@ -203,19 +204,33 @@ function checkAnswer(qIndex, selectedIndex) {
   
 function submitQuiz() {
   let score = 0;
+
   questions.forEach((item, idx) => {
-    const sel = document.querySelector(`input[name="q${idx}"]:checked`);
-    const fb = document.getElementById(`feedback-${idx}`);
-    if (!sel) return;
-    if (parseInt(sel.value) === item.answer) {
+    const selected = document.querySelector(`input[name="q${idx}"]:checked`);
+    const feedback = document.getElementById(`feedback-${idx}`);
+
+    if (!selected) return;
+
+    if (parseInt(selected.value) === item.answer) {
       score++;
-      if (mode === "learning") fb.innerHTML = "<span class='correct'>✔ Correct</span>";
+      if (mode === "learning") {
+        feedback.innerHTML = "<span class='correct'>✔ Correct</span>";
+      }
     } else {
-      if (mode === "learning") fb.innerHTML = "<span class='wrong'>✘ Wrong</span>";
+      if (mode === "learning") {
+        feedback.innerHTML = "<span class='wrong'>✘ Wrong</span>";
+      }
     }
   });
-  if (mode === "exam") alert(`Score: ${score} / ${questions.length}`);
+
+  const total = questions.length;
+  const percent = ((score / total) * 100).toFixed(1);
+
+  document.getElementById("resultBox").innerHTML =
+    `<strong>Score:</strong> ${score} / ${total} &nbsp; 
+     (<strong>${percent}%</strong>)`;
 }
+
 
 renderQuiz();
 </script>
