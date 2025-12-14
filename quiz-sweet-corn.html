@@ -179,14 +179,28 @@ function renderQuiz() {
       <div class="question">${item.q}</div>`;
     item.options.forEach((opt, i) => {
       html += `<div class="option">
-        <label><input type="radio" name="q${idx}" value="${i}"> ${opt}</label>
+        <label><input type="radio" name="q${idx}" value="${i}" onchange="checkAnswer(${idx}, ${i})">
+ ${opt}</label>
       </div>`;
     });
     html += `<div id="feedback-${idx}"></div></div>`;
     quizDiv.innerHTML += html;
   });
 }
+function checkAnswer(qIndex, selectedIndex) {
+  if (mode !== "learning") return;
 
+  const correctIndex = questions[qIndex].answer;
+  const feedback = document.getElementById(`feedback-${qIndex}`);
+
+  if (selectedIndex === correctIndex) {
+    feedback.innerHTML = "<span class='correct'>✔ Correct</span>";
+  } else {
+    feedback.innerHTML = "<span class='wrong'>✘ Wrong</span>";
+  }
+}
+
+  
 function submitQuiz() {
   let score = 0;
   questions.forEach((item, idx) => {
