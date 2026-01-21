@@ -488,3 +488,19 @@ p {
 .paper-links a:hover {
     text-decoration: underline;
 }
+/* =========================
+   Literature page fixes
+   ========================= */
+
+.literature-section {
+    background: #ffffff;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.hero.literature {
+    position: relative;
+    z-index: 1;
+}
+
