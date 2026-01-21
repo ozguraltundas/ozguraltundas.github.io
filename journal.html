@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- OpenGraph Meta Tags -->
-<meta property="og:title" content="Özgür Altundaş | Plant Breeding & Genetics">
-<meta property="og:description" content="PhD Candidate in Plant Breeding & Genetics at the University of Nebraska–Lincoln. Researching quantitative genetics, plant genomics, and high-throughput phenotyping.">
-<meta property="og:image" content="https://ozguraltundas.com/og-image-ozgur-altundas.jpg">
-<meta property="og:url" content="https://ozguraltundas.com">
-<meta property="og:type" content="website">
 
-<!-- Twitter Card Meta Tags -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Özgür Altundaş | Plant Breeding & Genetics">
-<meta name="twitter:description" content="Research in quantitative genetics, genomics, and high-throughput phenotyping.">
-<meta name="twitter:image" content="https://ozguraltundas.com/og-image-ozgur-altundas.jpg">
+    <!-- OpenGraph Meta Tags -->
+    <meta property="og:title" content="Özgür Altundaş | Plant Breeding & Genetics">
+    <meta property="og:description" content="PhD Candidate in Plant Breeding & Genetics at the University of Nebraska–Lincoln. Researching quantitative genetics, plant genomics, and high-throughput phenotyping.">
+    <meta property="og:image" content="https://ozguraltundas.com/og-image-ozgur-altundas.jpg">
+    <meta property="og:url" content="https://ozguraltundas.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Özgür Altundaş | Plant Breeding & Genetics">
+    <meta name="twitter:description" content="Research in quantitative genetics, genomics, and high-throughput phenotyping.">
+    <meta name="twitter:image" content="https://ozguraltundas.com/og-image-ozgur-altundas.jpg">
 
     <title>Literature Highlights | Özgür Altundaş</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <nav class="navbar">
-
-
     <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
@@ -37,13 +37,10 @@
         <li><a href="contact.html">Contact</a></li>
     </ul>
 
-    <!-- Hamburger icon -->
-    <div class="hamburger" onclick="toggleMenu()">
-        ☰
-    </div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
 </nav>
 
-<!-- MOBILE MENU (HIDDEN) -->
+<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -57,13 +54,16 @@
     <a href="contact.html">Contact</a>
 </div>
 
-
+<!-- HERO -->
 <section class="hero literature">
     <div class="hero-content">
         <h1>Literature Highlights</h1>
         <h3>Important papers I read & recommend</h3>
     </div>
-<section class="section">
+</section>
+
+<!-- CONTENT -->
+<section class="section literature-section">
     <h2>Highlighted Papers</h2>
 
     <div class="paper-card">
@@ -89,27 +89,25 @@
         </p>
 
         <p class="paper-links">
-            <a href="https://doi.org/10.1101/2025.10.27.684862" target="_blank">Preprint</a> |
-            <a href="#" target="_blank">GitHub</a>
+            <a href="https://doi.org/10.1101/2025.10.27.684862" target="_blank">Preprint</a>
         </p>
     </div>
-
 </section>
+
+<footer>
+    © 2025 Özgür Altundaş — University of Nebraska–Lincoln
+</footer>
 
 <script>
 function toggleMenu() {
     const menu = document.getElementById("mobileMenu");
     menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
 }
-</script>
 
-<footer>© 2025 Özgür Altundaş — University of Nebraska–Lincoln</footer>
-
-<script>
 window.addEventListener("scroll", () =>
-document.querySelector(".navbar").classList.toggle("scrolled", window.scrollY > 10));
+    document.querySelector(".navbar").classList.toggle("scrolled", window.scrollY > 10)
+);
 </script>
 
 </body>
 </html>
-
