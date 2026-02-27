@@ -509,34 +509,9 @@ p {
    Episode Section
 ========================= 
 /* ===============================
-   HERO
+   CONTAINER
 ================================= */
 
-.convo-hero {
-    padding: 140px 20px 100px 20px;
-    background: #f8f8f8;
-    text-align: center;
-}
-
-.convo-hero h1 {
-    font-size: 42px;
-    font-weight: 500;
-    margin-bottom: 20px;
-}
-
-.convo-hero p {
-    max-width: 720px;
-    margin: 0 auto;
-    font-size: 17px;
-    color: #555;
-}
-
-
-/* ===============================
-   EPISODE SECTION
-================================= */
-
-/* Container */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -544,19 +519,68 @@ p {
 }
 
 
-/* Episode Section */
+/* ===============================
+   HERO (Background Image)
+================================= */
+
+.convo-hero {
+    position: relative;
+    padding: 140px 20px;
+    text-align: center;
+    background-image: url("images/road.jpg");
+    background-size: cover;
+    background-position: center;
+    color: #1f2d3d;
+}
+
+/* Soft overlay */
+.convo-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.85);
+}
+
+.convo-hero * {
+    position: relative;
+    z-index: 2;
+}
+
+.convo-hero h1 {
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 18px;
+}
+
+.convo-hero p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #444;
+}
+
+
+/* ===============================
+   EPISODE SECTION
+================================= */
+
 .episode-section {
     padding: 120px 0;
-    background: #f4f4f4;
+    background: #ffffff;  /* Gri kaldırıldı, daha temiz */
 }
 
 .episode-section h2 {
     text-align: center;
-    font-size: 34px;
+    font-size: 30px;
     font-weight: 500;
     margin-bottom: 80px;
 }
 
+
+/* ===============================
+   GRID LAYOUT
+================================= */
 
 .episode-grid {
     display: grid;
@@ -564,34 +588,43 @@ p {
     gap: 70px;
     max-width: 1100px;
     margin: 0 auto;
+    justify-items: center;
 }
-.episode-card {
-    text-align: center;
-    width: 100%;
-    max-width: 340px;  /* Kritik kısım */
-}
+
+/* Tek kart varsa ortala */
 .episode-grid:has(.episode-card:only-child) {
     display: flex;
     justify-content: center;
 }
 
 
-/* Card */
+/* ===============================
+   CARD
+================================= */
+
 .episode-card {
     text-align: center;
+    width: 100%;
     max-width: 360px;
 }
 
 
-/* Image */
+/* ===============================
+   IMAGE
+================================= */
+
 .episode-card img {
     width: 100%;
     aspect-ratio: 4 / 5;
     object-fit: cover;
+    display: block;
 }
 
 
-/* Content */
+/* ===============================
+   CONTENT
+================================= */
+
 .episode-content {
     padding-top: 30px;
 }
@@ -616,8 +649,12 @@ p {
 }
 
 
-/* Button */
+/* ===============================
+   BUTTON
+================================= */
+
 .episode-btn {
+    display: inline-block;
     padding: 12px 32px;
     border: 1.5px solid #1f2d3d;
     border-radius: 40px;
@@ -633,3 +670,18 @@ p {
 }
 
 
+/* ===============================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 1000px) {
+    .episode-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .episode-grid {
+        grid-template-columns: 1fr;
+    }
+}
