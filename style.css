@@ -508,39 +508,115 @@ p {
 /* =========================
    Conversation
    ========================= */
+/* ===============================
+   EPISODE SECTION BACKGROUND
+================================= */
 
-/* HERO SECTION */
-.convo-hero {
-    padding: 180px 20px;
-    text-align: center;
-    background: linear-gradient(
-        to bottom,
-        #fff5f5 0%,
-        #ffffff 60%
-    );
-}
-
-.convo-hero h1 {
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-.convo-hero p {
-    max-width: 800px;
-    margin: 0 auto;
-    font-size: 18px;
-    color: #555;
-}
-/* EPISODE SECTION */
 .episode-section {
-    padding: 100px 20px;
+    padding: 120px 20px;
     background: linear-gradient(
-        to bottom,
-        #f8eaea 0%,
+        180deg,
+        #faf6f6 0%,
+        #f5eeee 40%,
         #ffffff 100%
     );
 }
+
+
+/* ===============================
+   GRID LAYOUT
+================================= */
+
+.episode-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center;   /* Tek kart varsa ortada */
+}
+
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+    .episode-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .episode-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ===============================
+   CARD STYLE
+================================= */
+
+.episode-card {
+    background: transparent;
+    text-align: center;
+    max-width: 340px; /* Tek kartın çok büyümemesi için */
+}
+
+
+/* IMAGE */
+
+.episode-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;   /* DiscoveringAcademia style */
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+
+/* CONTENT */
+
+.episode-content {
+    padding-top: 25px;
+}
+
+.episode-content h3 {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.institution {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.episode-summary {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+
+/* BUTTON */
+
+.episode-btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border: 1.5px solid #2f3e55;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #2f3e55;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.episode-btn:hover {
+    background: #2f3e55;
+    color: white;
+}
+
 .episode-card img {
     width: 100%;
     aspect-ratio: 4 / 5;
