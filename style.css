@@ -685,3 +685,56 @@ p {
         grid-template-columns: 1fr;
     }
 }
+/* ===============================
+   IMAGE FRAME UPGRADE
+================================= */
+
+.episode-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    transition: 0.4s ease;
+}
+
+.episode-image-wrapper:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+}
+
+.episode-image-wrapper img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.episode-image-wrapper:hover img {
+    transform: scale(1.04);
+}
+
+
+/* ===============================
+   LINKEDIN BADGE
+================================= */
+
+.linkedin-badge {
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    background: #0a66c2;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.linkedin-badge:hover {
+    background: #004182;
+    transform: scale(1.1);
+}
