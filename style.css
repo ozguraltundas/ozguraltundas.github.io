@@ -505,40 +505,30 @@ p {
 }
 
 
-/* =========================
-   Conversation
-   ========================= */
+=========================
+   Episode Section
+========================= 
 /* ===============================
    EPISODE SECTION BACKGROUND
 ================================= */
-
 .episode-section {
-    padding: 120px 20px;
-    background: linear-gradient(
-        180deg,
-        #faf6f6 0%,
-        #f5eeee 40%,
-        #ffffff 100%
-    );
+    padding: 80px 20px; /* Adjusted padding for better spacing */
+    background: #ffffff; /* Simplifies to white like the second image */
 }
-
 
 /* ===============================
    GRID LAYOUT
 ================================= */
-
 .episode-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 60px;
+    gap: 40px; /* Balanced spacing between the 3 people */
     max-width: 1200px;
     margin: 0 auto;
-    justify-items: center;   /* Tek kart varsa ortada */
+    justify-items: center;
 }
 
-
-/* Responsive */
-
+/* Responsive adjustments */
 @media (max-width: 1000px) {
     .episode-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -551,61 +541,57 @@ p {
     }
 }
 
-
 /* ===============================
    CARD STYLE
 ================================= */
-
 .episode-card {
     background: transparent;
     text-align: center;
-    max-width: 340px; /* Tek kartın çok büyümemesi için */
+    width: 100%;
+    max-width: 360px;
 }
 
-
-/* IMAGE */
-
+/* IMAGE - Fixed to Square & Grayscale option */
 .episode-card img {
     width: 100%;
-    aspect-ratio: 1 / 1;   /* DiscoveringAcademia style */
+    aspect-ratio: 1 / 1; /* Makes it a perfect square like picture 2 */
     object-fit: cover;
-    border-radius: 6px;
+    display: block;
+    border-radius: 0; /* Removed rounding for the sharp academic look */
+    /* filter: grayscale(100%); */ /* Uncomment this if you want the B&W look */
 }
 
-
 /* CONTENT */
-
 .episode-content {
-    padding-top: 25px;
+    padding-top: 20px;
 }
 
 .episode-content h3 {
-    font-size: 22px;
-    font-weight: 500;
-    margin-bottom: 8px;
+    font-size: 24px; /* Slightly larger for the names */
+    font-weight: 400; /* Lighter weight mimics the target font better */
+    color: #2f3e55;
+    margin-bottom: 5px;
 }
 
 .institution {
-    font-size: 14px;
-    color: #777;
-    margin-bottom: 20px;
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 15px;
 }
 
 .episode-summary {
-    font-size: 15px;
-    color: #555;
+    font-size: 14px;
+    color: #666;
     margin-bottom: 25px;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
-
-/* BUTTON */
-
+/* BUTTON - Pill shaped like the target */
 .episode-btn {
     display: inline-block;
-    padding: 10px 22px;
-    border: 1.5px solid #2f3e55;
-    border-radius: 30px;
+    padding: 12px 35px;
+    border: 1px solid #2f3e55;
+    border-radius: 50px; /* Clean pill shape */
     text-decoration: none;
     color: #2f3e55;
     font-size: 14px;
@@ -617,9 +603,8 @@ p {
     color: white;
 }
 
-.episode-card img {
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
-    display: block;
-}
+
+
+
+
+
