@@ -707,3 +707,13 @@ p {
     left: -150px;
     transform: rotate(45deg);
 }
+.convo-hero {
+    padding: 180px 20px;
+    text-align: center;
+    background: linear-gradient(
+        to bottom,
+        #eaf4ff 0%,
+        #f7fbff 50%,
+        #ffffff 100%
+    );
+}
