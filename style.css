@@ -503,191 +503,26 @@ p {
     position: relative;
     z-index: 1;
 }
-/* EPISODE SECTION */
-.episode-section {
-    padding: 80px 20px;
-    text-align: center;
-}
-
-.episode-section h2 {
-    font-size: 28px;
-    margin-bottom: 40px;
-}
-
-.episode-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.episode-card {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    transition: 0.3s ease;
-}
-
-.episode-card:hover {
-    transform: translateY(-5px);
-}
-
-.episode-card img {
-    width: 100%;
-    border-radius: 12px;
-    margin-bottom: 15px;
-}
-
-.episode-card h3 {
-    margin: 10px 0;
-}
-
-.episode-card p {
-    color: #666;
-    margin-bottom: 15px;
-}
-
-.episode-btn {
-    display: inline-block;
-    padding: 8px 16px;
-    border: 1px solid #333;
-    border-radius: 20px;
-    text-decoration: none;
-    color: #333;
-    transition: 0.3s;
-}
-
-.episode-btn:hover {
-    background: #333;
-    color: white;
-}
 
 
-<-----Conversation Page---->
-/* GENERAL CONTAINER */
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+/* =========================
+   Conversation
+   ========================= */
 
-/* HERO */
-.convo-hero {
-    padding: 140px 20px;
-    text-align: center;
-    background: #f6f6f6;
-}
-
-.convo-hero h1 {
-    font-size: 44px;
-    margin-bottom: 20px;
-    font-weight: 600;
-}
-
-.convo-hero p {
-    max-width: 750px;
-    margin: 0 auto;
-    font-size: 18px;
-    color: #555;
-    line-height: 1.6;
-}
-
-/* EPISODES */
-.episode-section {
-    padding: 100px 20px;
-}
-
-.episode-section h2 {
-    text-align: center;
-    margin-bottom: 60px;
-    font-size: 28px;
-}
-
-.episode-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 50px;
-}
-
-/* CARD */
-.episode-card {
-    background: white;
-    border-radius: 14px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.episode-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-}
-
-.episode-card img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-}
-
-.episode-content {
-    padding: 25px;
-}
-
-.episode-content h3 {
-    margin: 10px 0;
-    font-size: 20px;
-}
-
-.institution {
-    font-size: 14px;
-    color: #777;
-    margin-bottom: 15px;
-}
-
-.episode-summary {
-    font-size: 15px;
-    color: #555;
-    margin-bottom: 20px;
-    line-height: 1.5;
-}
-
-/* BUTTON */
-.episode-btn {
-    display: inline-block;
-    padding: 8px 18px;
-    border: 1px solid #222;
-    border-radius: 25px;
-    text-decoration: none;
-    color: #222;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-.episode-btn:hover {
-    background: #222;
-    color: white;
-}
-
-/* FOOTER */
-.footer {
-    text-align: center;
-    padding: 40px 20px;
-    background: #fafafa;
-    font-size: 14px;
-    color: #777;
-}
+/* HERO SECTION */
 .convo-hero {
     padding: 180px 20px;
     text-align: center;
-    background: linear-gradient(90deg, #f1f1f1 0%, #ffffff 60%);
-    position: relative;
-    overflow: hidden;
+    background: linear-gradient(
+        to bottom,
+        #fff5f5 0%,
+        #ffffff 60%
+    );
 }
 
 .convo-hero h1 {
     font-size: 48px;
     font-weight: 700;
-    letter-spacing: 1px;
     margin-bottom: 20px;
 }
 
@@ -697,28 +532,31 @@ p {
     font-size: 18px;
     color: #555;
 }
-.convo-hero::before {
-    content: "";
-    position: absolute;
-    width: 450px;
-    height: 450px;
-    background: rgba(0,0,0,0.03);
-    top: -150px;
-    left: -150px;
-    transform: rotate(45deg);
-}
-.convo-hero {
-    padding: 180px 20px;
-    text-align: center;
+/* EPISODE SECTION */
+.episode-section {
+    padding: 100px 20px;
     background: linear-gradient(
         to bottom,
-        #eaf4ff 0%,
-        #f7fbff 50%,
+        #f8eaea 0%,
         #ffffff 100%
     );
 }
+/* EPISODE IMAGE */
 .episode-card img {
     width: 100%;
     aspect-ratio: 4 / 5;
     object-fit: cover;
+}
+/* EPISODE CARD */
+.episode-card {
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+}
+
+.episode-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.08);
 }
