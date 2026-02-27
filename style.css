@@ -717,3 +717,8 @@ p {
         #ffffff 100%
     );
 }
+.episode-card img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
