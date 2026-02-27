@@ -235,3 +235,8 @@ footer {
 .accordion-item.active .accordion-content {
     display: block;
 }
+.episode-card img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
