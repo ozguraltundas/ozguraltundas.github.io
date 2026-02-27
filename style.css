@@ -908,3 +908,59 @@ p {
     background: #1db954;
     color: white;
 }
+/* HERO */
+
+.interview-hero {
+    height: 55vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* HEADER */
+
+.interview-header {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.interview-header h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #666;
+}
+
+.interview-links {
+    margin-top: 20px;
+}
+
+.interview-links a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.interview-links a:first-child {
+    background: #0077b5;
+    color: white;
+}
+
+.spotify-btn {
+    background: #1db954;
+    color: white;
+}
+
+/* ARTICLE FIX */
+
+.conversation-article {
+    padding: 60px 20px;
+    background: #f7f8fa;
+}
