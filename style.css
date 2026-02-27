@@ -809,3 +809,52 @@ p {
   display: inline-block;
   margin-top: 60px;
 }
+
+<<_____merve-saglam.html___>>>
+
+
+.conversation-article {
+    padding: 100px 20px;
+    background: #f7f8fa;
+}
+
+.conversation-container {
+    max-width: 850px;
+    margin: 0 auto;
+    background: white;
+    padding: 60px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+}
+
+.conversation-container h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.conversation-container h2 {
+    margin-top: 50px;
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #1f2d3d;
+}
+
+.conversation-container p {
+    line-height: 1.7;
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+.conversation-intro {
+    font-size: 17px;
+    color: #555;
+}
+
+.conversation-closing {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
