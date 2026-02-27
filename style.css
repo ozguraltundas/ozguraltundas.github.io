@@ -503,4 +503,62 @@ p {
     position: relative;
     z-index: 1;
 }
+/* EPISODE SECTION */
+.episode-section {
+    padding: 80px 20px;
+    text-align: center;
+}
 
+.episode-section h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.episode-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.episode-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+.episode-card:hover {
+    transform: translateY(-5px);
+}
+
+.episode-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.episode-card h3 {
+    margin: 10px 0;
+}
+
+.episode-card p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.episode-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid #333;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #333;
+    transition: 0.3s;
+}
+
+.episode-btn:hover {
+    background: #333;
+    color: white;
+}
