@@ -964,3 +964,10 @@ p {
     padding: 60px 20px;
     background: #f7f8fa;
 }
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu.show {
+  display: block;
+}
