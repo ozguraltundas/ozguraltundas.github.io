@@ -704,14 +704,14 @@ p {
 
 .episode-image-wrapper img {
     width: 100%;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 3 / 4;
     object-fit: cover;
     display: block;
     transition: transform 0.5s ease;
 }
 
 .episode-image-wrapper:hover img {
-    transform: scale(1.04);
+    transform: scale(1.02);
 }
 
 
