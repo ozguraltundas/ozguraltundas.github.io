@@ -689,17 +689,17 @@ p {
    IMAGE FRAME UPGRADE
 ================================= */
 
-.episode-image-wrapper {
-    position: relative;
-    overflow: hidden;
-    border-radius: 16px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-    transition: 0.4s ease;
+.episode-image-wrapper img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center bottom;
+    display: block;
+    transition: transform 0.5s ease;
 }
 
-.episode-image-wrapper:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+.episode-image-wrapper:hover img {
+    transform: scale(1.02);
 }
 
 .episode-image-wrapper img {
