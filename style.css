@@ -971,3 +971,14 @@ p {
 .mobile-menu.show {
   display: block;
 }
+.episode-image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.linkedin-badge {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    z-index: 5;
+}
