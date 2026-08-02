@@ -982,3 +982,6 @@ p {
     bottom: 14px;
     z-index: 5;
 }
+.episode-section .linkedin-badge {
+    display: none;
+}
