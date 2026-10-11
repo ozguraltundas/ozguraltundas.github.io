@@ -26,3 +26,6 @@ body.projects-page { background: #f3f5f2; color: #273b42; }
  .projects-page .accordion-content { padding: 20px; }
  .projects-page .accordion-content p { text-align: left; line-height: 1.8; }
 }
+
+.projects-page .hero.projects { height: auto; background-image: none; }
+.projects-page .hero.projects::before { display: none; }
