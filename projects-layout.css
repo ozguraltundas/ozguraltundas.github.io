@@ -29,3 +29,7 @@ body.projects-page { background: #f3f5f2; color: #273b42; }
 
 .projects-page .hero.projects { height: auto; background-image: none; }
 .projects-page .hero.projects::before { display: none; }
+
+/* Keep the full photograph within a balanced header height. */
+.projects-page .hero.projects picture { display: block; }
+.projects-page .hero.projects img { max-height: 500px; object-fit: contain; margin-inline: auto; }
