@@ -13,7 +13,7 @@
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && !menu.hidden) { setMenu(false); button.focus(); }
   });
-  window.matchMedia('(min-width: 1201px)').addEventListener('change', () => setMenu(false));
+  window.matchMedia('(min-width: 901px)').addEventListener('change', () => setMenu(false));
   const navbar = document.querySelector('.navbar');
   const updateScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 10);
   window.addEventListener('scroll', updateScroll, { passive: true });
