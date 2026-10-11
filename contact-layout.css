@@ -20,3 +20,21 @@ body.contact-page { background: #f3f5f2; color: #273b42; }
  .contact-page .hero-content { width: calc(100% - 40px); }
  .contact-page .hero-content h3 { font-size: 1.05rem; line-height: 1.6; }
 }
+
+/* Wide two-column contact layout. */
+.contact-page .section { max-width: 1200px; margin: 56px auto; padding: 0 28px; }
+.contact-card { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; padding: 48px; background: transparent; border: 0; box-shadow: none; }
+.contact-profile { padding: 20px 0; }
+.contact-page .contact-card h2 { font-size: clamp(2rem,4vw,3rem); line-height: 1.2; margin-bottom: 32px; }
+.contact-page .contact-card h2::after { content: ''; display: block; width: 64px; height: 3px; background: #3d7976; margin-top: 24px; }
+.contact-name { font-size: 1.35rem; }
+.contact-links { margin-top: 0; padding-top: 0; border-top: 0; align-content: center; gap: 18px; }
+.contact-links a { display: flex; align-items: center; min-height: 94px; padding: 24px 28px; background: #fff; border: 1px solid #d9e5dc; border-radius: 12px; font-size: 1.08rem; font-weight: 600; box-shadow: 0 5px 20px rgba(22,55,48,.035); overflow-wrap: anywhere; }
+.contact-links a::after { content: '↗'; margin-left: auto; padding-left: 16px; }
+.contact-links a:first-child { background: #1a5258; color: white; }
+@media(max-width:800px) {
+ .contact-page .section { margin: 32px auto; padding: 0 22px; }
+ .contact-card { grid-template-columns: minmax(0,1fr); gap: 24px; padding: 8px 0; }
+ .contact-profile { padding: 0; }
+ .contact-links a { min-height: 76px; padding: 20px; font-size: 1rem; }
+}
