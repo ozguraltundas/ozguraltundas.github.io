@@ -33,3 +33,7 @@ body.projects-page { background: #f3f5f2; color: #273b42; }
 /* Keep the full photograph within a balanced header height. */
 .projects-page .hero.projects picture { display: block; }
 .projects-page .hero.projects img { max-height: 500px; object-fit: contain; margin-inline: auto; }
+
+/* Restore the original full-width Projects hero. */
+.projects-page .hero.projects { height: 550px; width: 100%; background-image: url("image4.jpg"); background-size: cover; background-position: center; }
+.projects-page .hero.projects::before { display: block; background: linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.10)); }
