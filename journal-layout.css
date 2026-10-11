@@ -20,3 +20,9 @@ body.journal-page { background: #f3f5f2; color: #273b42; }
  .journal-page .paper-card h3 { font-size: 1.15rem; }
  .journal-page .paper-card .paper-summary { line-height: 1.8; }
 }
+.journal-page .paper-details[hidden] { display: none; }
+.journal-page .paper-title-toggle { display: block; width: 100%; text-align: left; border: 0; background: transparent; color: inherit; font: inherit; font-weight: inherit; cursor: pointer; padding: 0 30px 0 0; position: relative; }
+.journal-page .paper-title-toggle::after { content: '+'; position: absolute; right: 0; top: 0; color: #3d7976; }
+.journal-page .paper-title-toggle[aria-expanded='true']::after { content: '−'; }
+.journal-page .paper-card .paper-authors { margin-bottom: 0; }
+.journal-page .paper-details { margin-top: 20px; }
