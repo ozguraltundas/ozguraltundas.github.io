@@ -1,0 +1,28 @@
+/* Projects review stage only. */
+body.projects-page { background: #f3f5f2; color: #273b42; }
+.projects-page .hero.projects { height: clamp(240px, 30vw, 420px); background-image: url('images/site/projects-desktop.webp'); opacity: 1; animation: none; }
+.projects-page .hero::before { background: none; }
+.projects-page .section { max-width: 1000px; margin: 48px auto 64px; padding: 0 28px; }
+.projects-page .section h1 { color: #153e43; font-size: clamp(1.9rem, 3.5vw, 2.7rem); line-height: 1.3; margin-bottom: 32px; }
+.projects-page .accordion { margin-top: 0; }
+.projects-page .accordion-item { border: 1px solid #dfe7e1; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 5px 24px rgba(22,55,48,.035); }
+.projects-page .accordion-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 24px 28px; background: white; color: #153e43; font-family: inherit; font-size: 1.15rem; line-height: 1.6; }
+.projects-page .accordion-header::after { content: '⌄'; font-size: 1.5rem; flex-shrink: 0; }
+.projects-page .accordion-header[aria-expanded='true']::after { content: '⌃'; }
+.projects-page .accordion-header:hover { background: #f0f6f2; }
+.projects-page .accordion-header:focus-visible { outline: 3px solid #c58b32; outline-offset: -4px; }
+.projects-page .accordion-content { padding: 28px; border-top: 1px solid #e2e8e3; color: #34494e; line-height: 1.85; }
+.projects-page .accordion-content p { text-align: justify; margin-bottom: 24px; }
+.projects-page .accordion-content p:last-child { margin-bottom: 0; }
+.projects-page .accordion-content p > strong:first-child { display: block; color: #153e43; margin-bottom: 8px; font-size: 1.08rem; }
+.projects-page .accordion-content p:first-child { padding: 20px; background: #f0f5f2; border-left: 3px solid #3d7976; border-radius: 0 8px 8px 0; }
+.projects-page .nav-links { flex-wrap: wrap; justify-content: center; }
+.projects-page .mobile-menu li { list-style: none; }
+.projects-page .mobile-menu li a { display: block; }
+@media (max-width: 700px) {
+ .projects-page .hero.projects { background-image: url('images/site/projects-mobile.webp'); }
+ .projects-page .section { margin: 32px auto 40px; padding: 0 18px; }
+ .projects-page .accordion-header { padding: 20px; font-size: 1.05rem; gap: 16px; }
+ .projects-page .accordion-content { padding: 20px; }
+ .projects-page .accordion-content p { text-align: left; line-height: 1.8; }
+}
