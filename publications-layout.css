@@ -59,3 +59,8 @@
 .publications-page .year-categories .accordion-content[hidden] { display: none; }
 .publications-page .year-categories .accordion-content li { margin-bottom: 18px; }
 @media(max-width:700px) { .publications-page .year-categories .accordion-content { padding: 22px 20px; } .publications-page .category-tabs .accordion-header { padding: 10px 14px; } }
+
+.all-category-heading { color: #153e43; font-size: 1.2rem; margin-bottom: 20px; }
+.all-category-heading[hidden] { display: none; }
+.publications-page .year-categories .accordion-item + .accordion-item { margin-top: 16px; }
+.publications-page .year-categories .accordion-item:has(.accordion-content[hidden]) { display: none; }
