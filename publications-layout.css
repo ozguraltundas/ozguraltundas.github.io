@@ -1,0 +1,29 @@
+/* Publications content only; preserve the existing photograph. */
+.publications-page { background: #f3f5f2; color: #273b42; }
+.publications-page .section { max-width: 1000px; margin: 56px auto; padding: 0 28px; }
+.publications-page .section > h2:not(.year-heading) { color: #153e43; font-size: clamp(1.6rem,3vw,2.2rem); line-height: 1.4; }
+.publications-page .section > p { text-align: left; line-height: 1.85; }
+.publications-page .year-heading { display: flex; align-items: center; gap: 20px; color: #153e43; margin: 44px 0 20px; font-size: 1.7rem; }
+.publications-page .year-heading::after { content: ''; height: 1px; background: #ccdcd4; flex: 1; }
+.publications-page .accordion { margin-top: 0; }
+.publications-page .accordion-item { border: 1px solid #dfe7e1; border-radius: 10px; margin-bottom: 12px; box-shadow: 0 4px 18px rgba(22,55,48,.025); }
+.publications-page .accordion-header { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 20px 26px; background: #fff; color: #153e43; font-family: inherit; font-size: 1.1rem; line-height: 1.6; }
+.publications-page .accordion-header::after { content: '⌄'; font-size: 1.5rem; flex-shrink: 0; }
+.publications-page .accordion-header[aria-expanded='true']::after { content: '⌃'; }
+.publications-page .accordion-header:hover { background: #eff5f1; }
+.publications-page .accordion-header:focus-visible { outline: 3px solid #c58b32; outline-offset: -4px; }
+.publications-page .accordion-content { border-top: 1px solid #e2e8e3; padding: 24px 28px; line-height: 1.85; }
+.publications-page .accordion-content ul { padding-left: 20px; }
+.publications-page .accordion-content li { padding-left: 6px; margin-bottom: 20px; }
+.publications-page .accordion-content li:last-child { margin-bottom: 0; }
+.publications-page .accordion-content li::marker { color: #3d7976; }
+.publications-page .nav-links { flex-wrap: wrap; justify-content: center; }
+.publications-page .mobile-menu li { list-style: none; }
+.publications-page .mobile-menu li a { display: block; }
+@media (max-width:700px) {
+ .publications-page .section { margin: 32px auto; padding: 0 18px; }
+ .publications-page .year-heading { margin-top: 32px; }
+ .publications-page .accordion-header { padding: 18px 20px; font-size: 1rem; }
+ .publications-page .accordion-content { padding: 22px 20px; }
+ .publications-page .accordion-content li { line-height: 1.8; }
+}
