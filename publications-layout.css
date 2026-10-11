@@ -27,3 +27,24 @@
  .publications-page .accordion-content { padding: 22px 20px; }
  .publications-page .accordion-content li { line-height: 1.8; }
 }
+/* Years remain the primary groups; categories sit side by side. */
+.publications-page .section { max-width: 1180px; position: relative; }
+.publications-page .year-heading { display: block; margin: 24px 0 16px; }
+.publications-page .year-heading::after { display: none; }
+.year-toggle { width: 100%; display: flex; justify-content: space-between; align-items: center; border: 1px solid #cbdcd3; border-radius: 10px; background: #eaf2ec; color: #153e43; padding: 14px 22px; font: inherit; font-weight: 700; cursor: pointer; }
+.year-toggle[aria-expanded='true'] span { transform: rotate(180deg); }
+.year-toggle:focus-visible { outline: 3px solid #c58b32; outline-offset: 3px; }
+.year-categories { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; align-items: start; }
+.year-categories[hidden] { display: none; }
+.publications-page .year-categories .accordion-item { min-width: 0; margin: 0; }
+.publications-page .year-categories .accordion-header { padding: 18px 20px; font-size: 1rem; }
+.publications-page .year-categories .accordion-content { padding: 20px; font-size: .95rem; line-height: 1.8; overflow-wrap: anywhere; }
+.margin-botanical { position: fixed; top: 48%; width: clamp(50px,5vw,100px); color: #6b9480; opacity: .18; pointer-events: none; animation: botanical-drift 12s ease-in-out infinite alternate; }
+.margin-botanical svg { width: 100%; display: block; }
+.botanical-left { left: 20px; }
+.botanical-right { right: 20px; top: 68%; animation-delay: -6s; }
+@keyframes botanical-drift { from { transform: translateY(-14px) rotate(-8deg); } to { transform: translateY(14px) rotate(8deg); } }
+@media (max-width: 1400px) { .margin-botanical { display: none; } }
+@media (max-width: 1000px) { .year-categories { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 700px) { .year-categories { grid-template-columns: minmax(0,1fr); } }
+@media (prefers-reduced-motion: reduce) { .margin-botanical { animation: none; } }
