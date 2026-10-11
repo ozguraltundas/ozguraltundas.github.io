@@ -1,0 +1,22 @@
+body.contact-page { background: #f3f5f2; color: #273b42; }
+.contact-page .section { max-width: 880px; margin: 48px auto; padding: 0 24px; }
+.contact-card { background: white; border: 1px solid #e0e8e2; border-radius: 14px; padding: 40px; box-shadow: 0 8px 28px rgba(22,55,48,.04); }
+.contact-page .contact-card h2 { color: #153e43; margin-bottom: 24px; }
+.contact-page .contact-card p { text-align: left; line-height: 1.85; }
+.contact-name { font-size: 1.25rem; font-weight: 700; color: #153e43; margin-bottom: 18px; }
+.contact-location { margin-top: 20px; color: #536865; }
+.contact-links { display: grid; gap: 12px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #e1e8e2; }
+.contact-links a { color: #1c6265; padding: 12px 16px; border: 1px solid #cdded4; border-radius: 8px; text-decoration: none; overflow-wrap: anywhere; min-height: 44px; }
+.contact-links a:first-child { color: white; background: #1a5258; border-color: #1a5258; }
+.contact-links a:hover { text-decoration: underline; }
+.contact-page a:focus-visible, .contact-page button:focus-visible { outline: 3px solid #c58b32; outline-offset: 3px; }
+.contact-page .nav-links { flex-wrap: wrap; justify-content: center; }
+.contact-page .hamburger { background: white; border: 0; color: #222; }
+.contact-page .mobile-menu li { list-style: none; }
+.contact-page .mobile-menu li a { display: block; }
+@media(max-width:700px) {
+ .contact-page .section { padding: 0 18px; margin: 32px auto; }
+ .contact-card { padding: 28px 22px; }
+ .contact-page .hero-content { width: calc(100% - 40px); }
+ .contact-page .hero-content h3 { font-size: 1.05rem; line-height: 1.6; }
+}
