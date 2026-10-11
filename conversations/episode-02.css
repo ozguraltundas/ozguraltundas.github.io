@@ -1,0 +1,19 @@
+/* Academic Talks Episode 02 */
+.talks-portrait { display: block; width: 100%; height: auto; aspect-ratio: 1; background: #fff; }
+.episode-card .talks-portrait { border-radius: 12px; }
+.talks-status { display: inline-block; font-size: 13px; color: #5c6972; margin-bottom: 18px; }
+.talks-header { max-width: 850px; padding: 36px 20px 0; margin: 0 auto; text-align: center; }
+.talks-header .talks-portrait { max-width: 360px; margin: 0 auto 24px; }
+.talks-header h1 { font-size: clamp(28px, 5vw, 40px); }
+.talks-header .subtitle { margin: 10px 0; }
+.talks-kicker { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: #67747f; }
+.talks-notice { border-left: 3px solid #c2a167; padding: 16px 20px; background: #faf8f3; }
+.talks-answer { min-height: 72px; padding: 10px 0; border-bottom: 1px solid #e7ebee; }
+.talks-article .conversation-container h2:first-child { margin-top: 0; }
+.talks-article .back-link { display: block; width: fit-content; margin: 30px auto 0; }
+.talks-nav-button { border: 0; background: transparent; }
+@media (max-width: 650px) {
+  .talks-article .conversation-container { padding: 28px 22px; }
+  .talks-article { padding: 32px 16px; }
+  .talks-header { padding-top: 24px; }
+}
