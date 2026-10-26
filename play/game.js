@@ -3,11 +3,22 @@
   const categories = window.KNOWLEDGE_CATEGORIES;
   const questions = categories.flatMap(category => category.questions.map(q => ({...q, category})));
   const byId = new Map(questions.map(q => [q.id, q]));
-  const key = 'ozgur-knowledge-board-v1';
+  const key = 'ozgur-knowledge-board-v2';
   const $ = id => document.getElementById(id);
   const dialog = $('question-dialog');
   let active = null, order = [], opener = null;
-  const fresh = () => ({ids: questions.map(q => q.id), answers: {}, retry: false});
+  let seen = [];
+  try { const stored = JSON.parse(localStorage.getItem(key + '-seen')); if(Array.isArray(stored)) seen = stored.filter(id => byId.has(id)); } catch {}
+  const fresh = () => {
+    const ids = categories.flatMap(category => [100,200,300,400,500].map(value => {
+      const pool = category.questions.filter(q => q.value === value);
+      let available = pool.filter(q => !seen.includes(q.id));
+      if(!available.length) { seen = seen.filter(id => !pool.some(q => q.id === id)); available = pool; }
+      const q = available[Math.floor(Math.random() * available.length)];
+      seen.push(q.id); return q.id;
+    }));
+    return {ids, answers: {}, retry:false};
+  };
   const equal = (a,b) => a.length === b.length && a.every((v,i) => v === b[i]);
   function isCorrect(q, response) {
     if (q.type === 'order') return equal(response, q.options.map((_,i) => i));
@@ -16,7 +27,7 @@
   function validResponse(q, response) {
     return Array.isArray(response) && new Set(response).size === response.length && response.every(i => Number.isInteger(i) && i >= 0 && i < q.options.length) && (q.type === 'order' ? response.length === q.options.length : q.type === 'single' ? response.length === 1 : response.length > 0);
   }
-  let state = fresh();
+  let state = null;
   try {
     const saved = JSON.parse(localStorage.getItem(key));
     if (saved && Array.isArray(saved.ids) && saved.ids.length && new Set(saved.ids).size === saved.ids.length && saved.ids.every(id=>byId.has(id)) && saved.answers && typeof saved.answers === 'object') {
@@ -24,9 +35,10 @@
       for (const id of saved.ids) if (validResponse(byId.get(id), saved.answers[id])) state.answers[id] = saved.answers[id];
     }
   } catch { /* A missing or invalid save starts a fresh board. */ }
+  if(!state) state = fresh();
   function save() {
-    try { localStorage.setItem(key, JSON.stringify(state)); }
-    catch { $('save-status').textContent = 'Tarayıcı kaydı kullanılamıyor; bu tur açıkken oynayabilirsin.'; }
+    try { localStorage.setItem(key, JSON.stringify(state)); localStorage.setItem(key + '-seen', JSON.stringify(seen)); }
+    catch { $('save-status').textContent = 'Browser storage is unavailable; you can still play this round.'; }
   }
   function element(tag, cls, text) {
     const node = document.createElement(tag);
@@ -42,34 +54,34 @@
   }
   function render() {
     const result = stats();
-    $('score').replaceChildren(document.createTextNode(String(result.score)),element('span','', ' puan'));
+    $('score').replaceChildren(document.createTextNode(String(result.score)),element('span','', ' points'));
     $('progress').replaceChildren(document.createTextNode(String(result.answered.length)),element('span','', ` / ${state.ids.length}`));
     $('correct').textContent = result.correct.length;
     $('retry').disabled = !result.wrong.length;
-    $('round-label').textContent = state.retry ? `TEKRAR TURU · ${state.ids.length} SORU` : '5 KONU · 25 SORU · SÜRE SINIRI YOK';
+    $('round-label').textContent = state.retry ? `RETRY ROUND · ${state.ids.length} QUESTIONS` : `${questions.length} QUESTIONS · ${state.ids.length} PER ROUND · NO TIMER`;
     $('board').replaceChildren();
     for (const category of categories) {
       if (!category.questions.some(q=>state.ids.includes(q.id))) continue;
       const column = element('div','column');
       const heading = element('div','category-head');
       heading.append(element('span','category-icon',category.icon));
-      const label = element('div'); label.append(element('h3','',category.name),element('p','',category.subtitle)); heading.append(label); column.append(heading);
-      for (const q of category.questions.filter(q=>state.ids.includes(q.id))) {
+      const label = element('div'); label.append(element('h3','',category.name),element('p','',`${category.questions.length} QUESTIONS`)); heading.append(label); column.append(heading);
+      for (const q of category.questions.filter(q=>state.ids.includes(q.id)).sort((a,b)=>a.value-b.value)) {
         const answer = state.answers[q.id];
         const correct = answer && isCorrect(q,answer);
         const button = element('button',`tile${answer ? correct ? ' answered' : ' answered wrong' : ''}`);
         button.type = 'button'; button.dataset.question = q.id;
         const number = element('span','tile-number',String(q.value));
-        if(answer) number.append(element('span','tile-label',correct ? 'DOĞRU' : 'TEKRAR BAK'));
+        if(answer) number.append(element('span','tile-label',correct ? 'CORRECT' : 'REVISIT'));
         button.append(number,element('span','tile-arrow',answer ? correct ? '✓' : '↻' : '↗'));
-        button.setAttribute('aria-label',`${category.name}, ${q.value} puan${answer ? correct ? ', doğru yanıtlandı, incele' : ', yanlış yanıtlandı, incele' : ''}`);
+        button.setAttribute('aria-label',`${category.name}, ${q.value} points${answer ? correct ? ', answered correctly, review' : ', answered incorrectly, review' : ''}`);
         button.addEventListener('click',()=>open(q.id,button)); column.append(button);
       }
       $('board').append(column);
     }
     const complete = result.answered.length === state.ids.length;
     $('summary').hidden = !complete;
-    if(complete) $('summary').replaceChildren(element('h2','',result.wrong.length ? 'Bir tur daha, biraz daha net.' : 'Tahta tamamlandı. Güzel keşif!'),element('p','',`${result.correct.length} doğru · ${result.wrong.length} yanlış · ${result.score} puan. ${result.wrong.length ? 'Üstteki “Yanlışları tekrar oyna” ile yeni bir tekrar turu başlatabilirsin.' : 'Yeni tur başlatarak bütün soruları yeniden oynayabilirsin.'}`));
+    if(complete) $('summary').replaceChildren(element('h2','',result.wrong.length ? 'One round closer to understanding.' : 'Board complete. Keep exploring!'),element('p','',`${result.correct.length} correct · ${result.wrong.length} missed · ${result.score} points. ${result.wrong.length ? 'Use “Retry missed questions” to revisit what needs practice.' : 'Start a new round to explore more questions.'}`));
   }
   function shuffle(values) {
     const list = [...values];
@@ -80,12 +92,12 @@
   function open(id,button) {
     active = byId.get(id); opener=button;
     $('question-meta').textContent = active.category.name;
-    $('question-type').textContent = {single:'Tek doğru seçenek',multiple:'Birden fazla doğru seçenek',order:'Adımları sırala'}[active.type];
+    $('question-type').textContent = {single:'Single choice',multiple:'Select all that apply',order:'Put the steps in order'}[active.type];
     $('question-title').textContent = active.text;
     $('question-code').hidden = !active.code;
     $('question-code').firstElementChild.textContent = active.code || '';
-    $('question-value').textContent = `${active.value} puan`;
-    $('question-help').textContent = active.type==='multiple' ? 'Doğru olanların tümünü seç. Tam doğru seçim puan kazandırır.' : active.type==='order' ? 'Yukarı ve aşağı oklarıyla adımları doğru sıraya getir.' : 'Bir seçenek seç ve yanıtını kontrol et.';
+    $('question-value').textContent = `${active.value} points`;
+    $('question-help').textContent = active.type==='multiple' ? 'Select every correct option. Only the complete correct selection earns points.' : active.type==='order' ? 'Use the up and down arrows to put the steps in order.' : 'Choose an option, then check your answer.';
     $('feedback').hidden = true; $('submit').hidden = false; $('next').hidden = true;
     const existing = state.answers[id];
     order = existing ? [...existing] : shuffle(active.options.map((_,i)=>i));
@@ -101,9 +113,9 @@
         const controls=element('div','order-controls');
         for(const direction of [-1,1]) {
           const button=element('button','',direction<0?'↑':'↓');button.type='button';
-          button.setAttribute('aria-label',`${active.options[optionIndex]}: ${direction<0?'yukarı':'aşağı'} taşı`);
+          button.setAttribute('aria-label',`${active.options[optionIndex]}: ${direction<0?'up':'down'} — move`);
           button.disabled=!!existing || position+direction<0 || position+direction>=order.length;
-          button.addEventListener('click',()=>{[order[position],order[position+direction]]=[order[position+direction],order[position]]; renderAnswers(); $('answers').children[position+direction].querySelectorAll('button')[direction<0?0:1].focus();});
+          button.addEventListener('click',()=>{[order[position],order[position+direction]]=[order[position+direction],order[position]]; renderAnswers(); $('answers').children[position+direction].querySelector('button:not(:disabled)')?.focus();});
           controls.append(button);
         }
         row.append(controls);$('answers').append(row);
@@ -118,15 +130,15 @@
   function showFeedback(response) {
     const correct=isCorrect(active,response);
     $('feedback').className=`feedback${correct?'':' wrong'}`;
-    $('feedback').replaceChildren(element('strong','',correct?`Doğru! +${active.value} puan`:'Bu kez olmadı. Birlikte bakalım.'),element('p','',active.explanation));
+    $('feedback').replaceChildren(element('strong','',correct?`Correct! +${active.value} points`:'Not quite. Let’s take a look.'),element('p','',active.explanation));
     const correctOptions=active.type==='order'?active.options:active.correct.map(i=>active.options[i]);
-    $('feedback').append(element('p','',`${active.type==='order'?'Doğru sıra':'Doğru yanıt'}: ${correctOptions.join(active.type==='order'?' → ':' · ')}`));
+    $('feedback').append(element('p','',`${active.type==='order'?'Correct order':'Correct answer'}: ${correctOptions.join(active.type==='order'?' → ':' · ')}`));
     $('feedback').hidden=false;$('submit').hidden=true;$('next').hidden=false;
   }
   $('question-form').addEventListener('submit',event=>{
     event.preventDefault();if(!active||state.answers[active.id])return;
     const response=active.type==='order'?[...order]:Array.from($('answers').querySelectorAll('input:checked'),input=>Number(input.value));
-    if(!response.length){$('question-help').textContent='Devam etmek için en az bir seçenek seç.';return;}
+    if(!response.length){$('question-help').textContent='Select at least one option to continue.';return;}
     state.answers[active.id]=response;save();renderAnswers(response);showFeedback(response);render();$('next').focus();
   });
   $('close-dialog').addEventListener('click',()=>dialog.close());$('next').addEventListener('click',()=>dialog.close());
@@ -135,5 +147,6 @@
   $('reset').addEventListener('click',()=>$('reset-dialog').showModal());
   $('cancel-reset').addEventListener('click',()=>$('reset-dialog').close());
   $('confirm-reset').addEventListener('click',()=>{state=fresh();save();render();$('reset-dialog').close();});
+  save();
   render();
 })();
