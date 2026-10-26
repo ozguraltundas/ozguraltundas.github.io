@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Knowledge Board · Özgür Altundaş</title>
+  <meta name="description" content="Genetik, RNA, istatistik, R ve Linux üzerine kişisel bir pratik oyunu.">
+  <link rel="stylesheet" href="game.css"><script src="questions.js" defer></script><script src="game.js" defer></script>
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="../index.html">ÖZGÜR ALTUNDAŞ<span>LEARNING LAB</span></a><a href="../index.html" class="back-link">↗ Ana site</a></header>
+  <main>
+    <section class="intro"><div><p class="eyebrow"><span></span> MERAK ET. HATIRLA. KEŞFET.</p><h1>Bilgini oyuna getir<span>.</span></h1><p class="lede">Bir konu seç, bir kutu aç. Bildiklerini pekiştir,<br class="desktop"> karıştırdıklarına yeniden bak.</p></div><div class="intro-mark" aria-hidden="true">?<span>KNOWLEDGE<br>BOARD / 01</span></div></section>
+    <section class="dashboard" aria-label="Oyun durumu"><div><span class="stat-label">TOPLAM PUAN</span><strong id="score">0<span> puan</span></strong></div><div><span class="stat-label">TAMAMLANAN</span><strong id="progress">0<span> / 25</span></strong></div><div><span class="stat-label">DOĞRU YANIT</span><strong id="correct">0</strong></div><div class="dashboard-actions"><button id="retry" class="quiet" disabled>Yanlışları tekrar oyna</button><button id="reset" class="text-button">Yeni tur ↻</button></div></section>
+    <section class="board-section" aria-labelledby="board-title"><div class="board-toolbar"><h2 id="board-title">Bugünün keşif tahtası</h2><span id="round-label">5 KONU · 25 SORU · SÜRE SINIRI YOK</span></div><div id="board" class="board"></div></section>
+    <section id="summary" class="summary" hidden aria-live="polite"></section>
+    <footer class="game-footer"><p><span class="small-dot"></span> Doğru yanıt puan kazandırır. Yanlış yanıt puan götürmez.</p><p id="save-status">İlerlemen bu tarayıcıda saklanır.</p></footer>
+  </main>
+  <dialog id="question-dialog" aria-labelledby="question-title"><form id="question-form"><div class="dialog-top"><span id="question-meta" class="eyebrow"></span><button type="button" id="close-dialog" class="close" aria-label="Soruyu kapat">×</button></div><div class="question-type" id="question-type"></div><h2 id="question-title"></h2><pre id="question-code" hidden><code></code></pre><p id="question-help" class="help"></p><div id="answers"></div><div id="feedback" class="feedback" hidden aria-live="polite"></div><div class="dialog-bottom"><span id="question-value"></span><button type="submit" id="submit" class="primary">Yanıtı kontrol et <span>↗</span></button><button type="button" id="next" class="primary" hidden>Tahtaya dön ↗</button></div></form></dialog>
+  <dialog id="reset-dialog" aria-labelledby="reset-title"><h2 id="reset-title">Yeni bir tur başlatılsın mı?</h2><p>Bu turdaki puanın ve yanıtların sıfırlanır.</p><div class="confirm-actions"><button class="quiet" id="cancel-reset">Vazgeç</button><button class="primary" id="confirm-reset">Yeni tur başlat</button></div></dialog>
+</body></html>
