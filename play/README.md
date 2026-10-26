@@ -1,11 +1,19 @@
 # Knowledge Board
 
-Buildless game served at `/play/` on GitHub Pages. Open through a static HTTP server for development, e.g. `python3 -m http.server 4173` from the repository root.
+A build-free English practice game hosted at `/play/` on GitHub Pages.
 
-Edit `questions.js` to add content. Each category has five questions with stable IDs, point values, a type (`single`, `multiple`, `order`), question text, options, and explanation. Single/multiple questions use zero-based `correct` indexes. Order questions list options in the correct order; the interface shuffles them. Optional `code` is displayed as text, never executed.
+## Current release
 
-Scoring: fully correct response earns the displayed points; incorrect answers earn zero with no deduction. Answers are locked after submission but remain reviewable. Retrying starts a separate round containing only the previous round's wrong questions, with score reset for that round. New round resets all 25 questions after confirmation.
+215 questions: R & Data (100), Statistics & Models (100), Genetics & Breeding (5), RNA & Omics (5), Linux & HCC (5). Includes single-choice, multiple-selection and ordering practice with explanations.
 
-Progress is local to the browser, stored under `ozgur-knowledge-board-v1`. No login, account connection, analytics, or backend is required. Questions and answers are public source; use fictional or public examples rather than private lab data.
+Each round selects one question at each point value per category (25 tiles). Selection avoids previously shown questions in each category/value pool until that pool is exhausted. Point values are game weights, not calibrated difficulty estimates. The three starter categories repeat each round. Retry missed questions creates a separate round; correct answers earn points, mistakes do not subtract points.
 
-Content references: [R rep](https://stat.ethz.ch/R-manual/R-devel/library/base/html/rep.html), [dplyr filter](https://dplyr.tidyverse.org/reference/filter.html), [tabix](https://www.htslib.org/doc/tabix.html), [SLURM sbatch](https://slurm.schedmd.com/sbatch.html). Use course/research references when extending genetics and statistical modelling questions. Existing ChatGPT answers are not authoritative answer keys.
+Round progress and question exposure history are stored only in the current browser using localStorage. Devices do not sync. Version 2 starts a new round instead of loading the old 25-question version's saved answers. No account, server, API key or private research data is required.
+
+English communication practice, vocabulary notes and larger starter banks are future work, not part of this release.
+
+## Editing
+
+`questions.js` defines the bank loader. Bank rows in `banks/` contain five pipe-separated fields: question, correct option, two distractors, explanation. Do not include a pipe within a field. The loader rotates correct option positions. `starter.js` also defines an ordering question and a multiple-selection question.
+
+Serve the repository root with `python3 -m http.server 4173` and open `/play/`. Run `node tests/banks.cjs` to validate bank counts, uniqueness and answer keys. No build step is needed.
