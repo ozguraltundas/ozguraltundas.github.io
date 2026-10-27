@@ -10,7 +10,7 @@
   let seen = [];
   try { const stored = JSON.parse(localStorage.getItem(key + '-seen')); if(Array.isArray(stored)) seen = stored.filter(id => byId.has(id)); } catch {}
   const fresh = () => {
-    const ids = categories.flatMap(category => [100,200,300,400,500].map(value => {
+    const ids = categories.flatMap(category => [...new Set(category.questions.map(q => q.value))].sort((a,b)=>a-b).map(value => {
       const pool = category.questions.filter(q => q.value === value);
       let available = pool.filter(q => !seen.includes(q.id));
       if(!available.length) { seen = seen.filter(id => !pool.some(q => q.id === id)); available = pool; }
@@ -36,6 +36,8 @@
     }
   } catch { /* A missing or invalid save starts a fresh board. */ }
   if(!state) state = fresh();
+  // Include the dedicated genetics question in existing regular rounds, too.
+  if(!state.retry && !state.ids.includes("genetics-9")) state.ids.push("genetics-9");
   function save() {
     try { localStorage.setItem(key, JSON.stringify(state)); localStorage.setItem(key + '-seen', JSON.stringify(seen)); }
     catch { $('save-status').textContent = 'Browser storage is unavailable; you can still play this round.'; }
