@@ -92,12 +92,12 @@
   function open(id,button) {
     active = byId.get(id); opener=button;
     $('question-meta').textContent = active.category.name;
-    $('question-type').textContent = {single:'Single choice',multiple:'Select all that apply',order:'Put the steps in order'}[active.type];
+    $('question-type').textContent = active.typeLabel || {single:'Single choice',multiple:'Select all that apply',order:'Put the steps in order'}[active.type];
     $('question-title').textContent = active.text;
     $('question-code').hidden = !active.code;
     $('question-code').firstElementChild.textContent = active.code || '';
     $('question-value').textContent = `${active.value} points`;
-    $('question-help').textContent = active.type==='multiple' ? 'Select every correct option. Only the complete correct selection earns points.' : active.type==='order' ? 'Use the up and down arrows to put the steps in order.' : 'Choose an option, then check your answer.';
+    $('question-help').textContent = active.help || (active.type==='multiple' ? 'Select every correct option. Only the complete correct selection earns points.' : active.type==='order' ? 'Use the up and down arrows to put the steps in order.' : 'Choose an option, then check your answer.');
     $('feedback').hidden = true; $('submit').hidden = false; $('next').hidden = true;
     const existing = state.answers[id];
     order = existing ? [...existing] : shuffle(active.options.map((_,i)=>i));
