@@ -384,3 +384,74 @@ window.KNOWLEDGE_CATEGORIES.find(c => c.id === "genetics").questions.push(...[
     ]
   }
 ]);
+
+// A dedicated 600-point question completes each category column.
+window.KNOWLEDGE_CATEGORIES.find(c => c.id === "r").questions.push({
+  "id": "r-101",
+  "text": "A phenotype vector contains one missing observation. Which R expression computes the mean of the observed values without replacing the missing value with zero?",
+  "code": "yield <- c(4, 6, NA, 8)",
+  "options": [
+    "mean(yield)",
+    "mean(yield, na.rm = TRUE)",
+    "mean(is.na(yield))",
+    "sum(yield, na.rm = TRUE) / length(yield)"
+  ],
+  "correct": [
+    1
+  ],
+  "explanation": "mean(yield, na.rm = TRUE) averages the three observed values: (4 + 6 + 8) / 3 = 6. The default mean returns NA. Dividing the observed sum by the full vector length incorrectly uses four observations. Removing missing values for this calculation does not resolve possible bias from the missing-data mechanism.",
+  "value": 600,
+  "type": "single",
+  "topic": "Applied practice"
+});
+window.KNOWLEDGE_CATEGORIES.find(c => c.id === "stats").questions.push({
+  "id": "stats-101",
+  "text": "The same 12 plants are measured before and after a treatment. For a paired t-test of the mean change, which set of observations is central to the analysis?",
+  "options": [
+    "The 24 measurements treated as independent observations",
+    "Only the 12 measurements after treatment",
+    "The 12 within-plant differences, assuming plants are independent",
+    "The two group means treated as a sample of size two"
+  ],
+  "correct": [
+    2
+  ],
+  "explanation": "Calculate one difference per plant (after minus before), then test whether the population mean difference is zero. Pairing preserves the dependence within each plant. The usual exact small-sample t-test assumes independent, normally distributed differences; it does not require the before and after measurements to be independent of each other.",
+  "value": 600,
+  "type": "single",
+  "topic": "Applied practice"
+});
+window.KNOWLEDGE_CATEGORIES.find(c => c.id === "rna").questions.push({
+  "id": "rna-6",
+  "text": "You sequence the same RNA library in two sequencing lanes. Do those lanes provide two independent biological replicates for differential expression?",
+  "options": [
+    "Yes, because each lane generates different reads",
+    "Yes, if each lane contains enough reads",
+    "No; increasing read depth removes the need for biological replication",
+    "No; they are technical measurements of the same biological sample"
+  ],
+  "correct": [
+    3
+  ],
+  "explanation": "Two lanes from the same library do not represent independently sampled biological units. They can increase sequencing depth, but they do not measure between-sample biological variation. Treating them as independent biological replicates would inflate the apparent sample size. Appropriate biological replication is needed to estimate biological variability.",
+  "value": 600,
+  "type": "single",
+  "topic": "Applied practice"
+});
+window.KNOWLEDGE_CATEGORIES.find(c => c.id === "linux").questions.push({
+  "id": "linux-6",
+  "text": "A script expects input.csv in the current working directory. You submit it from a different directory and it reports that the file is missing. What is the most direct issue to check?",
+  "options": [
+    "The working directory and how the relative input path is resolved",
+    "Whether the CSV contains a statistically significant result",
+    "Whether the job name matches the file name",
+    "Whether the script requests the maximum possible memory"
+  ],
+  "correct": [
+    0
+  ],
+  "explanation": "A relative path such as input.csv is resolved from the process working directory. Check that directory with pwd and confirm the file location. Use an appropriate absolute path or deliberately set the working directory. Increasing memory or changing a job name does not fix an incorrect input path.",
+  "value": 600,
+  "type": "single",
+  "topic": "Applied practice"
+});
