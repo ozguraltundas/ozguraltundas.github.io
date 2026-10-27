@@ -35,3 +35,6 @@ assert.equal(6/(6+4),0.6);
 const d=[2,1,0], p=[0.5,0.25,0.5], b=[0.4,-0.2,0];
 assert.ok(Math.abs(d.reduce((s,x,i)=>s+(x-2*p[i])*b[i],0)-0.3)<1e-12);
 console.log('PASS: recombinant probability, offspring dosage, heritability and centered GEBV calculations.');
+
+assert.deepEqual(all.filter(q=>q.value===600).map(q=>q.id),['genetics-9']);
+assert.equal(KNOWLEDGE_CATEGORIES.reduce((n,c)=>n+new Set(c.questions.map(q=>q.value)).size,0),26);
