@@ -36,8 +36,16 @@
     }
   } catch { /* A missing or invalid save starts a fresh board. */ }
   if(!state) state = fresh();
-  // Include the dedicated genetics question in existing regular rounds, too.
-  if(!state.retry && !state.ids.includes("genetics-9")) state.ids.push("genetics-9");
+  // Fill newly introduced category/value slots without losing saved answers.
+  if(!state.retry) {
+    for(const category of categories) {
+      for(const value of new Set(category.questions.map(q => q.value))) {
+        if(!category.questions.some(q => q.value === value && state.ids.includes(q.id))) {
+          state.ids.push(category.questions.find(q => q.value === value).id);
+        }
+      }
+    }
+  }
   function save() {
     try { localStorage.setItem(key, JSON.stringify(state)); localStorage.setItem(key + '-seen', JSON.stringify(seen)); }
     catch { $('save-status').textContent = 'Browser storage is unavailable; you can still play this round.'; }
