@@ -87,7 +87,7 @@ window.KNOWLEDGE_CATEGORIES.find(c => c.id === "genetics").questions.push(...[
   },
   {
     "id": "genetics-9",
-    "value": 400,
+    "value": 600,
     "type": "single",
     "text": "Parent 1 and Parent 2 are crossed. No crossing over occurs between these SNPs. What fraction of offspring inherits G–C from Parent 1, and what are its unphased genotypes?",
     "options": [
