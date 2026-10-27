@@ -3,12 +3,12 @@ global.window = global;
 require('../play/questions.js');
 for (const file of ['r','statistics','starter']) require('../play/banks/'+file+'.js');
 const all = KNOWLEDGE_CATEGORIES.flatMap(c=>c.questions);
-assert.equal(all.length,235);
-assert.equal(new Set(all.map(q=>q.id)).size,235);
-assert.equal(new Set(all.map(q=>q.text)).size,235);
+assert.equal(all.length,239);
+assert.equal(new Set(all.map(q=>q.id)).size,239);
+assert.equal(new Set(all.map(q=>q.text)).size,239);
 for (const c of KNOWLEDGE_CATEGORIES) {
- assert.equal(c.questions.length,['r','stats'].includes(c.id)?100:c.id==='genetics'?25:5);
- for(const value of [100,200,300,400,500]) assert.ok(c.questions.some(q=>q.value===value));
+ assert.equal(c.questions.length,['r','stats'].includes(c.id)?101:c.id==='genetics'?25:6);
+ for(const value of [100,200,300,400,500,600]) assert.ok(c.questions.some(q=>q.value===value));
  for(const q of c.questions) {
   assert.ok(q.text && q.explanation);
   assert.equal(new Set(q.options).size,q.options.length);
@@ -16,7 +16,7 @@ for (const c of KNOWLEDGE_CATEGORIES) {
   if(q.type!=='order') assert.ok(q.correct.length && q.correct.every(i=>i>=0 && i<q.options.length));
  }
 }
-console.log('PASS: 235 unique questions; category counts, options and answer keys valid.');
+console.log('PASS: 239 unique questions; category counts, options and answer keys valid.');
 
 const added = all.filter(q=>q.id.startsWith("genetics-") && Number(q.id.split("-")[1])>=6);
 assert.equal(added.length,20);
@@ -36,5 +36,6 @@ const d=[2,1,0], p=[0.5,0.25,0.5], b=[0.4,-0.2,0];
 assert.ok(Math.abs(d.reduce((s,x,i)=>s+(x-2*p[i])*b[i],0)-0.3)<1e-12);
 console.log('PASS: recombinant probability, offspring dosage, heritability and centered GEBV calculations.');
 
-assert.deepEqual(all.filter(q=>q.value===600).map(q=>q.id),['genetics-9']);
-assert.equal(KNOWLEDGE_CATEGORIES.reduce((n,c)=>n+new Set(c.questions.map(q=>q.value)).size,0),26);
+assert.equal(all.filter(q=>q.value===600).length,5);
+assert.equal(all.find(q=>q.id==='genetics-9').value,600);
+assert.equal(KNOWLEDGE_CATEGORIES.reduce((n,c)=>n+new Set(c.questions.map(q=>q.value)).size,0),30);
