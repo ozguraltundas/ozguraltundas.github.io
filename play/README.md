@@ -6,7 +6,7 @@ A build-free English practice game hosted at `/play/` on GitHub Pages.
 
 235 questions: R & Data (100), Statistics & Models (100), Genetics & Breeding (25), RNA & Omics (5), Linux & HCC (5). Includes single-choice, multiple-selection and ordering practice with explanations.
 
-Each round selects one question at each point value per category (25 tiles). Selection avoids previously shown questions in each category/value pool until that pool is exhausted. Point values are game weights, not calibrated difficulty estimates. RNA and Linux starter categories repeat each round. Genetics now has five questions per point-value pool and rotates across rounds. Retry missed questions creates a separate round; correct answers earn points, mistakes do not subtract points.
+Each round selects one question at each available point value per category (26 tiles). Selection avoids previously shown questions in each category/value pool until that pool is exhausted. Point values are game weights, not calibrated difficulty estimates. RNA and Linux starter categories repeat each round. Genetics rotates questions at 100–500 points and always includes the VCF testcross question in a dedicated 600-point tile. Retry missed questions creates a separate round; correct answers earn points, mistakes do not subtract points.
 
 Round progress and question exposure history are stored only in the current browser using localStorage. Devices do not sync. Version 2 starts a new round instead of loading the old 25-question version's saved answers. No account, server, API key or private research data is required.
 
